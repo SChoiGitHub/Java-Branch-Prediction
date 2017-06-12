@@ -11,7 +11,12 @@ import soot.jimple.toolkits.annotation.logic.*;
 //For any future researchers
 //This is a class that inheirits from LoopFinder, which inheirits from BodyTransform. This will allow it to be inserted into Soot's Packs, which will be dealt with at runtime.
 public class LoopHeuristic extends LoopFinder {
-	LoopHeuristic(){
+	private Tallier tallier;
+	private int my_id;
+	
+	LoopHeuristic(Tallier t, int id){
+		tallier = t;
+		my_id = id;
 		System.out.println("Loop Heuristic Prepared.");
 	}
 	

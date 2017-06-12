@@ -9,7 +9,13 @@ import soot.toolkits.graph.*;
 //For any future researchers
 //This is a class that inheirits from BodyTransformer. This will allow it to be inserted into Soot's Packs, which will be dealt with at runtime.
 public class BackHeuristic extends BodyTransformer {
-	BackHeuristic(){
+	private Tallier tallier;
+	private int my_id;
+	
+	
+	BackHeuristic(Tallier t, int id){
+		tallier = t;
+		my_id = id;
 		System.out.println("Back Heuristic Prepared.");
 	}
 	

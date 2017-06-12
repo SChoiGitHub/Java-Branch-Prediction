@@ -11,14 +11,23 @@ import soot.jimple.internal.*;
 //This is a class that inheirits from BodyTransformer. This will allow it to be inserted into Soot's Packs, which will be dealt with at runtime.
 public class ReturnHeuristic extends BodyTransformer {
 	private PatchingChain<Unit> units;
+	private BriefUnitGraph g;
 	
-	ReturnHeuristic(){
+	
+	private Tallier tallier;
+	private int my_id;
+	
+	ReturnHeuristic(Tallier t, int id){
+		tallier = t;
+		my_id = id;
 		System.out.println("Return Heuristic Prepared.");
 	}
 	
 	protected void internalTransform(Body b, String phaseName, Map options){
+		
+		System.out.println("Method:\t" +b.getMethod());
 		//We create a Control Flow Graph using b, the body of the SootMethod.
-		BriefUnitGraph g = new BriefUnitGraph(b);
+		g = new BriefUnitGraph(b);
 		//units represents all the statements within the body. Local varibles and exceptions are in other chains.
 		units = b.getUnits();
 		//Iterate between all Unit objects in units.
@@ -31,14 +40,33 @@ public class ReturnHeuristic extends BodyTransformer {
 				System.out.println("\tIfStmt Found: " + ifStatement);
 				
 				
-				boolean jump_has_return = search_BBlock_for_ReturnStmt(ifStatement.getTarget());
-				boolean fall_has_return = search_BBlock_for_ReturnStmt(units.getSuccOf(u1));
+				for(Unit u2 : g.getSuccsOf(u1)){
+					System.out.println("\t\tSearching BBlock beginning with: " + u2);
+					if(search_BBlock_for_ReturnStmt(u2)){
+						System.out.println("\t\t\tPredict not taken because it has a return.");
+					}else{
+						System.out.println("\t\t\tPredict taken because it does not have a return.");
+					}
+				}
 				
-				System.out.print("\t\tJump has return. ");
-				System.out.println("Fall has return.");
-				
-				
-			}catch(Exception e){
+			}catch(Exception e1){
+				try{
+					//Maybe its an switch statement?
+					SwitchStmt switchStmt = (SwitchStmt) u1;
+					
+					System.out.println("\tSwitchStmt Found: " + switchStmt);
+					
+					for(Unit u2 : g.getSuccsOf(u1)){
+						System.out.println("\t\tSearching BBlock beginning with: " + u2);
+						if(search_BBlock_for_ReturnStmt(u2)){
+							System.out.println("\t\t\tPredict not taken because it has a return.");
+						}else{
+							System.out.println("\t\t\tPredict taken because it does not have a return.");
+						}
+					}
+				}catch(Exception e2){
+					
+				}
 				//Ignore this...
 				continue;
 			}
@@ -47,7 +75,8 @@ public class ReturnHeuristic extends BodyTransformer {
 	
 	public boolean search_BBlock_for_ReturnStmt(Unit searching){
 		do{
-			if(searching.branches()){
+			//System.out.println(searching); //Debugs
+			if(g.getSuccsOf(searching).size() > 1){
 				//BBlock ends with a branch.
 				//We did not find a return.
 				return false;
@@ -59,7 +88,8 @@ public class ReturnHeuristic extends BodyTransformer {
 					//Nope, but continue.
 				}
 			}
-			searching = units.getSuccOf(searching);
+			//We go down the only path available to g, since the previous if statement guaranteed that this does not have multiple possible successors
+			searching = g.getSuccsOf(searching).get(0);
 		}while(searching != null);
 		//Looking at the last node? No point anymore.
 		return false;
