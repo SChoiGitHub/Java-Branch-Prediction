@@ -6,6 +6,7 @@ import java.io.*;
 import java.util.*;
 import soot.toolkits.graph.*;
 
+//Maybe we don't need this...
 public class Tallier{
 	private Hashtable<Unit,boolean[]> unitToTaken;
 	int heuristic_count;
