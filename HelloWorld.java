@@ -1,7 +1,7 @@
 import java.util.*;
 
-public class HelloWorld {
-	
+//Test input.
+public class HelloWorld {	
 	public static void main (String[] args) {
 		System.out.println("Hello World!");
 		Random r = new Random();
@@ -47,9 +47,5 @@ public class HelloWorld {
 			return x;
 		}
 	}
-	
-	
-	
-	
 }
 
