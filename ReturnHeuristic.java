@@ -20,8 +20,7 @@ public class ReturnHeuristic extends BodyTransformer {
 	}
 	
 	protected void internalTransform(Body b, String phaseName, Map options){
-		
-		System.out.println("Method:\t" +b.getMethod());
+		System.out.println("Applying " + phaseName + " on " + b.getMethod());
 		//We create a Control Flow Graph using b, the body of the SootMethod.
 		g = new BriefUnitGraph(b);
 		//units represents all the statements within the body. Local varibles and exceptions are in other chains.

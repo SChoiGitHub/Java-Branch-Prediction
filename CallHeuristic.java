@@ -18,10 +18,12 @@ public class CallHeuristic extends BodyTransformer {
 	}
 	
 	protected void internalTransform(Body b, String phaseName, Map options){
+		System.out.println("Applying " + phaseName + " on " + b.getMethod());
+		
 		//We create a Control Flow Graph using b, the body of the SootMethod.
 		g = new BriefUnitGraph(b);
 		//Finds Post dominators.
-		d = new MHGPostDominatorsFinder(g);
+		d = new MHGPostDominatorsFinder<Unit>(g);
 		//this is the patchingchain of unit in the body
 		units = b.getUnits();
 		

@@ -11,12 +11,13 @@ import soot.toolkits.graph.*;
 public class PointerHeuristic extends BodyTransformer {
 	PatchingChain<Unit> units;
 	
-	
 	PointerHeuristic(){
 		System.out.println("Pointer Heuristic Prepared.");
 	}
 	
 	protected void internalTransform(Body b, String phaseName, Map options){
+		System.out.println("Applying " + phaseName + " on " + b.getMethod());
+		
 		//this is the patchingchain of unit in the body
 		units = b.getUnits();
 		

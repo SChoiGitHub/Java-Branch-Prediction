@@ -18,6 +18,8 @@ public class OpcodeHeuristic extends BodyTransformer {
 	}
 	
 	protected void internalTransform(Body b, String phaseName, Map options){
+		System.out.println("Applying " + phaseName + " on " + b.getMethod());
+		
 		//this is the patchingchain of unit in the body
 		units = b.getUnits();
 		

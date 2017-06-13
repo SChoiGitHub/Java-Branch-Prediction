@@ -17,6 +17,8 @@ public class LoopHeuristic extends LoopFinder {
 	}
 	
     protected void internalTransform (Body b, String phaseName, Map options){
+		System.out.println("Applying " + phaseName + " on " + b.getMethod());
+		
 		super.internalTransform(b,phaseName,options);
 		//If we want the loops, we can call super.loops() to have it return a collection of loops
 		//this will print out all of the header units then print out all exits from that loop.

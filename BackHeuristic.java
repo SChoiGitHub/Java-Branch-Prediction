@@ -16,11 +16,12 @@ public class BackHeuristic extends BodyTransformer {
 	}
 	
 	protected void internalTransform(Body b, String phaseName, Map options){
+		System.out.println("Applying " + phaseName + " on " + b.getMethod());
+		
 		//We create a Control Flow Graph using b, the body of the SootMethod.
 		BriefUnitGraph g = new BriefUnitGraph(b);
 		//units represents all the statements within the body. Local varibles and exceptions are in other chains.
 		PatchingChain<Unit> units = b.getUnits();
-		System.out.println("Method:\t" +b.getMethod());
 		//Iterate between all Unit objects in units.
 		for(Unit u1 : units){
 			//All Unit objects will be checked with their successors to see if they are actually after their successors in code.
