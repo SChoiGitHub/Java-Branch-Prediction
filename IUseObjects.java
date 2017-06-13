@@ -18,6 +18,19 @@ public class IUseObjects {
 		if(x == 4){
 			a.talk();
 		}
+		
+		if(x <= 0){
+			a.talk();
+		}
+		if(x < 0){
+			a.talk();
+		}
+		if(0 >= x){
+			a.talk();
+		}
+		if(0 > x){
+			a.talk();
+		}
 	}
 }
 
