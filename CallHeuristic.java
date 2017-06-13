@@ -38,7 +38,7 @@ public class CallHeuristic extends BodyTransformer {
 					if(search_BBlock_for_InvokeStmt(u2)){
 						System.out.println("\t\t\tPredict not taken because it has a invoke statment and it postdominates this unit.");
 					}else{
-						System.out.println("\t\t\tPredict taken because it either does not have a invoke statment or it does not postdominates this unit.");
+						System.out.println("\t\t\tPrediction Uncertain");
 					}
 				}
 			}catch(Exception e1){
@@ -50,6 +50,7 @@ public class CallHeuristic extends BodyTransformer {
 	public boolean search_BBlock_for_InvokeStmt(Unit entry){
 		Unit searching = entry;
 		do{
+			//System.out.println(searching); //Debug
 			if(g.getSuccsOf(searching).size() > 1){
 				//BBlock ends with a branch.
 				//We did not find an invoke.
@@ -65,6 +66,10 @@ public class CallHeuristic extends BodyTransformer {
 				}
 			}
 			//We go down the only path available to g, since the previous if statement guaranteed that this does not have multiple possible successors
+			if(searching == units.getLast()){
+				//We just looked at the last one. No point continuing
+				return false;
+			}
 			searching = g.getSuccsOf(searching).get(0);
 		}while(searching != null);
 		//Looking at the nonexistent node? No point anymore.

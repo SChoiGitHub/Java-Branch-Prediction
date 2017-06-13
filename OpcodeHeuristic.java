@@ -49,9 +49,9 @@ public class OpcodeHeuristic extends BodyTransformer {
 	
 	public void parse(Value l, String op, Value r){
 		
-		System.out.println(l);
-		System.out.println(op);
-		System.out.println(r);
+		//System.out.println(l);
+		//System.out.println(op);
+		//System.out.println(r);
 		
 		
 		boolean l_is_0 = false;
@@ -64,9 +64,10 @@ public class OpcodeHeuristic extends BodyTransformer {
 			if(((IntConstant)l).value == 0){
 				//Hey! The left operand is zero!
 				l_is_0 = true;
+				r_is_const = true;
 				r_is_int = true;
 			}else{
-				//Its still a constant.
+				//Its still a constant. We parsed it and it worked.
 				l_is_const = true;
 				r_is_int = true;
 			}
@@ -83,6 +84,7 @@ public class OpcodeHeuristic extends BodyTransformer {
 			if(((IntConstant)r).value == 0){
 				//Hey! The left operand is zero!
 				r_is_0 = true;
+				r_is_const = true;
 				r_is_int = true;
 			}else{
 				//Its still a constant.
@@ -100,20 +102,21 @@ public class OpcodeHeuristic extends BodyTransformer {
 		
 		if(l_is_0){
 			//Left is a constant zero.
-			if(op.equals(">") || op.equals(">=")){
+			if(op.equals(" > ") || op.equals(" >= ")){
 				//Now we know that left is being checked to see if it is greater (or maybe greater or equal to) than its other operand.
 				if(r_is_int){
-					System.out.println("\t\tPredict untaken due to the less than comparison of an integer and zero.");
+					System.out.println("\t\tPredict untaken due to the \"less than\" comparison of an integer and zero.");
 				}
 			}else{
 				//Uh, we don't know now.
+				System.out.println("\t\tPrediction uncertain.");
 			}
 		}else if(r_is_0){
 			//Right is a constant zero.
-			if(op.equals("<") || op.equals("<=")){
+			if(op.equals(" < ") || op.equals(" <= ")){
 				//Now we know that right is being checked to see if it is greater (or maybe greater or equal to) than its other operand.
 				if(l_is_int){
-					System.out.println("\t\tPredict untaken due to the less than comparison of an integer and zero.");
+					System.out.println("\t\tPredict untaken due to the \"less than\" comparison of an integer and zero.");
 				}
 			}else{
 				//Uh, we don't know now.
@@ -121,9 +124,11 @@ public class OpcodeHeuristic extends BodyTransformer {
 			}
 		}else if(l_is_const != r_is_const){
 			//Only one of these is a constant int.
-			if((r_is_int && l_is_int) && op.equals("==")){
+			if((r_is_int && l_is_int) && op.equals(" == ")){
 				//If both are an int and we know equality is being checked, predict untaken.
 				System.out.println("\t\tPredict untaken due to the equality comparision of an int varible and zero.");
+			}else{
+				System.out.println("\t\tPrediction uncertain.");
 			}
 		}else{
 			System.out.println("\t\tPrediction uncertain.");
