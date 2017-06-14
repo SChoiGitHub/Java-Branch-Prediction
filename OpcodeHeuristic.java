@@ -11,10 +11,10 @@ import soot.JastAddJ.NumericType;
 //This is a class that inheirits from BodyTransformer. This will allow it to be inserted into Soot's Packs, which will be dealt with at runtime.
 public class OpcodeHeuristic extends BodyTransformer {
 	PatchingChain<Unit> units;
-	
+	IfStmt ifStatement;
 	
 	OpcodeHeuristic(){
-		System.out.println("Pointer Heuristic Prepared.");
+		System.out.println("Opcode Heuristic Prepared.");
 	}
 	
 	protected void internalTransform(Body b, String phaseName, Map options){
@@ -27,9 +27,9 @@ public class OpcodeHeuristic extends BodyTransformer {
 			//All Unit objects will be checked with their successors to see if they are actually after their successors in code.
 			try{
 				//If this is a jimple if statement, this will work. Else, it will throw an exception.
-				IfStmt ifStatement = (IfStmt) u1;
+				ifStatement = (IfStmt) u1;
 				//Look at the successor of the IfStmt and check its position
-				System.out.println("\tIfStmt Found: " + ifStatement);
+				
 
 				
 				parse(((BinopExpr)ifStatement.getCondition()).getOp1(),((BinopExpr)ifStatement.getCondition()).getSymbol(),((BinopExpr)ifStatement.getCondition()).getOp2());
@@ -107,33 +107,36 @@ public class OpcodeHeuristic extends BodyTransformer {
 			if(op.equals(" > ") || op.equals(" >= ")){
 				//Now we know that left is being checked to see if it is greater (or maybe greater or equal to) than its other operand.
 				if(r_is_int){
+					System.out.println("\tIfStmt Found: " + ifStatement);
 					System.out.println("\t\tPredict untaken due to the \"less than\" comparison of an integer and zero.");
 				}
 			}else{
 				//Uh, we don't know now.
-				System.out.println("\t\tPrediction uncertain.");
+				//System.out.println("\t\tPrediction uncertain.");
 			}
 		}else if(r_is_0){
 			//Right is a constant zero.
 			if(op.equals(" < ") || op.equals(" <= ")){
 				//Now we know that right is being checked to see if it is greater (or maybe greater or equal to) than its other operand.
 				if(l_is_int){
+					System.out.println("\tIfStmt Found: " + ifStatement);
 					System.out.println("\t\tPredict untaken due to the \"less than\" comparison of an integer and zero.");
 				}
 			}else{
 				//Uh, we don't know now.
-				System.out.println("\t\tPrediction uncertain.");
+				//System.out.println("\t\tPrediction uncertain.");
 			}
 		}else if(l_is_const != r_is_const){
 			//Only one of these is a constant int.
 			if((r_is_int && l_is_int) && op.equals(" == ")){
 				//If both are an int and we know equality is being checked, predict untaken.
+				System.out.println("\tIfStmt Found: " + ifStatement);
 				System.out.println("\t\tPredict untaken due to the equality comparision of an int varible and zero.");
 			}else{
-				System.out.println("\t\tPrediction uncertain.");
+				//System.out.println("\t\tPrediction uncertain.");
 			}
 		}else{
-			System.out.println("\t\tPrediction uncertain.");
+			//System.out.println("\t\tPrediction uncertain.");
 		}
 	}
 

@@ -24,9 +24,9 @@ public class LoopHeuristic extends LoopFinder {
 		//this will print out all of the header units then print out all exits from that loop.
 		for(Loop l : super.loops()){
 			System.out.println("\tLoop Found, Header: " + l.getHead());
-			System.out.println("\t\tExits:");
+			
 			for(Stmt s : l.getLoopExits()){
-				System.out.println("\t\t" + s);
+				System.out.println("\t\tExit: " + s);
 				try{
 					//Is s an if statement?
 					IfStmt s_if = (IfStmt) s;

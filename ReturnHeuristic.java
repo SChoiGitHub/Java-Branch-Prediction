@@ -32,14 +32,14 @@ public class ReturnHeuristic extends BodyTransformer {
 				//If this is a jimple if statement, this will work. Else, it will throw an exception.
 				JIfStmt ifStatement = (JIfStmt) u1;
 				//Look at the successor of the IfStmt and check its position
-				System.out.println("\tIfStmt Found: " + ifStatement);
-				
-				System.out.println("\t\tGoto Destination beginning with: " + ifStatement.getTarget());
+
 				
 				if(search_BBlock_for_ReturnStmt(ifStatement.getTarget())){
+					System.out.println("\tIfStmt Found: " + ifStatement);
+					System.out.println("\t\tGoto Destination beginning with: " + ifStatement.getTarget());
 					System.out.println("\t\t\tPredict not taken because it has a return.");
 				}else{
-					System.out.println("\t\t\tPrediction Uncertain.");
+					//System.out.println("\t\t\tPrediction Uncertain.");
 				}
 				
 			}catch(Exception e1){

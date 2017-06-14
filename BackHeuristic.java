@@ -28,11 +28,11 @@ public class BackHeuristic extends BodyTransformer {
 			try{
 				//If this is an if statement, this will work. Else, it will throw an exception.
 				IfStmt ifStatement = (IfStmt) u1;
-				//Look at the successor of the IfStmt and check its position
-				System.out.println("\tIfStmt Found: " + ifStatement);
 				if(units.follows(u1,(Unit)ifStatement.getTarget())){ //Returns true if u1 is after u2
+					System.out.println("\tIfStmt Found: " + ifStatement);
 					System.out.println("\t\tThis is a back branch. Predict taken.");
 				}else{
+					System.out.println("\tIfStmt Found: " + ifStatement);
 					System.out.println("\t\tThis is a forward branch. Predict not taken.");
 				}
 			}catch(Exception e){
@@ -42,4 +42,3 @@ public class BackHeuristic extends BodyTransformer {
 		}
 	}
 }
-

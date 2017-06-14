@@ -42,14 +42,13 @@ public class CallHeuristic extends BodyTransformer {
 			try{
 				//If this is a jimple if statement, this will work. Else, it will throw an exception.
 				IfStmt ifStatement = (IfStmt) u1;
-				//Look at the successor of the IfStmt and check its position
-				System.out.println("\tIfStmt Found: " + ifStatement);
-				//d.getDominators(x) gets all the post dominators of x.
-				System.out.println("\t\tGoto Destination beginning with: " + ifStatement.getTarget());
+				
 				if(search_BBlock_for_InvokeStmt(ifStatement.getTarget())){
+					System.out.println("\tIfStmt Found: " + ifStatement);
+					System.out.println("\t\tGoto Destination beginning with: " + ifStatement.getTarget());
 					System.out.println("\t\t\tPredict not taken because it has a invoke statment and it postdominates this unit.");
 				}else{
-					System.out.println("\t\t\tPrediction Uncertain");
+					//System.out.println("\t\t\tPrediction Uncertain");
 				}
 			}catch(Exception e1){
 				continue;

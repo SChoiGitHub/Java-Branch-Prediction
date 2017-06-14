@@ -26,16 +26,15 @@ public class PointerHeuristic extends BodyTransformer {
 			try{
 				//If this is a jimple if statement, this will work. Else, it will throw an exception.
 				IfStmt ifStatement = (IfStmt) u1;
-				//Look at the successor of the IfStmt and check its position
-				System.out.println("\tIfStmt Found: " + ifStatement);
 				
 				//If we can turn either one of these operands in the condition of the if statement into a primitive type, the pointer heuristic will predict uncertain
 				if(isPrimitive(((BinopExpr)ifStatement.getCondition()).getOp1().getType()) || isPrimitive(((BinopExpr)ifStatement.getCondition()).getOp2().getType())){
-					System.out.println("\t\tPrediction uncertain.");
+					//System.out.println("\t\tPrediction uncertain.");
 				}else{
 					//Right now we confirmed that both of them are not primitive.
 					if(isObject(((BinopExpr)ifStatement.getCondition()).getOp1().getType()) && isObject(((BinopExpr)ifStatement.getCondition()).getOp2().getType())){
 						//strangely enough, null is considered an RefLikeType.
+						System.out.println("\tIfStmt Found: " + ifStatement);
 						System.out.println("\t\tPredict untaken due to comparisons between two pointers or a pointer and null_type.");
 					}
 				}
