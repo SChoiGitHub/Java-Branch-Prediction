@@ -34,15 +34,12 @@ public class ReturnHeuristic extends BodyTransformer {
 				//Look at the successor of the IfStmt and check its position
 				System.out.println("\tIfStmt Found: " + ifStatement);
 				
+				System.out.println("\t\tGoto Destination beginning with: " + ifStatement.getTarget());
 				
-				for(Unit u2 : g.getSuccsOf(u1)){
-					System.out.println("\t\tSearching BBlock beginning with: " + u2);
-					if(search_BBlock_for_ReturnStmt(u2)){
-						
-						System.out.println("\t\t\tPredict not taken because it has a return.");
-					}else{
-						System.out.println("\t\t\tPredict taken because it does not have a return.");
-					}
+				if(search_BBlock_for_ReturnStmt(ifStatement.getTarget())){
+					System.out.println("\t\t\tPredict not taken because it has a return.");
+				}else{
+					System.out.println("\t\t\tPrediction Uncertain.");
 				}
 				
 			}catch(Exception e1){
@@ -73,23 +70,31 @@ public class ReturnHeuristic extends BodyTransformer {
 	
 	public boolean search_BBlock_for_ReturnStmt(Unit searching){
 		do{
-			//System.out.println(searching); //Debugs
-			if(g.getSuccsOf(searching).size() > 1){
-				//BBlock ends with a branch.
-				//We did not find a return.
-				return false;
-			}else{
+			
+			try{
+				ReturnStmt is_searching_a_return_statment = (ReturnStmt) searching;
+				return true; //If this does not throw an exception, it is.
+			}catch(Exception e1){
 				try{
-					ReturnStmt is_searching_a_return_statment = (ReturnStmt) searching;
+					ReturnVoidStmt is_searching_a_void_return_statment = (ReturnVoidStmt) searching;
 					return true; //If this does not throw an exception, it is.
-				}catch(Exception e){
+				}catch(Exception e2){
 					//Nope, but continue.
 				}
 			}
-			//We go down the only path available to g, since the previous if statement guaranteed that this does not have multiple possible successors
-			searching = g.getSuccsOf(searching).get(0);
+			
+			if(g.getSuccsOf(searching).size() == 1){
+				//We go down the only path available to g, since the previous if statement guaranteed that this does not have multiple possible successors
+				searching = g.getSuccsOf(searching).get(0);
+			}else{
+				//Two possibilities:
+				//BBlock ends with a branch. The BBlock ended without finding a return.
+				//OR
+				//No more successors, nothing to search.
+				return false;
+			}
 		}while(searching != null);
-		//Looking at the last node? No point anymore.
+		//Looking at a non-existent node? No point anymore.
 		return false;
 	}
 }

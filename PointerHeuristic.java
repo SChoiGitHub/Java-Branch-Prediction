@@ -29,7 +29,6 @@ public class PointerHeuristic extends BodyTransformer {
 				//Look at the successor of the IfStmt and check its position
 				System.out.println("\tIfStmt Found: " + ifStatement);
 				
-				
 				//If we can turn either one of these operands in the condition of the if statement into a primitive type, the pointer heuristic will predict uncertain
 				if(isPrimitive(((BinopExpr)ifStatement.getCondition()).getOp1().getType()) || isPrimitive(((BinopExpr)ifStatement.getCondition()).getOp2().getType())){
 					System.out.println("\t\tPrediction uncertain.");
@@ -37,7 +36,7 @@ public class PointerHeuristic extends BodyTransformer {
 					//Right now we confirmed that both of them are not primitive.
 					if(isObject(((BinopExpr)ifStatement.getCondition()).getOp1().getType()) && isObject(((BinopExpr)ifStatement.getCondition()).getOp2().getType())){
 						//strangely enough, null is considered an RefLikeType.
-						System.out.println("\t\tPrediction untaken due to comparisons between two pointers or a pointer and null_type.");
+						System.out.println("\t\tPredict untaken due to comparisons between two pointers or a pointer and null_type.");
 					}
 				}
 			}catch(Exception e1){
