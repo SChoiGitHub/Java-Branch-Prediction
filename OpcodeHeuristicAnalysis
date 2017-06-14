@@ -1,5 +1,0 @@
-Applying jtp.opcode_h on <HelloWorld: void <init>()>
-Applying jtp.opcode_h on <HelloWorld: void main(java.lang.String[])>
-	IfStmt Found: if $i2 <= 0 goto return
-		Predict untaken due to the "less than" comparison of an integer and zero.
-Applying jtp.opcode_h on <HelloWorld: int fib(int)>

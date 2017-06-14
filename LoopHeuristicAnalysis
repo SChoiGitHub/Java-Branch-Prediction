@@ -1,9 +1,0 @@
-Applying jtp.loop_h on <HelloWorld: void <init>()>
-Applying jtp.loop_h on <HelloWorld: void main(java.lang.String[])>
-	Loop Found, Header: $i2 = staticinvoke <HelloWorld: int fib(int)>(i6)
-		Exit: if $i2 <= 0 goto return
-			Predict not taken to continue the loop.
-	Loop Found, Header: $i5 = staticinvoke <HelloWorld: int fib(int)>(i4)
-		Exit: if $i5 >= 20 goto i6 = 4
-			Predict not taken to continue the loop.
-Applying jtp.loop_h on <HelloWorld: int fib(int)>

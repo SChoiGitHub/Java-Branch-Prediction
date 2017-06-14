@@ -1,9 +1,0 @@
-Applying jtp.return_h on <HelloWorld: void <init>()>
-Applying jtp.return_h on <HelloWorld: void main(java.lang.String[])>
-	IfStmt Found: if $i2 <= 0 goto return
-		Goto Destination beginning with: return
-			Predict not taken because it has a return.
-Applying jtp.return_h on <HelloWorld: int fib(int)>
-	IfStmt Found: if i0 <= 1 goto return i0
-		Goto Destination beginning with: return i0
-			Predict not taken because it has a return.
