@@ -12,13 +12,26 @@ public class CallHeuristic extends BodyTransformer {
 	private PatchingChain<Unit> units;
 	private BriefUnitGraph g;
 	private MHGPostDominatorsFinder<Unit> d;
+	private FileOutputStream file;
 	
-	CallHeuristic(){
+	CallHeuristic(FileOutputStream f){
+		file = f;
 		System.out.println("Call Heuristic Prepared.");
 	}
 	
+	public void printAndWriteToFile(String s){
+		System.out.println(s);
+		try{
+			file.write(s.getBytes());
+			file.write('\n');
+		}catch(Exception e){
+			
+		}
+	}
+	
+	
 	protected void internalTransform(Body b, String phaseName, Map options){
-		System.out.println("Applying " + phaseName + " on " + b.getMethod());
+		printAndWriteToFile("Applying " + phaseName + " on " + b.getMethod());
 		
 		//We create a Control Flow Graph using b, the body of the SootMethod.
 		g = new BriefUnitGraph(b);
@@ -32,7 +45,7 @@ public class CallHeuristic extends BodyTransformer {
 			/*
 			try{
 				InvokeStmt is_searching_a_invoke = (InvokeStmt) u1;
-				System.out.println("INVOKE!  " + is_searching_a_invoke); //Debug to find invokes.
+				printAndWriteToFile("INVOKE!  " + is_searching_a_invoke); //Debug to find invokes.
 			}catch(Exception e){
 				//Nope, but continue.
 			}
@@ -44,11 +57,11 @@ public class CallHeuristic extends BodyTransformer {
 				IfStmt ifStatement = (IfStmt) u1;
 				
 				if(search_BBlock_for_InvokeStmt(ifStatement.getTarget())){
-					System.out.println("\tIfStmt Found: " + ifStatement);
-					System.out.println("\t\tGoto Destination beginning with: " + ifStatement.getTarget());
-					System.out.println("\t\t\tPredict not taken because it has a invoke statment and it postdominates this unit.");
+					printAndWriteToFile("\tIfStmt Found: " + ifStatement);
+					printAndWriteToFile("\t\tGoto Destination beginning with: " + ifStatement.getTarget());
+					printAndWriteToFile("\t\t\tPredict not taken because it has a invoke statment and it postdominates this unit.");
 				}else{
-					//System.out.println("\t\t\tPrediction Uncertain");
+					//printAndWriteToFile("\t\t\tPrediction Uncertain");
 				}
 			}catch(Exception e1){
 				continue;

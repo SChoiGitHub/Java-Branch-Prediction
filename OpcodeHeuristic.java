@@ -10,15 +10,27 @@ import soot.JastAddJ.NumericType;
 //For any future researchers
 //This is a class that inheirits from BodyTransformer. This will allow it to be inserted into Soot's Packs, which will be dealt with at runtime.
 public class OpcodeHeuristic extends BodyTransformer {
-	PatchingChain<Unit> units;
-	IfStmt ifStatement;
+	private PatchingChain<Unit> units;
+	private IfStmt ifStatement;
+	private FileOutputStream file;
 	
-	OpcodeHeuristic(){
+	OpcodeHeuristic(FileOutputStream f){
+		file = f;
 		System.out.println("Opcode Heuristic Prepared.");
 	}
 	
+	public void printAndWriteToFile(String s){
+		System.out.println(s);
+		try{
+			file.write(s.getBytes());
+			file.write('\n');
+		}catch(Exception e){
+			
+		}
+	}
+	
 	protected void internalTransform(Body b, String phaseName, Map options){
-		System.out.println("Applying " + phaseName + " on " + b.getMethod());
+		printAndWriteToFile("Applying " + phaseName + " on " + b.getMethod());
 		
 		//this is the patchingchain of unit in the body
 		units = b.getUnits();
@@ -37,7 +49,7 @@ public class OpcodeHeuristic extends BodyTransformer {
 				//If we can turn either one of these operands in the condition of the if statement into a primitive type, the pointer heuristic will predict uncertain
 				if(isConstant((Local)((BinopExpr)ifStatement.getCondition()).getOp1()) || isConstant((Local)((BinopExpr)ifStatement.getCondition()).getOp2())){
 					//One of the operands is a nameless varible, which is likely a constant.
-					System.out.println("\t\tPredict untaken because there is probably a comparison between something an a constant.");
+					printAndWriteToFile("\t\tPredict untaken because there is probably a comparison between something an a constant.");
 				}else{
 					
 				}
@@ -51,9 +63,9 @@ public class OpcodeHeuristic extends BodyTransformer {
 	
 	public void parse(Value l, String op, Value r){
 		
-		//System.out.println(l);
-		//System.out.println(op);
-		//System.out.println(r);
+		//printAndWriteToFile(l);
+		//printAndWriteToFile(op);
+		//printAndWriteToFile(r);
 		
 		
 		boolean l_is_0 = false;
@@ -107,36 +119,36 @@ public class OpcodeHeuristic extends BodyTransformer {
 			if(op.equals(" > ") || op.equals(" >= ")){
 				//Now we know that left is being checked to see if it is greater (or maybe greater or equal to) than its other operand.
 				if(r_is_int){
-					System.out.println("\tIfStmt Found: " + ifStatement);
-					System.out.println("\t\tPredict untaken due to the \"less than\" comparison of an integer and zero.");
+					printAndWriteToFile("\tIfStmt Found: " + ifStatement);
+					printAndWriteToFile("\t\tPredict untaken due to the \"less than\" comparison of an integer and zero.");
 				}
 			}else{
 				//Uh, we don't know now.
-				//System.out.println("\t\tPrediction uncertain.");
+				//printAndWriteToFile("\t\tPrediction uncertain.");
 			}
 		}else if(r_is_0){
 			//Right is a constant zero.
 			if(op.equals(" < ") || op.equals(" <= ")){
 				//Now we know that right is being checked to see if it is greater (or maybe greater or equal to) than its other operand.
 				if(l_is_int){
-					System.out.println("\tIfStmt Found: " + ifStatement);
-					System.out.println("\t\tPredict untaken due to the \"less than\" comparison of an integer and zero.");
+					printAndWriteToFile("\tIfStmt Found: " + ifStatement);
+					printAndWriteToFile("\t\tPredict untaken due to the \"less than\" comparison of an integer and zero.");
 				}
 			}else{
 				//Uh, we don't know now.
-				//System.out.println("\t\tPrediction uncertain.");
+				//printAndWriteToFile("\t\tPrediction uncertain.");
 			}
 		}else if(l_is_const != r_is_const){
 			//Only one of these is a constant int.
 			if((r_is_int && l_is_int) && op.equals(" == ")){
 				//If both are an int and we know equality is being checked, predict untaken.
-				System.out.println("\tIfStmt Found: " + ifStatement);
-				System.out.println("\t\tPredict untaken due to the equality comparision of an int varible and zero.");
+				printAndWriteToFile("\tIfStmt Found: " + ifStatement);
+				printAndWriteToFile("\t\tPredict untaken due to the equality comparision of an int varible and zero.");
 			}else{
-				//System.out.println("\t\tPrediction uncertain.");
+				//printAndWriteToFile("\t\tPrediction uncertain.");
 			}
 		}else{
-			//System.out.println("\t\tPrediction uncertain.");
+			//printAndWriteToFile("\t\tPrediction uncertain.");
 		}
 	}
 

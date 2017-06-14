@@ -12,15 +12,27 @@ import soot.jimple.internal.*;
 public class ReturnHeuristic extends BodyTransformer {
 	private PatchingChain<Unit> units;
 	private BriefUnitGraph g;
+	private FileOutputStream file;
 	
 	
-	
-	ReturnHeuristic(){
+	ReturnHeuristic(FileOutputStream f){
+		file = f;
 		System.out.println("Return Heuristic Prepared.");
 	}
 	
+	public void printAndWriteToFile(String s){
+		System.out.println(s);
+		try{
+			file.write(s.getBytes());
+			file.write('\n');
+		}catch(Exception e){
+			
+		}
+	}
+	
+	
 	protected void internalTransform(Body b, String phaseName, Map options){
-		System.out.println("Applying " + phaseName + " on " + b.getMethod());
+		printAndWriteToFile("Applying " + phaseName + " on " + b.getMethod());
 		//We create a Control Flow Graph using b, the body of the SootMethod.
 		g = new BriefUnitGraph(b);
 		//units represents all the statements within the body. Local varibles and exceptions are in other chains.
@@ -35,11 +47,11 @@ public class ReturnHeuristic extends BodyTransformer {
 
 				
 				if(search_BBlock_for_ReturnStmt(ifStatement.getTarget())){
-					System.out.println("\tIfStmt Found: " + ifStatement);
-					System.out.println("\t\tGoto Destination beginning with: " + ifStatement.getTarget());
-					System.out.println("\t\t\tPredict not taken because it has a return.");
+					printAndWriteToFile("\tIfStmt Found: " + ifStatement);
+					printAndWriteToFile("\t\tGoto Destination beginning with: " + ifStatement.getTarget());
+					printAndWriteToFile("\t\t\tPredict not taken because it has a return.");
 				}else{
-					//System.out.println("\t\t\tPrediction Uncertain.");
+					//printAndWriteToFile("\t\t\tPrediction Uncertain.");
 				}
 				
 			}catch(Exception e1){
@@ -48,14 +60,14 @@ public class ReturnHeuristic extends BodyTransformer {
 					//Maybe its an switch statement?
 					SwitchStmt switchStmt = (SwitchStmt) u1;
 					
-					System.out.println("\tSwitchStmt Found: " + switchStmt);
+					printAndWriteToFile("\tSwitchStmt Found: " + switchStmt);
 					
 					for(Unit u2 : g.getSuccsOf(u1)){
-						System.out.println("\t\tSearching BBlock beginning with: " + u2);
+						printAndWriteToFile("\t\tSearching BBlock beginning with: " + u2);
 						if(search_BBlock_for_ReturnStmt(u2)){
-							System.out.println("\t\t\tPredict not taken because it has a return.");
+							printAndWriteToFile("\t\t\tPredict not taken because it has a return.");
 						}else{
-							System.out.println("\t\t\tPredict taken because it does not have a return.");
+							printAndWriteToFile("\t\t\tPredict taken because it does not have a return.");
 						}
 					}
 				}catch(Exception e2){

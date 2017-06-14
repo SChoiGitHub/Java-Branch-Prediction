@@ -10,13 +10,25 @@ import soot.toolkits.graph.*;
 //This is a class that inheirits from BodyTransformer. This will allow it to be inserted into Soot's Packs, which will be dealt with at runtime.
 public class BackHeuristic extends BodyTransformer {
 	
+	private FileOutputStream file;
 	
-	BackHeuristic(){
+	BackHeuristic(FileOutputStream f){
+		file = f;
 		System.out.println("Back Heuristic Prepared.");
 	}
 	
+	public void printAndWriteToFile(String s){
+		System.out.println(s);
+		try{
+			file.write(s.getBytes());
+			file.write('\n');
+		}catch(Exception e){
+			
+		}
+	}
+	
 	protected void internalTransform(Body b, String phaseName, Map options){
-		System.out.println("Applying " + phaseName + " on " + b.getMethod());
+		printAndWriteToFile("Applying " + phaseName + " on " + b.getMethod());
 		
 		//We create a Control Flow Graph using b, the body of the SootMethod.
 		BriefUnitGraph g = new BriefUnitGraph(b);
@@ -29,11 +41,11 @@ public class BackHeuristic extends BodyTransformer {
 				//If this is an if statement, this will work. Else, it will throw an exception.
 				IfStmt ifStatement = (IfStmt) u1;
 				if(units.follows(u1,(Unit)ifStatement.getTarget())){ //Returns true if u1 is after u2
-					System.out.println("\tIfStmt Found: " + ifStatement);
-					System.out.println("\t\tThis is a back branch. Predict taken.");
+					printAndWriteToFile("\tIfStmt Found: " + ifStatement);
+					printAndWriteToFile("\t\tThis is a back branch. Predict taken.");
 				}else{
-					System.out.println("\tIfStmt Found: " + ifStatement);
-					System.out.println("\t\tThis is a forward branch. Predict not taken.");
+					printAndWriteToFile("\tIfStmt Found: " + ifStatement);
+					printAndWriteToFile("\t\tThis is a forward branch. Predict not taken.");
 				}
 			}catch(Exception e){
 				//Ignore this...

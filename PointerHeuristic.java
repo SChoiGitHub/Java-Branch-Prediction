@@ -9,14 +9,26 @@ import soot.toolkits.graph.*;
 //For any future researchers
 //This is a class that inheirits from BodyTransformer. This will allow it to be inserted into Soot's Packs, which will be dealt with at runtime.
 public class PointerHeuristic extends BodyTransformer {
-	PatchingChain<Unit> units;
+	private PatchingChain<Unit> units;
+	private FileOutputStream file;
 	
-	PointerHeuristic(){
+	PointerHeuristic(FileOutputStream f){
+		file = f;
 		System.out.println("Pointer Heuristic Prepared.");
 	}
 	
+	public void printAndWriteToFile(String s){
+		System.out.println(s);
+		try{
+			file.write(s.getBytes());
+			file.write('\n');
+		}catch(Exception e){
+			
+		}
+	}
+	
 	protected void internalTransform(Body b, String phaseName, Map options){
-		System.out.println("Applying " + phaseName + " on " + b.getMethod());
+		printAndWriteToFile("Applying " + phaseName + " on " + b.getMethod());
 		
 		//this is the patchingchain of unit in the body
 		units = b.getUnits();
@@ -29,13 +41,13 @@ public class PointerHeuristic extends BodyTransformer {
 				
 				//If we can turn either one of these operands in the condition of the if statement into a primitive type, the pointer heuristic will predict uncertain
 				if(isPrimitive(((BinopExpr)ifStatement.getCondition()).getOp1().getType()) || isPrimitive(((BinopExpr)ifStatement.getCondition()).getOp2().getType())){
-					//System.out.println("\t\tPrediction uncertain.");
+					//printAndWriteToFile("\t\tPrediction uncertain.");
 				}else{
 					//Right now we confirmed that both of them are not primitive.
 					if(isObject(((BinopExpr)ifStatement.getCondition()).getOp1().getType()) && isObject(((BinopExpr)ifStatement.getCondition()).getOp2().getType())){
 						//strangely enough, null is considered an RefLikeType.
-						System.out.println("\tIfStmt Found: " + ifStatement);
-						System.out.println("\t\tPredict untaken due to comparisons between two pointers or a pointer and null_type.");
+						printAndWriteToFile("\tIfStmt Found: " + ifStatement);
+						printAndWriteToFile("\t\tPredict untaken due to comparisons between two pointers or a pointer and null_type.");
 					}
 				}
 			}catch(Exception e1){

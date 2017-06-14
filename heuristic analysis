@@ -1,0 +1,70 @@
+Applying jtp.back_h on <IUseObjects: void <init>()>
+Applying jtp.loop_h on <IUseObjects: void <init>()>
+Applying jtp.return_h on <IUseObjects: void <init>()>
+Applying jtp.call_h on <IUseObjects: void <init>()>
+Applying jtp.pointer_h on <IUseObjects: void <init>()>
+Applying jtp.opcode_h on <IUseObjects: void <init>()>
+Applying jtp.back_h on <IUseObjects: void main(java.lang.String[])>
+	IfStmt Found: if $r2 == null goto $r4 = new Animal
+		This is a forward branch. Predict not taken.
+	IfStmt Found: if $r4 != $r2 goto (branch)
+		This is a forward branch. Predict not taken.
+	IfStmt Found: if i0 != 2 goto (branch)
+		This is a forward branch. Predict not taken.
+	IfStmt Found: if i0 != 4 goto (branch)
+		This is a forward branch. Predict not taken.
+	IfStmt Found: if i0 > 0 goto (branch)
+		This is a forward branch. Predict not taken.
+	IfStmt Found: if i0 >= 0 goto (branch)
+		This is a forward branch. Predict not taken.
+	IfStmt Found: if 0 < i0 goto (branch)
+		This is a forward branch. Predict not taken.
+	IfStmt Found: if 0 <= i0 goto (branch)
+		This is a forward branch. Predict not taken.
+	IfStmt Found: if i0 < 0 goto (branch)
+		This is a forward branch. Predict not taken.
+	IfStmt Found: if i0 <= 0 goto (branch)
+		This is a forward branch. Predict not taken.
+	IfStmt Found: if 0 > i0 goto (branch)
+		This is a forward branch. Predict not taken.
+	IfStmt Found: if 0 >= i0 goto staticinvoke <IUseObjects: void section()>()
+		This is a forward branch. Predict not taken.
+Applying jtp.loop_h on <IUseObjects: void main(java.lang.String[])>
+Applying jtp.return_h on <IUseObjects: void main(java.lang.String[])>
+	IfStmt Found: if 0 >= i0 goto staticinvoke <IUseObjects: void section()>()
+		Goto Destination beginning with: staticinvoke <IUseObjects: void section()>()
+			Predict not taken because it has a return.
+Applying jtp.call_h on <IUseObjects: void main(java.lang.String[])>
+	IfStmt Found: if 0 >= i0 goto staticinvoke <IUseObjects: void section()>()
+		Goto Destination beginning with: staticinvoke <IUseObjects: void section()>()
+			Predict not taken because it has a invoke statment and it postdominates this unit.
+Applying jtp.pointer_h on <IUseObjects: void main(java.lang.String[])>
+	IfStmt Found: if $r2 == null goto $r4 = new Animal
+		Predict untaken due to comparisons between two pointers or a pointer and null_type.
+	IfStmt Found: if $r4 != $r2 goto (branch)
+		Predict untaken due to comparisons between two pointers or a pointer and null_type.
+Applying jtp.opcode_h on <IUseObjects: void main(java.lang.String[])>
+	IfStmt Found: if i0 < 0 goto (branch)
+		Predict untaken due to the "less than" comparison of an integer and zero.
+	IfStmt Found: if i0 <= 0 goto (branch)
+		Predict untaken due to the "less than" comparison of an integer and zero.
+	IfStmt Found: if 0 > i0 goto (branch)
+		Predict untaken due to the "less than" comparison of an integer and zero.
+	IfStmt Found: if 0 >= i0 goto staticinvoke <IUseObjects: void section()>()
+		Predict untaken due to the "less than" comparison of an integer and zero.
+Applying jtp.back_h on <IUseObjects: void section()>
+	IfStmt Found: if i0 <= 2 goto i3 = i0 + 1
+		This is a forward branch. Predict not taken.
+	IfStmt Found: if i4 <= 2 goto return
+		This is a forward branch. Predict not taken.
+Applying jtp.loop_h on <IUseObjects: void section()>
+Applying jtp.return_h on <IUseObjects: void section()>
+	IfStmt Found: if i0 <= 2 goto i3 = i0 + 1
+		Goto Destination beginning with: i3 = i0 + 1
+			Predict not taken because it has a return.
+	IfStmt Found: if i4 <= 2 goto return
+		Goto Destination beginning with: return
+			Predict not taken because it has a return.
+Applying jtp.call_h on <IUseObjects: void section()>
+Applying jtp.pointer_h on <IUseObjects: void section()>
+Applying jtp.opcode_h on <IUseObjects: void section()>
