@@ -13,9 +13,13 @@ public class OpcodeHeuristic extends BodyTransformer {
 	private PatchingChain<Unit> units;
 	private IfStmt ifStatement;
 	private FileOutputStream file;
+	HeuristicDatabase h_d;
+	int h_id;
 	
-	OpcodeHeuristic(){
+	OpcodeHeuristic(HeuristicDatabase hd, int heuristic_id){
 		System.out.println("Opcode Heuristic Prepared.");
+		h_d = hd;
+		h_id = heuristic_id;
 	}
 	
 	public void printAndWriteToFile(String s){

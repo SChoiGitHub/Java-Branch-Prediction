@@ -13,9 +13,13 @@ public class ReturnHeuristic extends BodyTransformer {
 	private PatchingChain<Unit> units;
 	private BriefUnitGraph g;
 	private FileOutputStream file;
+	HeuristicDatabase h_d;
+	int h_id;
 	
-	ReturnHeuristic(){
+	ReturnHeuristic(HeuristicDatabase hd, int heuristic_id){
 		System.out.println("Return Heuristic Prepared.");
+		h_d = hd;
+		h_id = heuristic_id;
 	}
 	
 	public void printAndWriteToFile(String s){

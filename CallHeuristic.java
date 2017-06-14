@@ -13,14 +13,15 @@ public class CallHeuristic extends BodyTransformer {
 	private BriefUnitGraph g;
 	private MHGPostDominatorsFinder<Unit> d;
 	private FileOutputStream file;
-	
-	CallHeuristic(){
-		try{
-			file = new FileOutputStream("CallHeuristicAnalysis", false);
-		}catch(Exception e){
-			
-		}
+	HeuristicDatabase h_d;
+	int h_id;
+	int if_num = -1;
+		
+		
+	CallHeuristic(HeuristicDatabase hd, int heuristic_id){
 		System.out.println("Call Heuristic Prepared.");
+		h_d = hd;
+		h_id = heuristic_id;
 	}
 	
 	public void printAndWriteToFile(String s){
@@ -66,11 +67,13 @@ public class CallHeuristic extends BodyTransformer {
 			try{
 				//If this is a jimple if statement, this will work. Else, it will throw an exception.
 				IfStmt ifStatement = (IfStmt) u1;
+				if_num++;
 				
 				if(search_BBlock_for_InvokeStmt(ifStatement.getTarget())){
 					printAndWriteToFile("\tIfStmt Found: " + ifStatement);
 					printAndWriteToFile("\t\tGoto Destination beginning with: " + ifStatement.getTarget());
 					printAndWriteToFile("\t\t\tPredict not taken because it has a invoke statment and it postdominates this unit.");
+					h_d.add(b.getMethod(),if_num,h_id,false);
 				}else{
 					//printAndWriteToFile("\t\t\tPrediction Uncertain");
 				}

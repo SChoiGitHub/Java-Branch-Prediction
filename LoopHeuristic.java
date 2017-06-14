@@ -12,9 +12,14 @@ import soot.jimple.toolkits.annotation.logic.*;
 //This is a class that inheirits from LoopFinder, which inheirits from BodyTransform. This will allow it to be inserted into Soot's Packs, which will be dealt with at runtime.
 public class LoopHeuristic extends LoopFinder {
 	private FileOutputStream file;
+	HeuristicDatabase h_d;
+	int h_id;
+	int if_num = -1;
 	
-	LoopHeuristic(){
+	LoopHeuristic(HeuristicDatabase hd, int heuristic_id){
 		System.out.println("Loop Heuristic Prepared.");
+		h_d = hd;
+		h_id = heuristic_id;
 	}
 	
 	public void printAndWriteToFile(String s){
@@ -49,12 +54,15 @@ public class LoopHeuristic extends LoopFinder {
 				try{
 					//Is s an if statement?
 					IfStmt s_if = (IfStmt) s;
+					if_num++;
 					//If both are true, we check.
 					if(s_if.getTarget() != l.getHead()){
 						//The header is not the destination of the goto if it is taken. 
 						printAndWriteToFile("\t\t\tPredict not taken to continue the loop.");
+						h_d.add(b.getMethod(),if_num,h_id,false);
 					}else{
 						printAndWriteToFile("\t\t\tPredict taken to continue the loop.");
+						h_d.add(b.getMethod(),if_num,h_id,true);
 					}
 				}catch(Exception e1){
 					/*

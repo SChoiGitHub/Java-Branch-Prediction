@@ -14,6 +14,10 @@ public class UseSoot{
 	//This has the main method, and thusly should be used as the caller.
 	public static void main(String[] args) {
 		try{
+			
+			HeuristicDatabase h_d = new HeuristicDatabase(6);
+			
+			
 			File directory = new File("Soot_Heuristic_Information");
 			try{
 				directory.mkdir();
@@ -24,14 +28,18 @@ public class UseSoot{
 			
 			//The main must be called in order to add the internalTransforms below to the jtp pack. This will activate the Transform when Soot makes its Jimple file.
 			//This Transform helps with reading the if statements.
-			PackManager.v().getPack("jtp").add(new Transform("jtp.if_reader",new IfReader()));
+			
+			//PackManager.v().getPack("jtp").add(new Transform("jtp.if_reader",new IfReader()));
+			
 			//These transform should deal with analysis.
-			PackManager.v().getPack("jtp").add(new Transform("jtp.back_h",new BackHeuristic()));
-			PackManager.v().getPack("jtp").add(new Transform("jtp.loop_h",new LoopHeuristic()));
-			PackManager.v().getPack("jtp").add(new Transform("jtp.return_h",new ReturnHeuristic()));
-			PackManager.v().getPack("jtp").add(new Transform("jtp.call_h",new CallHeuristic()));
-			PackManager.v().getPack("jtp").add(new Transform("jtp.pointer_h",new PointerHeuristic()));
-			PackManager.v().getPack("jtp").add(new Transform("jtp.opcode_h",new OpcodeHeuristic()));
+			PackManager.v().getPack("jtp").add(new Transform("jtp.back_h",new BackHeuristic(h_d,0)));
+			//PackManager.v().getPack("jtp").add(new Transform("jtp.loop_h",new LoopHeuristic(h_d,1)));
+			//PackManager.v().getPack("jtp").add(new Transform("jtp.return_h",new ReturnHeuristic()));
+			//PackManager.v().getPack("jtp").add(new Transform("jtp.call_h",new CallHeuristic(h_d,3)));
+			//PackManager.v().getPack("jtp").add(new Transform("jtp.pointer_h",new PointerHeuristic()));
+			//PackManager.v().getPack("jtp").add(new Transform("jtp.opcode_h",new OpcodeHeuristic()));
+			h_d.print();
+			
 		}catch(Exception e){
 			
 		}

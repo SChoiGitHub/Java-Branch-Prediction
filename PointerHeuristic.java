@@ -11,10 +11,13 @@ import soot.toolkits.graph.*;
 public class PointerHeuristic extends BodyTransformer {
 	private PatchingChain<Unit> units;
 	private FileOutputStream file;
+	HeuristicDatabase h_d;
+	int h_id;
 	
-	PointerHeuristic(){
-
+	PointerHeuristic(HeuristicDatabase hd, int heuristic_id){
 		System.out.println("Pointer Heuristic Prepared.");
+		h_d = hd;
+		h_id = heuristic_id;
 	}
 	
 	public void printAndWriteToFile(String s){
