@@ -14,14 +14,12 @@ public class ReturnHeuristic extends BodyTransformer {
 	private BriefUnitGraph g;
 	private FileOutputStream file;
 	
-	
-	ReturnHeuristic(FileOutputStream f){
-		file = f;
+	ReturnHeuristic(){
 		System.out.println("Return Heuristic Prepared.");
 	}
 	
 	public void printAndWriteToFile(String s){
-		System.out.println(s);
+		//System.out.println(s);
 		try{
 			file.write(s.getBytes());
 			file.write('\n');
@@ -32,6 +30,14 @@ public class ReturnHeuristic extends BodyTransformer {
 	
 	
 	protected void internalTransform(Body b, String phaseName, Map options){
+		try{
+			file = new FileOutputStream("Soot_Heuristic_Information/return_h_" + b.getMethod(), false);
+		}catch(Exception e){
+			
+		}
+		
+		
+		
 		printAndWriteToFile("Applying " + phaseName + " on " + b.getMethod());
 		//We create a Control Flow Graph using b, the body of the SootMethod.
 		g = new BriefUnitGraph(b);
@@ -77,6 +83,11 @@ public class ReturnHeuristic extends BodyTransformer {
 				//Ignore this...
 				continue;
 			}
+		}
+		try{
+			file.close();
+		}catch(Exception e){
+			
 		}
 	}
 	

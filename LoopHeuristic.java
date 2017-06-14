@@ -13,13 +13,12 @@ import soot.jimple.toolkits.annotation.logic.*;
 public class LoopHeuristic extends LoopFinder {
 	private FileOutputStream file;
 	
-	LoopHeuristic(FileOutputStream f){
-		file = f;
+	LoopHeuristic(){
 		System.out.println("Loop Heuristic Prepared.");
 	}
 	
 	public void printAndWriteToFile(String s){
-		System.out.println(s);
+		//System.out.println(s);
 		try{
 			file.write(s.getBytes());
 			file.write('\n');
@@ -29,6 +28,14 @@ public class LoopHeuristic extends LoopFinder {
 	}
 	
     protected void internalTransform (Body b, String phaseName, Map options){
+		try{
+			file = new FileOutputStream("Soot_Heuristic_Information/loop_h_" + b.getMethod(), false);
+		}catch(Exception e){
+			
+		}
+		
+		
+		
 		printAndWriteToFile("Applying " + phaseName + " on " + b.getMethod());
 		
 		super.internalTransform(b,phaseName,options);
@@ -63,6 +70,11 @@ public class LoopHeuristic extends LoopFinder {
 				}
 				
 			}
+		}
+		try{
+			file.close();
+		}catch(Exception e){
+			
 		}
     }
 }

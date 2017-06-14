@@ -1,0 +1,3 @@
+Applying jtp.pointer_h on <HelloWorld: void <init>()>
+Applying jtp.pointer_h on <HelloWorld: void main(java.lang.String[])>
+Applying jtp.pointer_h on <HelloWorld: int fib(int)>

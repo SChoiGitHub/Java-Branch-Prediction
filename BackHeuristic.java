@@ -12,13 +12,17 @@ public class BackHeuristic extends BodyTransformer {
 	
 	private FileOutputStream file;
 	
-	BackHeuristic(FileOutputStream f){
-		file = f;
+	BackHeuristic(){
+		try{
+			file = new FileOutputStream("BackHeuristicAnalysis", false);
+		}catch(Exception e){
+			
+		}
 		System.out.println("Back Heuristic Prepared.");
 	}
 	
 	public void printAndWriteToFile(String s){
-		System.out.println(s);
+		//System.out.println(s);
 		try{
 			file.write(s.getBytes());
 			file.write('\n');
@@ -28,6 +32,14 @@ public class BackHeuristic extends BodyTransformer {
 	}
 	
 	protected void internalTransform(Body b, String phaseName, Map options){
+		try{
+			file = new FileOutputStream("Soot_Heuristic_Information/back_h_" + b.getMethod(), false);
+		}catch(Exception e){
+			
+		}	
+		
+		
+		
 		printAndWriteToFile("Applying " + phaseName + " on " + b.getMethod());
 		
 		//We create a Control Flow Graph using b, the body of the SootMethod.
@@ -51,6 +63,11 @@ public class BackHeuristic extends BodyTransformer {
 				//Ignore this...
 				continue;
 			}
+		}
+		try{
+			file.close();
+		}catch(Exception e){
+			
 		}
 	}
 }

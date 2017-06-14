@@ -14,13 +14,12 @@ public class OpcodeHeuristic extends BodyTransformer {
 	private IfStmt ifStatement;
 	private FileOutputStream file;
 	
-	OpcodeHeuristic(FileOutputStream f){
-		file = f;
+	OpcodeHeuristic(){
 		System.out.println("Opcode Heuristic Prepared.");
 	}
 	
 	public void printAndWriteToFile(String s){
-		System.out.println(s);
+		//System.out.println(s);
 		try{
 			file.write(s.getBytes());
 			file.write('\n');
@@ -30,6 +29,13 @@ public class OpcodeHeuristic extends BodyTransformer {
 	}
 	
 	protected void internalTransform(Body b, String phaseName, Map options){
+		
+		try{
+			file = new FileOutputStream("Soot_Heuristic_Information/opcode_h_" + b.getMethod(), false);
+		}catch(Exception e){
+			
+		}	
+		
 		printAndWriteToFile("Applying " + phaseName + " on " + b.getMethod());
 		
 		//this is the patchingchain of unit in the body
@@ -58,6 +64,11 @@ public class OpcodeHeuristic extends BodyTransformer {
 			}catch(Exception e1){
 				continue;
 			}
+		}
+		try{
+			file.close();
+		}catch(Exception e){
+			
 		}
 	}
 	

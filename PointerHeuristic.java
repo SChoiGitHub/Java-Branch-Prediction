@@ -12,13 +12,13 @@ public class PointerHeuristic extends BodyTransformer {
 	private PatchingChain<Unit> units;
 	private FileOutputStream file;
 	
-	PointerHeuristic(FileOutputStream f){
-		file = f;
+	PointerHeuristic(){
+
 		System.out.println("Pointer Heuristic Prepared.");
 	}
 	
 	public void printAndWriteToFile(String s){
-		System.out.println(s);
+		//System.out.println(s);
 		try{
 			file.write(s.getBytes());
 			file.write('\n');
@@ -28,6 +28,12 @@ public class PointerHeuristic extends BodyTransformer {
 	}
 	
 	protected void internalTransform(Body b, String phaseName, Map options){
+		try{
+			file = new FileOutputStream("Soot_Heuristic_Information/pointer_h_" + b.getMethod(), false);
+		}catch(Exception e){
+			
+		}		
+
 		printAndWriteToFile("Applying " + phaseName + " on " + b.getMethod());
 		
 		//this is the patchingchain of unit in the body
@@ -53,6 +59,11 @@ public class PointerHeuristic extends BodyTransformer {
 			}catch(Exception e1){
 				continue;
 			}
+		}
+		try{
+			file.close();
+		}catch(Exception e){
+			
 		}
 	}
 	

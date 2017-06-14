@@ -14,13 +14,17 @@ public class CallHeuristic extends BodyTransformer {
 	private MHGPostDominatorsFinder<Unit> d;
 	private FileOutputStream file;
 	
-	CallHeuristic(FileOutputStream f){
-		file = f;
+	CallHeuristic(){
+		try{
+			file = new FileOutputStream("CallHeuristicAnalysis", false);
+		}catch(Exception e){
+			
+		}
 		System.out.println("Call Heuristic Prepared.");
 	}
 	
 	public void printAndWriteToFile(String s){
-		System.out.println(s);
+		//System.out.println(s);
 		try{
 			file.write(s.getBytes());
 			file.write('\n');
@@ -31,6 +35,13 @@ public class CallHeuristic extends BodyTransformer {
 	
 	
 	protected void internalTransform(Body b, String phaseName, Map options){
+		try{
+			file = new FileOutputStream("Soot_Heuristic_Information/call_h_" + b.getMethod(), false);
+		}catch(Exception e){
+			
+		}	
+		
+		
 		printAndWriteToFile("Applying " + phaseName + " on " + b.getMethod());
 		
 		//We create a Control Flow Graph using b, the body of the SootMethod.
@@ -66,6 +77,11 @@ public class CallHeuristic extends BodyTransformer {
 			}catch(Exception e1){
 				continue;
 			}
+		}
+		try{
+			file.close();
+		}catch(Exception e){
+			
 		}
 	}
 	
