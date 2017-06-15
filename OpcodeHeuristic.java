@@ -59,10 +59,7 @@ public class OpcodeHeuristic extends BodyTransformer {
 				
 				ifStatement = (IfStmt) u1;
 				if_num++;
-				//Look at the successor of the IfStmt and check its position
-				
-
-				
+				//Go to parse method.
 				parse(((BinopExpr)ifStatement.getCondition()).getOp1(),((BinopExpr)ifStatement.getCondition()).getSymbol(),((BinopExpr)ifStatement.getCondition()).getOp2());
 				/*
 				//If we can turn either one of these operands in the condition of the if statement into a primitive type, the pointer heuristic will predict uncertain

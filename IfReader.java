@@ -18,7 +18,7 @@ public class IfReader extends BodyTransformer {
 	}
 
 	protected void internalTransform(Body b, String phaseName, Map options){
-		int if_num = 0;
+		int if_num = -1;
 		PatchingChain<Unit> units = b.getUnits();
 		for(Unit u1 : units){
 			//All Unit objects will be checked with their successors to see if they are actually after their successors in code.
