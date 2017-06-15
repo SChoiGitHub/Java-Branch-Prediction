@@ -33,6 +33,7 @@ public class LoopHeuristic extends LoopFinder {
 	}
 	
     protected void internalTransform (Body b, String phaseName, Map options){
+		if_num = -1;
 		try{
 			file = new FileOutputStream("Soot_Heuristic_Information/loop_h_" + b.getMethod(), false);
 		}catch(Exception e){
@@ -59,10 +60,10 @@ public class LoopHeuristic extends LoopFinder {
 					if(s_if.getTarget() != l.getHead()){
 						//The header is not the destination of the goto if it is taken. 
 						printAndWriteToFile("\t\t\tPredict not taken to continue the loop.");
-						h_d.add(b.getMethod(),if_num,h_id,false);
+						h_d.add(b.getMethod(),if_num,h_id,false,s_if);
 					}else{
 						printAndWriteToFile("\t\t\tPredict taken to continue the loop.");
-						h_d.add(b.getMethod(),if_num,h_id,true);
+						h_d.add(b.getMethod(),if_num,h_id,true,s_if);
 					}
 				}catch(Exception e1){
 					/*

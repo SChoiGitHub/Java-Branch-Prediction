@@ -57,11 +57,11 @@ public class BackHeuristic extends BodyTransformer {
 				if(units.follows(u1,(Unit)ifStatement.getTarget())){ //Returns true if u1 is after u2
 					printAndWriteToFile("\tIfStmt Found: " + ifStatement);
 					printAndWriteToFile("\t\tThis is a back branch. Predict taken.");
-					h_d.add(b.getMethod(),if_num,h_id,true);
+					h_d.add(b.getMethod(),if_num,h_id,true,ifStatement);
 				}else{
 					printAndWriteToFile("\tIfStmt Found: " + ifStatement);
 					printAndWriteToFile("\t\tThis is a forward branch. Predict not taken.");
-					h_d.add(b.getMethod(),if_num,h_id,false);
+					h_d.add(b.getMethod(),if_num,h_id,false,ifStatement);
 				}
 			}catch(Exception e){
 				//Ignore this...

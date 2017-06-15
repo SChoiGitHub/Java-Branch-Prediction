@@ -13,6 +13,7 @@ public class PointerHeuristic extends BodyTransformer {
 	private FileOutputStream file;
 	HeuristicDatabase h_d;
 	int h_id;
+	int if_num = -1;
 	
 	PointerHeuristic(HeuristicDatabase hd, int heuristic_id){
 		System.out.println("Pointer Heuristic Prepared.");
@@ -31,6 +32,7 @@ public class PointerHeuristic extends BodyTransformer {
 	}
 	
 	protected void internalTransform(Body b, String phaseName, Map options){
+		if_num = -1;
 		try{
 			file = new FileOutputStream("Soot_Heuristic_Information/pointer_h_" + b.getMethod(), false);
 		}catch(Exception e){
@@ -47,7 +49,7 @@ public class PointerHeuristic extends BodyTransformer {
 			try{
 				//If this is a jimple if statement, this will work. Else, it will throw an exception.
 				IfStmt ifStatement = (IfStmt) u1;
-				
+				if_num++;
 				//If we can turn either one of these operands in the condition of the if statement into a primitive type, the pointer heuristic will predict uncertain
 				if(isPrimitive(((BinopExpr)ifStatement.getCondition()).getOp1().getType()) || isPrimitive(((BinopExpr)ifStatement.getCondition()).getOp2().getType())){
 					//printAndWriteToFile("\t\tPrediction uncertain.");
@@ -57,6 +59,7 @@ public class PointerHeuristic extends BodyTransformer {
 						//strangely enough, null is considered an RefLikeType.
 						printAndWriteToFile("\tIfStmt Found: " + ifStatement);
 						printAndWriteToFile("\t\tPredict untaken due to comparisons between two pointers or a pointer and null_type.");
+						h_d.add(b.getMethod(),if_num,h_id,false,ifStatement);
 					}
 				}
 			}catch(Exception e1){

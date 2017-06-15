@@ -15,6 +15,7 @@ public class ReturnHeuristic extends BodyTransformer {
 	private FileOutputStream file;
 	HeuristicDatabase h_d;
 	int h_id;
+	int if_num = -1;
 	
 	ReturnHeuristic(HeuristicDatabase hd, int heuristic_id){
 		System.out.println("Return Heuristic Prepared.");
@@ -34,6 +35,7 @@ public class ReturnHeuristic extends BodyTransformer {
 	
 	
 	protected void internalTransform(Body b, String phaseName, Map options){
+		
 		try{
 			file = new FileOutputStream("Soot_Heuristic_Information/return_h_" + b.getMethod(), false);
 		}catch(Exception e){
@@ -53,6 +55,7 @@ public class ReturnHeuristic extends BodyTransformer {
 			try{
 				//If this is a jimple if statement, this will work. Else, it will throw an exception.
 				JIfStmt ifStatement = (JIfStmt) u1;
+				if_num++;
 				//Look at the successor of the IfStmt and check its position
 
 				
@@ -60,6 +63,7 @@ public class ReturnHeuristic extends BodyTransformer {
 					printAndWriteToFile("\tIfStmt Found: " + ifStatement);
 					printAndWriteToFile("\t\tGoto Destination beginning with: " + ifStatement.getTarget());
 					printAndWriteToFile("\t\t\tPredict not taken because it has a return.");
+					h_d.add(b.getMethod(),if_num,h_id,false,ifStatement);
 				}else{
 					//printAndWriteToFile("\t\t\tPrediction Uncertain.");
 				}

@@ -73,7 +73,7 @@ public class CallHeuristic extends BodyTransformer {
 					printAndWriteToFile("\tIfStmt Found: " + ifStatement);
 					printAndWriteToFile("\t\tGoto Destination beginning with: " + ifStatement.getTarget());
 					printAndWriteToFile("\t\t\tPredict not taken because it has a invoke statment and it postdominates this unit.");
-					h_d.add(b.getMethod(),if_num,h_id,false);
+					h_d.add(b.getMethod(),if_num,h_id,false,ifStatement);
 				}else{
 					//printAndWriteToFile("\t\t\tPrediction Uncertain");
 				}
