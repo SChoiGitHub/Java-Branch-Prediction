@@ -10,22 +10,28 @@ import soot.toolkits.graph.*;
 public class HeuristicDatabase{
 	private Hashtable<SootMethod,Vector<HeuristicIfPair>> methodToPredictionTable;
 	private int heuristic_count;
+	private String[] what_heuristics_at_what_row;
 	
 	HeuristicDatabase(int h_c){
 		methodToPredictionTable = new Hashtable<SootMethod,Vector<HeuristicIfPair>>();
 		heuristic_count = h_c;
+		what_heuristics_at_what_row = new String[6];
 	}
 	
-	public void add(SootMethod s_m, int if_num, int heuristic_num, boolean taken, IfStmt the_if){		
+	public void add(SootMethod s_m, int if_num, int heuristic_num, boolean taken, IfStmt the_if,String h_name){
+		if(what_heuristics_at_what_row[heuristic_num] == null){
+			what_heuristics_at_what_row[heuristic_num] = h_name;
+		}
+				
 		if(!methodToPredictionTable.containsKey(s_m)){
-			System.out.println(s_m + " does not exist yet in the hashtable"); //Debug
+			//System.out.println(s_m + " does not exist yet in the hashtable"); //Debug
 			Vector<HeuristicIfPair> new_vector = new Vector<HeuristicIfPair>();
 			new_vector.add(new HeuristicIfPair(heuristic_count,the_if));
 			methodToPredictionTable.put(s_m, new_vector);
 		}
 		
 		if(if_num >= methodToPredictionTable.get(s_m).size()){
-			System.out.println("the vector is too small at size " + methodToPredictionTable.get(s_m).size()); //Debug
+			//System.out.println("the vector is too small at size " + methodToPredictionTable.get(s_m).size()); //Debug
 			methodToPredictionTable.get(s_m).add(new HeuristicIfPair(heuristic_count,the_if));
 		}
 		
@@ -41,6 +47,10 @@ public class HeuristicDatabase{
 	
 	public void print(){
 		System.out.println("Printing Table of Information...");
+		for(int a = 0; a < heuristic_count; a++){
+			System.out.println("Col #" +  a + ": " + what_heuristics_at_what_row[a]);
+		}
+		
 		for(SootMethod s_m : methodToPredictionTable.keySet()){
 			//System.out.println(methodToPredictionTable.get(s_m).size());
 			System.out.println(s_m);

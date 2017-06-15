@@ -12,7 +12,7 @@ public class BackHeuristic extends BodyTransformer {
 	private FileOutputStream file;
 	HeuristicDatabase h_d;
 	int h_id;
-	int if_num = -1;
+	int if_num;
 	
 	BackHeuristic(HeuristicDatabase hd, int heuristic_id){
 		System.out.println("Back Heuristic Prepared.");
@@ -42,11 +42,13 @@ public class BackHeuristic extends BodyTransformer {
 		
 		
 		printAndWriteToFile("Applying " + phaseName + " on " + b.getMethod());
-		
 		//We create a Control Flow Graph using b, the body of the SootMethod.
 		BriefUnitGraph g = new BriefUnitGraph(b);
 		//units represents all the statements within the body. Local varibles and exceptions are in other chains.
 		PatchingChain<Unit> units = b.getUnits();
+		
+		
+		if_num = -1;
 		//Iterate between all Unit objects in units.
 		for(Unit u1 : units){
 			//All Unit objects will be checked with their successors to see if they are actually after their successors in code.
@@ -57,11 +59,11 @@ public class BackHeuristic extends BodyTransformer {
 				if(units.follows(u1,(Unit)ifStatement.getTarget())){ //Returns true if u1 is after u2
 					printAndWriteToFile("\tIfStmt Found: " + ifStatement);
 					printAndWriteToFile("\t\tThis is a back branch. Predict taken.");
-					h_d.add(b.getMethod(),if_num,h_id,true,ifStatement);
+					h_d.add(b.getMethod(),if_num,h_id,true,ifStatement,phaseName);
 				}else{
 					printAndWriteToFile("\tIfStmt Found: " + ifStatement);
 					printAndWriteToFile("\t\tThis is a forward branch. Predict not taken.");
-					h_d.add(b.getMethod(),if_num,h_id,false,ifStatement);
+					h_d.add(b.getMethod(),if_num,h_id,false,ifStatement,phaseName);
 				}
 			}catch(Exception e){
 				//Ignore this...

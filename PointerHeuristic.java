@@ -44,6 +44,7 @@ public class PointerHeuristic extends BodyTransformer {
 		//this is the patchingchain of unit in the body
 		units = b.getUnits();
 		
+		if_num = -1;
 		for(Unit u1 : units){
 			//All Unit objects will be checked with their successors to see if they are actually after their successors in code.
 			try{
@@ -59,7 +60,7 @@ public class PointerHeuristic extends BodyTransformer {
 						//strangely enough, null is considered an RefLikeType.
 						printAndWriteToFile("\tIfStmt Found: " + ifStatement);
 						printAndWriteToFile("\t\tPredict untaken due to comparisons between two pointers or a pointer and null_type.");
-						h_d.add(b.getMethod(),if_num,h_id,false,ifStatement);
+						h_d.add(b.getMethod(),if_num,h_id,false,ifStatement,phaseName);
 					}
 				}
 			}catch(Exception e1){

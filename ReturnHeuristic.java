@@ -15,7 +15,7 @@ public class ReturnHeuristic extends BodyTransformer {
 	private FileOutputStream file;
 	HeuristicDatabase h_d;
 	int h_id;
-	int if_num = -1;
+	int if_num;
 	
 	ReturnHeuristic(HeuristicDatabase hd, int heuristic_id){
 		System.out.println("Return Heuristic Prepared.");
@@ -50,6 +50,7 @@ public class ReturnHeuristic extends BodyTransformer {
 		//units represents all the statements within the body. Local varibles and exceptions are in other chains.
 		units = b.getUnits();
 		//Iterate between all Unit objects in units.
+		if_num = -1;
 		for(Unit u1 : units){
 			//All Unit objects will be checked with their successors to see if they are actually after their successors in code.
 			try{
@@ -63,7 +64,7 @@ public class ReturnHeuristic extends BodyTransformer {
 					printAndWriteToFile("\tIfStmt Found: " + ifStatement);
 					printAndWriteToFile("\t\tGoto Destination beginning with: " + ifStatement.getTarget());
 					printAndWriteToFile("\t\t\tPredict not taken because it has a return.");
-					h_d.add(b.getMethod(),if_num,h_id,false,ifStatement);
+					h_d.add(b.getMethod(),if_num,h_id,false,ifStatement,phaseName);
 				}else{
 					//printAndWriteToFile("\t\t\tPrediction Uncertain.");
 				}

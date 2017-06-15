@@ -15,7 +15,7 @@ public class CallHeuristic extends BodyTransformer {
 	private FileOutputStream file;
 	HeuristicDatabase h_d;
 	int h_id;
-	int if_num = -1;
+	int if_num;
 		
 		
 	CallHeuristic(HeuristicDatabase hd, int heuristic_id){
@@ -52,6 +52,7 @@ public class CallHeuristic extends BodyTransformer {
 		//this is the patchingchain of unit in the body
 		units = b.getUnits();
 		
+		if_num = -1;
 		for(Unit u1 : units){
 			
 			/*
@@ -73,7 +74,7 @@ public class CallHeuristic extends BodyTransformer {
 					printAndWriteToFile("\tIfStmt Found: " + ifStatement);
 					printAndWriteToFile("\t\tGoto Destination beginning with: " + ifStatement.getTarget());
 					printAndWriteToFile("\t\t\tPredict not taken because it has a invoke statment and it postdominates this unit.");
-					h_d.add(b.getMethod(),if_num,h_id,false,ifStatement);
+					h_d.add(b.getMethod(),if_num,h_id,false,ifStatement,phaseName);
 				}else{
 					//printAndWriteToFile("\t\t\tPrediction Uncertain");
 				}
