@@ -35,6 +35,7 @@ public class ReturnHeuristic extends BodyTransformer {
 	
 	
 	protected void internalTransform(Body b, String phaseName, Map options){
+		h_d.name_heuristic(h_id,phaseName);
 		
 		try{
 			file = new FileOutputStream("Soot_Heuristic_Information/return_h_" + b.getMethod(), false);
@@ -64,7 +65,7 @@ public class ReturnHeuristic extends BodyTransformer {
 					printAndWriteToFile("\tIfStmt Found: " + ifStatement);
 					printAndWriteToFile("\t\tGoto Destination beginning with: " + ifStatement.getTarget());
 					printAndWriteToFile("\t\t\tPredict not taken because it has a return.");
-					h_d.add(b.getMethod(),if_num,h_id,false,ifStatement,phaseName);
+					h_d.add(b.getMethod(),if_num,h_id,false,ifStatement);
 				}else{
 					//printAndWriteToFile("\t\t\tPrediction Uncertain.");
 				}

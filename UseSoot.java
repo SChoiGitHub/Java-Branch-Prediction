@@ -30,12 +30,12 @@ public class UseSoot{
 			//PackManager.v().getPack("jtp").add(new Transform("jtp.if_reader",new IfReader()));
 			
 			//These transform should deal with analysis.
-			PackManager.v().getPack("jtp").add(new Transform("jtp.back_h",new BackHeuristic(h_d,0)));
-			PackManager.v().getPack("jtp").add(new Transform("jtp.loop_h",new LoopHeuristic(h_d,1)));
-			PackManager.v().getPack("jtp").add(new Transform("jtp.return_h",new ReturnHeuristic(h_d,2)));
-			PackManager.v().getPack("jtp").add(new Transform("jtp.call_h",new CallHeuristic(h_d,3)));
-			PackManager.v().getPack("jtp").add(new Transform("jtp.pointer_h",new PointerHeuristic(h_d,4)));
-			PackManager.v().getPack("jtp").add(new Transform("jtp.opcode_h",new OpcodeHeuristic(h_d,5)));
+			//PackManager.v().getPack("jtp").add(new Transform("jtp.back_h",new BackHeuristic(h_d,0)));
+			//PackManager.v().getPack("jtp").add(new Transform("jtp.return_h",new ReturnHeuristic(h_d,1)));
+			//PackManager.v().getPack("jtp").add(new Transform("jtp.call_h",new CallHeuristic(h_d,2)));
+			//PackManager.v().getPack("jtp").add(new Transform("jtp.pointer_h",new PointerHeuristic(h_d,3)));
+			PackManager.v().getPack("jtp").add(new Transform("jtp.opcode_h",new OpcodeHeuristic(h_d,4)));
+			//PackManager.v().getPack("jtp").add(new Transform("jtp.loop_h",new LoopHeuristic(h_d,5)));
 		}catch(Exception e){
 			
 		}

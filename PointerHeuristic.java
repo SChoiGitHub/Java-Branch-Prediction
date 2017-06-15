@@ -32,7 +32,8 @@ public class PointerHeuristic extends BodyTransformer {
 	}
 	
 	protected void internalTransform(Body b, String phaseName, Map options){
-		if_num = -1;
+		h_d.name_heuristic(h_id,phaseName);
+		
 		try{
 			file = new FileOutputStream("Soot_Heuristic_Information/pointer_h_" + b.getMethod(), false);
 		}catch(Exception e){
@@ -60,7 +61,7 @@ public class PointerHeuristic extends BodyTransformer {
 						//strangely enough, null is considered an RefLikeType.
 						printAndWriteToFile("\tIfStmt Found: " + ifStatement);
 						printAndWriteToFile("\t\tPredict untaken due to comparisons between two pointers or a pointer and null_type.");
-						h_d.add(b.getMethod(),if_num,h_id,false,ifStatement,phaseName);
+						h_d.add(b.getMethod(),if_num,h_id,false,ifStatement);
 					}
 				}
 			}catch(Exception e1){

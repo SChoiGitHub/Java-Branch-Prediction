@@ -15,7 +15,7 @@ public class OpcodeHeuristic extends BodyTransformer {
 	private FileOutputStream file;
 	HeuristicDatabase h_d;
 	int h_id;
-	int if_num = -1;
+	int if_num;
 	SootMethod current_method;
 	String current_phase_name;
 	
@@ -36,6 +36,8 @@ public class OpcodeHeuristic extends BodyTransformer {
 	}
 	
 	protected void internalTransform(Body b, String phaseName, Map options){
+		h_d.name_heuristic(h_id,phaseName);
+		
 		current_phase_name = phaseName;
 		current_method = b.getMethod();
 		try{
@@ -54,7 +56,9 @@ public class OpcodeHeuristic extends BodyTransformer {
 			//All Unit objects will be checked with their successors to see if they are actually after their successors in code.
 			try{
 				//If this is a jimple if statement, this will work. Else, it will throw an exception.
+				
 				ifStatement = (IfStmt) u1;
+				if_num++;
 				//Look at the successor of the IfStmt and check its position
 				
 
@@ -141,7 +145,7 @@ public class OpcodeHeuristic extends BodyTransformer {
 				if(r_is_int){
 					printAndWriteToFile("\tIfStmt Found: " + ifStatement);
 					printAndWriteToFile("\t\tPredict untaken due to the \"less than\" comparison of an integer and zero.");
-					h_d.add(current_method,if_num,h_id,false,ifStatement,current_phase_name);
+					h_d.add(current_method,if_num,h_id,false,ifStatement);
 				}
 			}else{
 				//Uh, we don't know now.
@@ -154,7 +158,7 @@ public class OpcodeHeuristic extends BodyTransformer {
 				if(l_is_int){
 					printAndWriteToFile("\tIfStmt Found: " + ifStatement);
 					printAndWriteToFile("\t\tPredict untaken due to the \"less than\" comparison of an integer and zero.");
-					h_d.add(current_method,if_num,h_id,false,ifStatement,current_phase_name);
+					h_d.add(current_method,if_num,h_id,false,ifStatement);
 				}
 			}else{
 				//Uh, we don't know now.
@@ -166,7 +170,7 @@ public class OpcodeHeuristic extends BodyTransformer {
 				//If both are an int and we know equality is being checked, predict untaken.
 				printAndWriteToFile("\tIfStmt Found: " + ifStatement);
 				printAndWriteToFile("\t\tPredict untaken due to the equality comparision of an int varible and zero.");
-				h_d.add(current_method,if_num,h_id,false,ifStatement,current_phase_name);
+				h_d.add(current_method,if_num,h_id,false,ifStatement);
 			}else{
 				//printAndWriteToFile("\t\tPrediction uncertain.");
 			}

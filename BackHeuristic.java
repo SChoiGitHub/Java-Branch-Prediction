@@ -31,7 +31,7 @@ public class BackHeuristic extends BodyTransformer {
 	}
 	
 	protected void internalTransform(Body b, String phaseName, Map options){
-		
+		h_d.name_heuristic(h_id,phaseName);
 		
 		try{
 			file = new FileOutputStream("Soot_Heuristic_Information/back_h_" + b.getMethod(), false);
@@ -59,11 +59,11 @@ public class BackHeuristic extends BodyTransformer {
 				if(units.follows(u1,(Unit)ifStatement.getTarget())){ //Returns true if u1 is after u2
 					printAndWriteToFile("\tIfStmt Found: " + ifStatement);
 					printAndWriteToFile("\t\tThis is a back branch. Predict taken.");
-					h_d.add(b.getMethod(),if_num,h_id,true,ifStatement,phaseName);
+					h_d.add(b.getMethod(),if_num,h_id,true,ifStatement);
 				}else{
 					printAndWriteToFile("\tIfStmt Found: " + ifStatement);
 					printAndWriteToFile("\t\tThis is a forward branch. Predict not taken.");
-					h_d.add(b.getMethod(),if_num,h_id,false,ifStatement,phaseName);
+					h_d.add(b.getMethod(),if_num,h_id,false,ifStatement);
 				}
 			}catch(Exception e){
 				//Ignore this...

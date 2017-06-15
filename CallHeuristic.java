@@ -36,6 +36,9 @@ public class CallHeuristic extends BodyTransformer {
 	
 	
 	protected void internalTransform(Body b, String phaseName, Map options){
+		
+		h_d.name_heuristic(h_id,phaseName);
+		
 		try{
 			file = new FileOutputStream("Soot_Heuristic_Information/call_h_" + b.getMethod(), false);
 		}catch(Exception e){
@@ -74,7 +77,7 @@ public class CallHeuristic extends BodyTransformer {
 					printAndWriteToFile("\tIfStmt Found: " + ifStatement);
 					printAndWriteToFile("\t\tGoto Destination beginning with: " + ifStatement.getTarget());
 					printAndWriteToFile("\t\t\tPredict not taken because it has a invoke statment and it postdominates this unit.");
-					h_d.add(b.getMethod(),if_num,h_id,false,ifStatement,phaseName);
+					h_d.add(b.getMethod(),if_num,h_id,false,ifStatement);
 				}else{
 					//printAndWriteToFile("\t\t\tPrediction Uncertain");
 				}

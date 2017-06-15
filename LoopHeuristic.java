@@ -14,7 +14,6 @@ public class LoopHeuristic extends LoopFinder {
 	private FileOutputStream file;
 	HeuristicDatabase h_d;
 	int h_id;
-	int if_num;
 	
 	LoopHeuristic(HeuristicDatabase hd, int heuristic_id){
 		System.out.println("Loop Heuristic Prepared.");
@@ -33,22 +32,18 @@ public class LoopHeuristic extends LoopFinder {
 	}
 	
     protected void internalTransform (Body b, String phaseName, Map options){
-		
+		h_d.name_heuristic(h_id,phaseName);
 		try{
 			file = new FileOutputStream("Soot_Heuristic_Information/loop_h_" + b.getMethod(), false);
 		}catch(Exception e){
 			
 		}
 		
-		
-		
 		printAndWriteToFile("Applying " + phaseName + " on " + b.getMethod());
 		
 		super.internalTransform(b,phaseName,options);
 		//If we want the loops, we can call super.loops() to have it return a collection of loops
 		//this will print out all of the header units then print out all exits from that loop.
-		
-		if_num = -1;
 		for(Loop l : super.loops()){
 			printAndWriteToFile("\tLoop Found, Header: " + l.getHead());
 			
@@ -57,15 +52,14 @@ public class LoopHeuristic extends LoopFinder {
 				try{
 					//Is s an if statement?
 					IfStmt s_if = (IfStmt) s;
-					if_num++;
 					//If both are true, we check.
 					if(s_if.getTarget() != l.getHead()){
 						//The header is not the destination of the goto if it is taken. 
 						printAndWriteToFile("\t\t\tPredict not taken to continue the loop.");
-						h_d.add(b.getMethod(),if_num,h_id,false,s_if,phaseName);
+						h_d.add(b.getMethod(),h_id,false,s_if);
 					}else{
 						printAndWriteToFile("\t\t\tPredict taken to continue the loop.");
-						h_d.add(b.getMethod(),if_num,h_id,true,s_if,phaseName);
+						h_d.add(b.getMethod(),h_id,true,s_if);
 					}
 				}catch(Exception e1){
 					/*
