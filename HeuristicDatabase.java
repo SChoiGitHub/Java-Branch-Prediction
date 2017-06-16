@@ -33,11 +33,8 @@ public class HeuristicDatabase{
 			Vector<HeuristicIfPair> new_vector = new Vector<HeuristicIfPair>();
 			new_vector.add(new HeuristicIfPair(heuristic_count,the_if));
 			methodToPredictionTable.put(s_m, new_vector);
-			methodToPredictionTable.get(s_m).add(new HeuristicIfPair(heuristic_count,the_if));
-		}
-		
-		//Do we need to extend the vector?
-		if(if_num >= methodToPredictionTable.get(s_m).size()){
+		}else if(if_num >= methodToPredictionTable.get(s_m).size()){
+			//if the element at this key exists, we may need to extend it.
 			System.out.println("the vector is too small at size " + methodToPredictionTable.get(s_m).size()); //Debug
 			methodToPredictionTable.get(s_m).add(new HeuristicIfPair(heuristic_count,the_if));
 		}

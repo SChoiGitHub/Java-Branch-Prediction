@@ -1,0 +1,2259 @@
+Hello World!
+bark
+bark
+bark
+bark
+bark
+ONE!
+hello world...
+10946
+Hello World!
+bark
+bark
+bark
+bark
+bark
+THREE!
+HELLO WORLD!
+10946
+Hello World!
+bark
+bark
+bark
+bark
+bark
+THREE!
+HELLO WORLD!
+10946
+Hello World!
+bark
+bark
+bark
+bark
+bark
+TWO!
+Hello world.
+10946
+Hello World!
+bark
+bark
+bark
+bark
+bark
+TWO!
+Hello world.
+10946
+Hello World!
+bark
+bark
+bark
+bark
+bark
+TWO!
+Hello world.
+10946
+Hello World!
+bark
+bark
+bark
+bark
+bark
+TWO!
+Hello world.
+10946
+Hello World!
+bark
+bark
+bark
+bark
+bark
+ONE!
+hello world...
+10946
+Hello World!
+bark
+bark
+bark
+bark
+bark
+THREE!
+HELLO WORLD!
+10946
+Hello World!
+bark
+bark
+bark
+bark
+bark
+THREE!
+HELLO WORLD!
+10946
+Hello World!
+bark
+bark
+bark
+bark
+bark
+THREE!
+HELLO WORLD!
+10946
+Hello World!
+bark
+bark
+bark
+bark
+bark
+TWO!
+Hello world.
+10946
+Hello World!
+bark
+bark
+bark
+bark
+bark
+ONE!
+hello world...
+10946
+Hello World!
+bark
+bark
+bark
+bark
+bark
+THREE!
+HELLO WORLD!
+10946
+Hello World!
+bark
+bark
+bark
+bark
+bark
+THREE!
+HELLO WORLD!
+10946
+Hello World!
+bark
+bark
+bark
+bark
+bark
+ONE!
+hello world...
+10946
+Hello World!
+bark
+bark
+bark
+bark
+bark
+THREE!
+HELLO WORLD!
+10946
+Hello World!
+bark
+bark
+bark
+bark
+bark
+THREE!
+HELLO WORLD!
+10946
+
+
+PK: JVM PATH: /nfs/projects/zephyr/OpenJDK/jdk7/hotspot_vb97_10_jun_2010/build/linux/linux_i486_compiler1/jvmg/libjvm.so 0
+
+
+VM option 'SuppressErrorAt=/handles.cpp:31'
+VM option '+PKBranchDir'
+
+
+Total number of methods queued (CountQueuedMethods) = 5
+
+Total number of methods compiled (CountCompiledMethods) = 5
+
+Print Method Branch Statistics
+
+
+virtual java/util/concurrent/ConcurrentHashMap$Segment.get(Ljava/lang/Object;I)Ljava/lang/Object; 
+BCI: 4, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 14, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 22, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 33, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 44, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+static sun/nio/cs/Surrogate$Parser.<clinit>()V 
+BCI: 6, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/io/BufferedWriter.write(Ljava/lang/String;II)V 
+BCI: 24, Taken: 324, Not-Taken: 324, Percent Taken: 0.50
+BCI: 92, Taken: 324, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/String.startsWith(Ljava/lang/String;I)Z 
+BCI: 32, Taken: 0, Not-Taken: 62, Percent Taken: 0.00
+BCI: 43, Taken: 50, Not-Taken: 12, Percent Taken: 0.81
+BCI: 53, Taken: 18, Not-Taken: 227, Percent Taken: 0.07
+BCI: 71, Taken: 195, Not-Taken: 32, Percent Taken: 0.86
+
+virtual java/util/StringTokenizer.skipDelimiters(I)I 
+BCI: 4, Taken: 5, Not-Taken: 0, Percent Taken: 1.00
+BCI: 21, Taken: 0, Not-Taken: 7, Percent Taken: 0.00
+BCI: 29, Taken: 0, Not-Taken: 7, Percent Taken: 0.00
+BCI: 36, Taken: 0, Not-Taken: 7, Percent Taken: 0.00
+BCI: 53, Taken: 0, Not-Taken: 7, Percent Taken: 0.00
+BCI: 64, Taken: 2, Not-Taken: 5, Percent Taken: 0.29
+
+virtual sun/misc/URLClassPath.getResource(Ljava/lang/String;Z)Lsun/misc/Resource; 
+BCI: 3, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 47, Taken: 2, Not-Taken: 10, Percent Taken: 0.17
+BCI: 60, Taken: 8, Not-Taken: 2, Percent Taken: 0.80
+
+virtual java/nio/Buffer.limit(I)Ljava/nio/Buffer; 
+BCI: 5, Taken: 0, Not-Taken: 513, Percent Taken: 0.00
+BCI: 9, Taken: 513, Not-Taken: 0, Percent Taken: 1.00
+BCI: 33, Taken: 513, Not-Taken: 0, Percent Taken: 1.00
+BCI: 52, Taken: 513, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/Thread.getContextClassLoader()Ljava/lang/ClassLoader; 
+BCI: 4, Taken: 3, Not-Taken: 4, Percent Taken: 0.43
+BCI: 14, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+static java/nio/charset/Charset.lookup(Ljava/lang/String;)Ljava/nio/charset/Charset; 
+BCI: 1, Taken: 13, Not-Taken: 0, Percent Taken: 1.00
+BCI: 19, Taken: 1, Not-Taken: 12, Percent Taken: 0.08
+BCI: 29, Taken: 0, Not-Taken: 12, Percent Taken: 0.00
+
+virtual java/nio/CharBuffer.hasArray()Z 
+BCI: 4, Taken: 0, Not-Taken: 418, Percent Taken: 0.00
+BCI: 11, Taken: 0, Not-Taken: 418, Percent Taken: 0.00
+
+static sun/nio/cs/UTF_8$Encoder.<clinit>()V 
+BCI: 6, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+static java/lang/System.nullPrintStream()Ljava/io/PrintStream; 
+BCI: 5, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+
+static java/lang/StringCoding.decode(Ljava/lang/String;[BII)[C 
+BCI: 12, Taken: 54, Not-Taken: 0, Percent Taken: 1.00
+BCI: 25, Taken: 1, Not-Taken: 53, Percent Taken: 0.02
+BCI: 66, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 90, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 38, Taken: 53, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/ThreadLocal$ThreadLocalMap.cleanSomeSlots(II)Z 
+BCI: 28, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 55, Taken: 1, Not-Taken: 1, Percent Taken: 0.50
+
+virtual java/nio/charset/CoderResult.isUnderflow()Z 
+BCI: 4, Taken: 0, Not-Taken: 1009, Percent Taken: 0.00
+
+static sun/nio/cs/UTF_8$Decoder.<clinit>()V 
+BCI: 6, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+static sun/misc/Unsafe.getUnsafe()Lsun/misc/Unsafe; 
+BCI: 9, Taken: 7, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/nio/charset/CharsetDecoder.onMalformedInput(Ljava/nio/charset/CodingErrorAction;)Ljava/nio/charset/CharsetDecoder; 
+BCI: 1, Taken: 5, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/File.<init>(Ljava/io/File;Ljava/lang/String;)V 
+BCI: 5, Taken: 12, Not-Taken: 0, Percent Taken: 1.00
+BCI: 17, Taken: 0, Not-Taken: 12, Percent Taken: 0.00
+BCI: 29, Taken: 12, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/LinkedHashMap$Entry.recordAccess(Ljava/util/HashMap;)V 
+BCI: 9, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/misc/Launcher$ExtClassLoader.getExtURLs([Ljava/io/File;)[Ljava/net/URL; 
+BCI: 13, Taken: 1, Not-Taken: 2, Percent Taken: 0.33
+BCI: 24, Taken: 1, Not-Taken: 1, Percent Taken: 0.50
+BCI: 34, Taken: 1, Not-Taken: 5, Percent Taken: 0.17
+BCI: 46, Taken: 1, Not-Taken: 4, Percent Taken: 0.20
+
+virtual java/util/HashMap.containsKey(Ljava/lang/Object;)Z 
+BCI: 5, Taken: 5, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/ClassLoader.findLoadedClass(Ljava/lang/String;)Ljava/lang/Class; 
+BCI: 9, Taken: 14, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/Class.getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field; 
+BCI: 20, Taken: 9, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/misc/SharedSecrets.getJavaIODeleteOnExitAccess()Lsun/misc/JavaIODeleteOnExitAccess; 
+BCI: 3, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/nio/cs/StreamDecoder.<init>(Ljava/io/InputStream;Ljava/lang/Object;Ljava/nio/charset/CharsetDecoder;)V 
+BCI: 32, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/lang/ThreadLocal.set(Ljava/lang/Object;)V 
+BCI: 11, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+
+virtual java/io/PrintStream.<init>(ZLjava/io/OutputStream;)V 
+BCI: 21, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/concurrent/ConcurrentHashMap.<init>(IFI)V 
+BCI: 7, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 11, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 15, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 29, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 44, Taken: 1, Not-Taken: 4, Percent Taken: 0.20
+BCI: 88, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 106, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 119, Taken: 1, Not-Taken: 1, Percent Taken: 0.50
+BCI: 141, Taken: 1, Not-Taken: 16, Percent Taken: 0.06
+
+static java/lang/System.getProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; 
+BCI: 9, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/ExpiringCache.get(Ljava/lang/String;)Ljava/lang/String; 
+BCI: 15, Taken: 16, Not-Taken: 0, Percent Taken: 1.00
+BCI: 29, Taken: 13, Not-Taken: 3, Percent Taken: 0.81
+
+static java/lang/StringCoding.safeTrim([CILjava/nio/charset/Charset;)[C 
+BCI: 3, Taken: 0, Not-Taken: 54, Percent Taken: 0.00
+BCI: 9, Taken: 54, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/reflect/Constructor.setConstructorAccessor(Lsun/reflect/ConstructorAccessor;)V 
+BCI: 9, Taken: 3, Not-Taken: 3, Percent Taken: 0.50
+
+virtual java/io/UnixFileSystem.isAbsolute(Ljava/io/File;)Z 
+BCI: 4, Taken: 1, Not-Taken: 13, Percent Taken: 0.07
+
+virtual java/util/concurrent/ConcurrentHashMap$Segment.rehash()V 
+BCI: 11, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 47, Taken: 3, Not-Taken: 8, Percent Taken: 0.27
+BCI: 58, Taken: 1, Not-Taken: 7, Percent Taken: 0.12
+BCI: 80, Taken: 1, Not-Taken: 6, Percent Taken: 0.14
+BCI: 106, Taken: 1, Not-Taken: 1, Percent Taken: 0.50
+BCI: 123, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 158, Taken: 1, Not-Taken: 1, Percent Taken: 0.50
+
+virtual java/io/PrintStream.write([BII)V 
+BCI: 23, Taken: 0, Not-Taken: 324, Percent Taken: 0.00
+
+virtual java/security/CodeSource.matchCerts(Ljava/security/CodeSource;Z)Z 
+BCI: 4, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 11, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 15, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 22, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 29, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/nio/ByteBuffer.hasArray()Z 
+BCI: 4, Taken: 0, Not-Taken: 418, Percent Taken: 0.00
+BCI: 11, Taken: 0, Not-Taken: 418, Percent Taken: 0.00
+
+virtual java/util/IdentityHashMap.keySet()Ljava/util/Set; 
+BCI: 6, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/net/www/ParseUtil.<clinit>()V 
+BCI: 6, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 179, Taken: 1, Not-Taken: 32, Percent Taken: 0.03
+
+virtual sun/misc/URLClassPath$JarLoader.<init>(Ljava/net/URL;Ljava/net/URLStreamHandler;Ljava/util/HashMap;)V 
+BCI: 56, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 74, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+BCI: 108, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+BCI: 116, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 128, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/Random.next(I)I 
+BCI: 35, Taken: 0, Not-Taken: 18, Percent Taken: 0.00
+
+virtual java/lang/String.getChars(II[CI)V 
+BCI: 1, Taken: 459, Not-Taken: 0, Percent Taken: 1.00
+BCI: 18, Taken: 459, Not-Taken: 0, Percent Taken: 1.00
+BCI: 32, Taken: 459, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/reflect/Constructor.newInstance([Ljava/lang/Object;)Ljava/lang/Object; 
+BCI: 4, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 63, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 80, Taken: 1, Not-Taken: 3, Percent Taken: 0.25
+
+static java/lang/ref/Finalizer.<clinit>()V 
+BCI: 34, Taken: 1, Not-Taken: 2, Percent Taken: 0.33
+
+static java/security/AccessController.getContext()Ljava/security/AccessControlContext; 
+BCI: 5, Taken: 7, Not-Taken: 2, Percent Taken: 0.78
+
+virtual java/nio/charset/CharsetEncoder.flush(Ljava/nio/ByteBuffer;)Ljava/nio/charset/CoderResult; 
+BCI: 5, Taken: 0, Not-Taken: 34, Percent Taken: 0.00
+BCI: 18, Taken: 0, Not-Taken: 34, Percent Taken: 0.00
+
+static java/lang/CharacterDataLatin1.<clinit>()V 
+BCI: 6, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 50, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 77, Taken: 1, Not-Taken: 256, Percent Taken: 0.00
+
+static java/net/URL.getURLStreamHandler(Ljava/lang/String;)Ljava/net/URLStreamHandler; 
+BCI: 12, Taken: 4, Not-Taken: 1, Percent Taken: 0.80
+BCI: 20, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 36, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 62, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 118, Taken: 1, Not-Taken: 1, Percent Taken: 0.50
+BCI: 126, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 206, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 249, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 258, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 264, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 280, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 287, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual sun/misc/Resource.getBytes()[B 
+BCI: 32, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+BCI: 42, Taken: 2, Not-Taken: 2, Percent Taken: 0.50
+BCI: 76, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 209, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 242, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/String.equalsIgnoreCase(Ljava/lang/String;)Z 
+BCI: 2, Taken: 2, Not-Taken: 1, Percent Taken: 0.67
+BCI: 10, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+BCI: 21, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/Math.max(II)I 
+BCI: 2, Taken: 0, Not-Taken: 10, Percent Taken: 0.00
+
+static sun/reflect/Reflection.isSubclassOf(Ljava/lang/Class;Ljava/lang/Class;)Z 
+BCI: 1, Taken: 3, Not-Taken: 10, Percent Taken: 0.23
+BCI: 6, Taken: 10, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/IdentityHashMap$IdentityHashMapIterator.<init>(Ljava/util/IdentityHashMap;)V 
+BCI: 17, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/misc/VM.initializeOSEnvironment()V 
+BCI: 3, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+static java/util/Locale.getInstance(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/util/Locale; 
+BCI: 1, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 5, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 9, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 73, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/reflect/Modifier.isPublic(I)Z 
+BCI: 3, Taken: 2, Not-Taken: 5, Percent Taken: 0.29
+
+virtual java/lang/ThreadGroup.checkAccess()V 
+BCI: 5, Taken: 10, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/AbstractStringBuilder.append(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder; 
+BCI: 1, Taken: 119, Not-Taken: 0, Percent Taken: 1.00
+BCI: 13, Taken: 111, Not-Taken: 8, Percent Taken: 0.93
+BCI: 31, Taken: 58, Not-Taken: 53, Percent Taken: 0.52
+
+virtual java/util/BitSet.<init>(I)V 
+BCI: 15, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/net/www/ParseUtil.decode(Ljava/lang/String;)Ljava/lang/String; 
+BCI: 15, Taken: 7, Not-Taken: 341, Percent Taken: 0.02
+BCI: 27, Taken: 0, Not-Taken: 341, Percent Taken: 0.00
+
+static java/io/FileSystem.getBooleanProperty(Ljava/lang/String;Z)Z 
+BCI: 6, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+
+virtual java/util/Hashtable.get(Ljava/lang/Object;)Ljava/lang/Object; 
+BCI: 27, Taken: 22, Not-Taken: 51, Percent Taken: 0.30
+BCI: 36, Taken: 14, Not-Taken: 37, Percent Taken: 0.27
+BCI: 48, Taken: 0, Not-Taken: 37, Percent Taken: 0.00
+
+static java/lang/Class.getReflectionFactory()Lsun/reflect/ReflectionFactory; 
+BCI: 3, Taken: 11, Not-Taken: 1, Percent Taken: 0.92
+
+virtual java/lang/String.getBytes(Ljava/lang/String;)[B 
+BCI: 1, Taken: 34, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/nio/ByteBuffer.<init>(IIII[BI)V 
+BCI: 21, Taken: 94, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/Class.arrayContentsEq([Ljava/lang/Object;[Ljava/lang/Object;)Z 
+BCI: 1, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 20, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 38, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 48, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/ref/Finalizer.add()V 
+BCI: 9, Taken: 1, Not-Taken: 6, Percent Taken: 0.14
+
+virtual java/util/BitSet.get(I)Z 
+BCI: 1, Taken: 19, Not-Taken: 0, Percent Taken: 1.00
+BCI: 45, Taken: 0, Not-Taken: 19, Percent Taken: 0.00
+BCI: 60, Taken: 19, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/Hashtable.remove(Ljava/lang/Object;)Ljava/lang/Object; 
+BCI: 30, Taken: 4, Not-Taken: 3, Percent Taken: 0.57
+BCI: 39, Taken: 2, Not-Taken: 1, Percent Taken: 0.67
+BCI: 51, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 66, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/Stack.peek()Ljava/lang/Object; 
+BCI: 6, Taken: 7, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/nio/cs/StreamDecoder.read([CII)I 
+BCI: 20, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+BCI: 27, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+BCI: 32, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+BCI: 42, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+BCI: 50, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 63, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 78, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 124, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/util/PreHashedMap.put(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object; 
+BCI: 31, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 51, Taken: 1, Not-Taken: 1, Percent Taken: 0.50
+BCI: 76, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/StringTokenizer.nextToken()Ljava/lang/String; 
+BCI: 5, Taken: 2, Not-Taken: 1, Percent Taken: 0.67
+BCI: 51, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 12, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/net/URLStreamHandler.hashCode(Ljava/net/URL;)I 
+BCI: 8, Taken: 0, Not-Taken: 5, Percent Taken: 0.00
+BCI: 27, Taken: 5, Not-Taken: 0, Percent Taken: 1.00
+BCI: 49, Taken: 0, Not-Taken: 5, Percent Taken: 0.00
+BCI: 71, Taken: 0, Not-Taken: 5, Percent Taken: 0.00
+BCI: 87, Taken: 0, Not-Taken: 5, Percent Taken: 0.00
+BCI: 115, Taken: 5, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/BufferedOutputStream.write([BII)V 
+BCI: 6, Taken: 324, Not-Taken: 0, Percent Taken: 1.00
+BCI: 35, Taken: 324, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/ThreadGroup.getParent()Ljava/lang/ThreadGroup; 
+BCI: 4, Taken: 2, Not-Taken: 2, Percent Taken: 0.50
+
+virtual java/nio/Buffer.position(I)Ljava/nio/Buffer; 
+BCI: 5, Taken: 0, Not-Taken: 1350, Percent Taken: 0.00
+BCI: 9, Taken: 1350, Not-Taken: 0, Percent Taken: 1.00
+BCI: 33, Taken: 1350, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/nio/charset/CharsetDecoder.onUnmappableCharacter(Ljava/nio/charset/CodingErrorAction;)Ljava/nio/charset/CharsetDecoder; 
+BCI: 1, Taken: 5, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/StringTokenizer.setMaxDelimCodePoint()V 
+BCI: 4, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 29, Taken: 2, Not-Taken: 2, Percent Taken: 0.50
+BCI: 45, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 71, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+BCI: 100, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/security/provider/PolicyFile.canonPath(Ljava/lang/String;)Ljava/lang/String; 
+BCI: 7, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/ClassLoader.checkPackageAccess(Ljava/lang/Class;Ljava/security/ProtectionDomain;)V 
+BCI: 5, Taken: 5, Not-Taken: 0, Percent Taken: 1.00
+
+static java/io/FilePermission.getMask(Ljava/lang/String;)I 
+BCI: 3, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 11, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+
+virtual java/net/URLStreamHandler.setURL(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V 
+BCI: 5, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/Integer.getChars(II[C)V 
+BCI: 7, Taken: 18, Not-Taken: 0, Percent Taken: 1.00
+BCI: 20, Taken: 18, Not-Taken: 0, Percent Taken: 1.00
+BCI: 110, Taken: 72, Not-Taken: 18, Percent Taken: 0.80
+BCI: 118, Taken: 18, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/concurrent/ConcurrentHashMap$Segment.put(Ljava/lang/Object;ILjava/lang/Object;Z)Ljava/lang/Object; 
+BCI: 19, Taken: 16, Not-Taken: 3, Percent Taken: 0.84
+BCI: 54, Taken: 19, Not-Taken: 3, Percent Taken: 0.86
+BCI: 90, Taken: 19, Not-Taken: 0, Percent Taken: 1.00
+BCI: 154, Taken: 19, Not-Taken: 0, Percent Taken: 1.00
+BCI: 63, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/net/URL.set(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V 
+BCI: 23, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+
+virtual java/io/BufferedReader.fill()V 
+BCI: 5, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+BCI: 150, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+BCI: 154, Taken: 1, Not-Taken: 1, Percent Taken: 0.50
+
+virtual java/util/concurrent/locks/ReentrantLock$NonfairSync.lock()V 
+BCI: 6, Taken: 0, Not-Taken: 19, Percent Taken: 0.00
+
+virtual java/lang/ref/Reference.<init>(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V 
+BCI: 11, Taken: 7, Not-Taken: 16, Percent Taken: 0.30
+
+virtual java/lang/String.concat(Ljava/lang/String;)Ljava/lang/String; 
+BCI: 6, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/Class.newInstance()Ljava/lang/Object; 
+BCI: 3, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/Thread.setDaemon(Z)V 
+BCI: 8, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/Collections$SynchronizedMap.<init>(Ljava/util/Map;)V 
+BCI: 20, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+static java/nio/charset/CoderResult.<clinit>()V 
+BCI: 6, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/lang/StringCoding$StringDecoder.decode([BII)[C 
+BCI: 20, Taken: 54, Not-Taken: 0, Percent Taken: 1.00
+BCI: 68, Taken: 54, Not-Taken: 0, Percent Taken: 1.00
+BCI: 92, Taken: 54, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/misc/URLClassPath$FileLoader.<init>(Ljava/net/URL;)V 
+BCI: 14, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+static java/io/ObjectStreamClass.getClassSignature(Ljava/lang/Class;)Ljava/lang/String; 
+BCI: 12, Taken: 13, Not-Taken: 2, Percent Taken: 0.87
+BCI: 34, Taken: 5, Not-Taken: 8, Percent Taken: 0.38
+BCI: 41, Taken: 7, Not-Taken: 1, Percent Taken: 0.88
+BCI: 58, Taken: 7, Not-Taken: 0, Percent Taken: 1.00
+BCI: 75, Taken: 5, Not-Taken: 2, Percent Taken: 0.71
+BCI: 92, Taken: 5, Not-Taken: 0, Percent Taken: 1.00
+BCI: 109, Taken: 4, Not-Taken: 1, Percent Taken: 0.80
+BCI: 126, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 143, Taken: 3, Not-Taken: 1, Percent Taken: 0.75
+BCI: 160, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+
+virtual java/security/BasicPermissionCollection.add(Ljava/security/Permission;)V 
+BCI: 4, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 38, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 65, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 152, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 164, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/nio/cs/FastCharsetProvider.lookup(Ljava/lang/String;)Ljava/nio/charset/Charset; 
+BCI: 24, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 46, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 58, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/ThreadLocal.get()Ljava/lang/Object; 
+BCI: 11, Taken: 1, Not-Taken: 87, Percent Taken: 0.01
+BCI: 21, Taken: 1, Not-Taken: 86, Percent Taken: 0.01
+
+virtual java/util/HashMap.put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; 
+BCI: 1, Taken: 29, Not-Taken: 0, Percent Taken: 1.00
+BCI: 40, Taken: 25, Not-Taken: 7, Percent Taken: 0.78
+BCI: 49, Taken: 3, Not-Taken: 4, Percent Taken: 0.43
+BCI: 61, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/ClassLoader.initializePath(Ljava/lang/String;)[Ljava/lang/String; 
+BCI: 28, Taken: 2, Not-Taken: 4, Percent Taken: 0.33
+BCI: 72, Taken: 2, Not-Taken: 4, Percent Taken: 0.33
+BCI: 80, Taken: 1, Not-Taken: 3, Percent Taken: 0.25
+BCI: 107, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/io/BufferedOutputStream.flushBuffer()V 
+BCI: 4, Taken: 162, Not-Taken: 324, Percent Taken: 0.33
+
+virtual java/util/HashMap.get(Ljava/lang/Object;)Ljava/lang/Object; 
+BCI: 1, Taken: 14, Not-Taken: 0, Percent Taken: 1.00
+BCI: 33, Taken: 9, Not-Taken: 5, Percent Taken: 0.64
+BCI: 41, Taken: 0, Not-Taken: 5, Percent Taken: 0.00
+BCI: 52, Taken: 0, Not-Taken: 5, Percent Taken: 0.00
+BCI: 61, Taken: 0, Not-Taken: 5, Percent Taken: 0.00
+
+static java/lang/System.setProperties(Ljava/util/Properties;)V 
+BCI: 5, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 13, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/PrintStream.print(Ljava/lang/String;)V 
+BCI: 1, Taken: 144, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/ArrayList.ensureCapacity(I)V 
+BCI: 18, Taken: 24, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/reflect/misc/ReflectUtil.checkPackageAccess(Ljava/lang/String;)V 
+BCI: 5, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/misc/MetaIndex.<clinit>()V 
+BCI: 6, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+static java/lang/reflect/AccessibleObject.setAccessible0(Ljava/lang/reflect/AccessibleObject;Z)V 
+BCI: 4, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+BCI: 9, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+BCI: 24, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/File.isDirectory()Z 
+BCI: 5, Taken: 8, Not-Taken: 0, Percent Taken: 1.00
+BCI: 25, Taken: 6, Not-Taken: 2, Percent Taken: 0.75
+
+virtual java/security/CodeSource.getCertificates()[Ljava/security/cert/Certificate; 
+BCI: 4, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 25, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/String.hashCode()I 
+BCI: 6, Taken: 32, Not-Taken: 144, Percent Taken: 0.18
+BCI: 32, Taken: 144, Not-Taken: 2982, Percent Taken: 0.05
+
+virtual java/io/PrintStream.newLine()V 
+BCI: 33, Taken: 0, Not-Taken: 162, Percent Taken: 0.00
+
+virtual java/lang/String.<init>([CII)V 
+BCI: 5, Taken: 98, Not-Taken: 0, Percent Taken: 1.00
+BCI: 18, Taken: 98, Not-Taken: 0, Percent Taken: 1.00
+BCI: 35, Taken: 98, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/security/Permissions.getPermissionCollection(Ljava/security/Permission;Z)Ljava/security/PermissionCollection; 
+BCI: 24, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+BCI: 28, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 36, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+BCI: 43, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 59, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+BCI: 63, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+BCI: 74, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 88, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+
+virtual java/util/Vector.ensureCapacityHelper(I)V 
+BCI: 8, Taken: 14, Not-Taken: 0, Percent Taken: 1.00
+
+static java/nio/charset/Charset.checkName(Ljava/lang/String;)V 
+BCI: 10, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+BCI: 14, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 30, Taken: 3, Not-Taken: 26, Percent Taken: 0.10
+BCI: 42, Taken: 10, Not-Taken: 16, Percent Taken: 0.38
+BCI: 48, Taken: 10, Not-Taken: 6, Percent Taken: 0.62
+BCI: 57, Taken: 10, Not-Taken: 10, Percent Taken: 0.50
+BCI: 72, Taken: 5, Not-Taken: 5, Percent Taken: 0.50
+BCI: 87, Taken: 0, Not-Taken: 5, Percent Taken: 0.00
+BCI: 91, Taken: 0, Not-Taken: 5, Percent Taken: 0.00
+BCI: 78, Taken: 0, Not-Taken: 5, Percent Taken: 0.00
+BCI: 63, Taken: 0, Not-Taken: 10, Percent Taken: 0.00
+
+static java/lang/ClassLoader.loadLibrary(Ljava/lang/Class;Ljava/lang/String;Z)V 
+BCI: 1, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 16, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 36, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 83, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 192, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 220, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/io/UnixFileSystem.getBooleanAttributes(Ljava/io/File;)I 
+BCI: 15, Taken: 0, Not-Taken: 20, Percent Taken: 0.00
+BCI: 25, Taken: 20, Not-Taken: 0, Percent Taken: 1.00
+BCI: 38, Taken: 20, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/misc/MetaIndex.<init>(Ljava/util/List;Z)V 
+BCI: 5, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/nio/cs/UTF_8$Encoder.encodeArrayLoop(Ljava/nio/CharBuffer;Ljava/nio/ByteBuffer;)Ljava/nio/charset/CoderResult; 
+BCI: 30, Taken: 145, Not-Taken: 0, Percent Taken: 1.00
+BCI: 52, Taken: 0, Not-Taken: 145, Percent Taken: 0.00
+BCI: 95, Taken: 145, Not-Taken: 0, Percent Taken: 1.00
+BCI: 117, Taken: 0, Not-Taken: 145, Percent Taken: 0.00
+BCI: 133, Taken: 145, Not-Taken: 2138, Percent Taken: 0.06
+BCI: 147, Taken: 0, Not-Taken: 2138, Percent Taken: 0.00
+BCI: 154, Taken: 2138, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/security/BasicPermission.getCanonicalName()Ljava/lang/String; 
+BCI: 4, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+
+virtual sun/nio/cs/StreamEncoder.ensureOpen()V 
+BCI: 4, Taken: 324, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/nio/cs/UTF_8$Encoder.encodeLoop(Ljava/nio/CharBuffer;Ljava/nio/ByteBuffer;)Ljava/nio/charset/CoderResult; 
+BCI: 4, Taken: 0, Not-Taken: 358, Percent Taken: 0.00
+BCI: 11, Taken: 0, Not-Taken: 358, Percent Taken: 0.00
+
+virtual java/io/File.getName()Ljava/lang/String; 
+BCI: 16, Taken: 20, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/net/URL.equals(Ljava/lang/Object;)Z 
+BCI: 4, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/ClassLoader.compareCerts([Ljava/security/cert/Certificate;[Ljava/security/cert/Certificate;)Z 
+BCI: 1, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 11, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual sun/nio/cs/UTF_8$Decoder.decodeLoop(Ljava/nio/ByteBuffer;Ljava/nio/CharBuffer;)Ljava/nio/charset/CoderResult; 
+BCI: 4, Taken: 0, Not-Taken: 60, Percent Taken: 0.00
+BCI: 11, Taken: 0, Not-Taken: 60, Percent Taken: 0.00
+
+static sun/misc/SharedSecrets.getJavaIOAccess()Lsun/misc/JavaIOAccess; 
+BCI: 3, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+static java/io/File.<clinit>()V 
+BCI: 6, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+static java/util/Arrays.copyOf([Ljava/lang/Object;ILjava/lang/Class;)[Ljava/lang/Object; 
+BCI: 4, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/ClassLoader.getSystemClassLoader()Ljava/lang/ClassLoader; 
+BCI: 6, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 16, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/security/CodeSource.equals(Ljava/lang/Object;)Z 
+BCI: 2, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 11, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 25, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 48, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/LinkedHashMap$LinkedHashIterator.hasNext()Z 
+BCI: 11, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/nio/cs/StreamDecoder.close()V 
+BCI: 11, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/net/URLClassLoader.getPermissions(Ljava/security/CodeSource;)Ljava/security/PermissionCollection; 
+BCI: 40, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 58, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 242, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 252, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/FilePermission.init(I)V 
+BCI: 5, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 19, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 41, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 68, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 115, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+BCI: 136, Taken: 1, Not-Taken: 1, Percent Taken: 0.50
+BCI: 187, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 152, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/nio/charset/Charset.<init>(Ljava/lang/String;[Ljava/lang/String;)V 
+BCI: 14, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 33, Taken: 1, Not-Taken: 2, Percent Taken: 0.33
+
+static BigExample.main([Ljava/lang/String;)V 
+BCI: 10, Taken: 1, Not-Taken: 18, Percent Taken: 0.05
+BCI: 25, Taken: 18, Not-Taken: 180, Percent Taken: 0.09
+BCI: 33, Taken: 18, Not-Taken: 810, Percent Taken: 0.02
+BCI: 94, Taken: 0, Not-Taken: 18, Percent Taken: 0.00
+BCI: 111, Taken: 18, Not-Taken: 0, Percent Taken: 1.00
+BCI: 121, Taken: 18, Not-Taken: 0, Percent Taken: 1.00
+BCI: 131, Taken: 18, Not-Taken: 0, Percent Taken: 1.00
+BCI: 140, Taken: 0, Not-Taken: 18, Percent Taken: 0.00
+BCI: 149, Taken: 18, Not-Taken: 0, Percent Taken: 1.00
+BCI: 159, Taken: 0, Not-Taken: 18, Percent Taken: 0.00
+BCI: 169, Taken: 18, Not-Taken: 0, Percent Taken: 1.00
+BCI: 178, Taken: 0, Not-Taken: 18, Percent Taken: 0.00
+BCI: 187, Taken: 18, Not-Taken: 0, Percent Taken: 1.00
+BCI: 197, Taken: 0, Not-Taken: 18, Percent Taken: 0.00
+BCI: 207, Taken: 18, Not-Taken: 0, Percent Taken: 1.00
+BCI: 277, Taken: 9, Not-Taken: 9, Percent Taken: 0.50
+BCI: 294, Taken: 4, Not-Taken: 5, Percent Taken: 0.44
+BCI: 311, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+BCI: 343, Taken: 18, Not-Taken: 126, Percent Taken: 0.12
+BCI: 360, Taken: 18, Not-Taken: 72, Percent Taken: 0.20
+BCI: 374, Taken: 648, Not-Taken: 180, Percent Taken: 0.78
+
+virtual java/lang/AbstractStringBuilder.expandCapacity(I)V 
+BCI: 11, Taken: 82, Not-Taken: 0, Percent Taken: 1.00
+BCI: 22, Taken: 60, Not-Taken: 22, Percent Taken: 0.73
+
+virtual java/nio/charset/CharsetDecoder.<init>(Ljava/nio/charset/Charset;FFLjava/lang/String;)V 
+BCI: 31, Taken: 5, Not-Taken: 0, Percent Taken: 1.00
+BCI: 47, Taken: 5, Not-Taken: 0, Percent Taken: 1.00
+BCI: 65, Taken: 0, Not-Taken: 5, Percent Taken: 0.00
+BCI: 71, Taken: 5, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; 
+BCI: 7, Taken: 0, Not-Taken: 14, Percent Taken: 0.00
+BCI: 14, Taken: 7, Not-Taken: 7, Percent Taken: 0.50
+BCI: 48, Taken: 12, Not-Taken: 0, Percent Taken: 1.00
+
+static java/nio/ByteBuffer.allocate(I)Ljava/nio/ByteBuffer; 
+BCI: 1, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/ThreadLocal$ThreadLocalMap.nextIndex(II)I 
+BCI: 4, Taken: 1, Not-Taken: 1, Percent Taken: 0.50
+
+virtual java/lang/reflect/Constructor.acquireConstructorAccessor()V 
+BCI: 6, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+BCI: 18, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/misc/URLClassPath$FileLoader.getResource(Ljava/lang/String;Z)Lsun/misc/Resource; 
+BCI: 44, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 50, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 84, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+
+static java/io/DeleteOnExitHook.hook()Ljava/io/DeleteOnExitHook; 
+BCI: 3, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+static sun/reflect/Reflection.filterFields(Ljava/lang/Class;[Ljava/lang/reflect/Field;)[Ljava/lang/reflect/Field; 
+BCI: 3, Taken: 6, Not-Taken: 0, Percent Taken: 1.00
+BCI: 25, Taken: 0, Not-Taken: 6, Percent Taken: 0.00
+
+static sun/misc/VM.maxDirectMemory()J 
+BCI: 3, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 29, Taken: 1, Not-Taken: 1, Percent Taken: 0.50
+BCI: 38, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/security/SecureClassLoader.getProtectionDomain(Ljava/security/CodeSource;)Ljava/security/ProtectionDomain; 
+BCI: 1, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 28, Taken: 1, Not-Taken: 1, Percent Taken: 0.50
+BCI: 52, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 68, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/ArrayList.<init>(Ljava/util/Collection;)V 
+BCI: 33, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/Class.privateGetDeclaredConstructors(Z)[Ljava/lang/reflect/Constructor; 
+BCI: 8, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+BCI: 16, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 47, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 65, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 74, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 94, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+BCI: 98, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/PrintStream.ensureOpen()V 
+BCI: 4, Taken: 648, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/Terminator.setup()V 
+BCI: 3, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+static java/io/UnixFileSystem.<clinit>()V 
+BCI: 6, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/lang/String.indexOf(II)I 
+BCI: 17, Taken: 223, Not-Taken: 0, Percent Taken: 1.00
+BCI: 30, Taken: 214, Not-Taken: 9, Percent Taken: 0.96
+BCI: 46, Taken: 0, Not-Taken: 214, Percent Taken: 0.00
+BCI: 52, Taken: 210, Not-Taken: 1630, Percent Taken: 0.11
+BCI: 61, Taken: 1626, Not-Taken: 4, Percent Taken: 1.00
+
+virtual sun/misc/URLClassPath.getLoader(I)Lsun/misc/URLClassPath$Loader; 
+BCI: 10, Taken: 10, Not-Taken: 7, Percent Taken: 0.59
+BCI: 27, Taken: 5, Not-Taken: 2, Percent Taken: 0.71
+BCI: 65, Taken: 5, Not-Taken: 0, Percent Taken: 1.00
+BCI: 85, Taken: 5, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/ThreadLocal$ThreadLocalMap.getEntry(Ljava/lang/ThreadLocal;)Ljava/lang/ThreadLocal$ThreadLocalMap$Entry; 
+BCI: 21, Taken: 1, Not-Taken: 86, Percent Taken: 0.01
+BCI: 29, Taken: 0, Not-Taken: 86, Percent Taken: 0.00
+
+virtual java/nio/charset/CharsetEncoder.onMalformedInput(Ljava/nio/charset/CodingErrorAction;)Ljava/nio/charset/CharsetEncoder; 
+BCI: 1, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/Thread.start()V 
+BCI: 4, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 31, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/ApplicationShutdownHooks.run()V 
+BCI: 40, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 73, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/Thread.setPriority(I)V 
+BCI: 7, Taken: 0, Not-Taken: 9, Percent Taken: 0.00
+BCI: 12, Taken: 9, Not-Taken: 0, Percent Taken: 1.00
+BCI: 29, Taken: 0, Not-Taken: 9, Percent Taken: 0.00
+BCI: 37, Taken: 9, Not-Taken: 0, Percent Taken: 1.00
+
+static java/nio/charset/Charset.forName(Ljava/lang/String;)Ljava/nio/charset/Charset; 
+BCI: 6, Taken: 0, Not-Taken: 5, Percent Taken: 0.00
+
+static sun/misc/Signal.handle(Lsun/misc/Signal;Lsun/misc/SignalHandler;)Lsun/misc/SignalHandler; 
+BCI: 4, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 37, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 118, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+BCI: 134, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+
+static sun/misc/MetaIndex.registerDirectory(Ljava/io/File;)V 
+BCI: 15, Taken: 1, Not-Taken: 1, Percent Taken: 0.50
+BCI: 67, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 76, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 90, Taken: 1, Not-Taken: 17, Percent Taken: 0.06
+BCI: 142, Taken: 1, Not-Taken: 3, Percent Taken: 0.25
+BCI: 205, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 216, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 152, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+BCI: 242, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 252, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/lang/Runtime.loadLibrary0(Ljava/lang/Class;Ljava/lang/String;)V 
+BCI: 5, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 21, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/String.substring(II)Ljava/lang/String; 
+BCI: 1, Taken: 60, Not-Taken: 0, Percent Taken: 1.00
+BCI: 18, Taken: 60, Not-Taken: 0, Percent Taken: 1.00
+BCI: 32, Taken: 60, Not-Taken: 0, Percent Taken: 1.00
+BCI: 47, Taken: 32, Not-Taken: 28, Percent Taken: 0.53
+BCI: 55, Taken: 17, Not-Taken: 11, Percent Taken: 0.61
+
+static java/lang/Float.isNaN(F)Z 
+BCI: 3, Taken: 14, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/security/action/GetPropertyAction.run()Ljava/lang/String; 
+BCI: 9, Taken: 9, Not-Taken: 7, Percent Taken: 0.56
+
+static java/lang/ApplicationShutdownHooks.hook()Ljava/lang/ApplicationShutdownHooks; 
+BCI: 3, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/util/Vector.<init>(II)V 
+BCI: 5, Taken: 10, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/UnixFileSystem.prefixLength(Ljava/lang/String;)I 
+BCI: 4, Taken: 33, Not-Taken: 0, Percent Taken: 1.00
+BCI: 16, Taken: 1, Not-Taken: 32, Percent Taken: 0.03
+
+virtual java/io/BufferedWriter.min(II)I 
+BCI: 2, Taken: 324, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/BitSet.expandTo(I)V 
+BCI: 9, Taken: 49, Not-Taken: 2, Percent Taken: 0.96
+
+virtual java/nio/charset/CharsetDecoder.decode(Ljava/nio/ByteBuffer;Ljava/nio/CharBuffer;Z)Ljava/nio/charset/CoderResult; 
+BCI: 1, Taken: 3, Not-Taken: 57, Percent Taken: 0.05
+BCI: 15, Taken: 58, Not-Taken: 2, Percent Taken: 0.97
+BCI: 94, Taken: 60, Not-Taken: 0, Percent Taken: 1.00
+BCI: 105, Taken: 0, Not-Taken: 60, Percent Taken: 0.00
+BCI: 109, Taken: 3, Not-Taken: 57, Percent Taken: 0.05
+BCI: 116, Taken: 57, Not-Taken: 0, Percent Taken: 1.00
+BCI: 23, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/misc/Launcher$AppClassLoader.<clinit>()V 
+BCI: 6, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual sun/misc/Signal.<init>(Ljava/lang/String;)V 
+BCI: 21, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/System.checkKey(Ljava/lang/String;)V 
+BCI: 1, Taken: 56, Not-Taken: 0, Percent Taken: 1.00
+BCI: 20, Taken: 56, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/misc/URLClassPath.push([Ljava/net/URL;)V 
+BCI: 13, Taken: 2, Not-Taken: 5, Percent Taken: 0.29
+
+virtual java/lang/Compiler$1.run()Ljava/lang/Object; 
+BCI: 9, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 80, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/Class.searchFields([Ljava/lang/reflect/Field;Ljava/lang/String;)Ljava/lang/reflect/Field; 
+BCI: 12, Taken: 0, Not-Taken: 36, Percent Taken: 0.00
+BCI: 23, Taken: 27, Not-Taken: 9, Percent Taken: 0.75
+
+virtual sun/reflect/ReflectionFactory.newConstructorAccessor(Ljava/lang/reflect/Constructor;)Lsun/reflect/ConstructorAccessor; 
+BCI: 15, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 31, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 51, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 66, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/net/URL.<init>(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/net/URLStreamHandler;)V 
+BCI: 16, Taken: 5, Not-Taken: 4, Percent Taken: 0.56
+BCI: 46, Taken: 0, Not-Taken: 9, Percent Taken: 0.00
+BCI: 50, Taken: 0, Not-Taken: 9, Percent Taken: 0.00
+BCI: 59, Taken: 9, Not-Taken: 0, Percent Taken: 1.00
+BCI: 103, Taken: 9, Not-Taken: 0, Percent Taken: 1.00
+BCI: 141, Taken: 0, Not-Taken: 9, Percent Taken: 0.00
+BCI: 207, Taken: 9, Not-Taken: 0, Percent Taken: 1.00
+BCI: 265, Taken: 4, Not-Taken: 5, Percent Taken: 0.44
+BCI: 275, Taken: 5, Not-Taken: 0, Percent Taken: 1.00
+BCI: 26, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/HashSet.add(Ljava/lang/Object;)Z 
+BCI: 11, Taken: 4, Not-Taken: 1, Percent Taken: 0.80
+
+static sun/nio/cs/FastCharsetProvider.toLower(Ljava/lang/String;)Ljava/lang/String; 
+BCI: 11, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 32, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 47, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 62, Taken: 1, Not-Taken: 5, Percent Taken: 0.17
+BCI: 84, Taken: 2, Not-Taken: 3, Percent Taken: 0.40
+
+virtual sun/nio/cs/StreamDecoder.implClose()V 
+BCI: 4, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/net/www/ParseUtil.highMask(Ljava/lang/String;)J 
+BCI: 13, Taken: 8, Not-Taken: 51, Percent Taken: 0.14
+BCI: 28, Taken: 41, Not-Taken: 10, Percent Taken: 0.80
+BCI: 36, Taken: 0, Not-Taken: 10, Percent Taken: 0.00
+
+virtual java/io/FileInputStream.<init>(Ljava/io/FileDescriptor;)V 
+BCI: 14, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 26, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/BufferedWriter.<init>(Ljava/io/Writer;I)V 
+BCI: 6, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/String.valueOf(Ljava/lang/Object;)Ljava/lang/String; 
+BCI: 1, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/misc/URLClassPath$JarLoader.getClassPath()[Ljava/net/URL; 
+BCI: 4, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 13, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+
+virtual java/io/BufferedWriter.flushBuffer()V 
+BCI: 15, Taken: 324, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/ThreadGroup.<init>(Ljava/lang/ThreadGroup;Ljava/lang/String;)V 
+BCI: 10, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/FileInputStream.close()V 
+BCI: 4, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/net/www/ParseUtil.lowMask(Ljava/lang/String;)J 
+BCI: 13, Taken: 8, Not-Taken: 51, Percent Taken: 0.14
+BCI: 28, Taken: 10, Not-Taken: 41, Percent Taken: 0.20
+
+virtual java/net/URLStreamHandler.getHostAddress(Ljava/net/URL;)Ljava/net/InetAddress; 
+BCI: 4, Taken: 7, Not-Taken: 0, Percent Taken: 1.00
+BCI: 18, Taken: 0, Not-Taken: 7, Percent Taken: 0.00
+BCI: 27, Taken: 0, Not-Taken: 7, Percent Taken: 0.00
+
+virtual java/security/CodeSource.<init>(Ljava/net/URL;[Ljava/security/CodeSigner;)V 
+BCI: 25, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/reflect/Modifier.isVolatile(I)Z 
+BCI: 4, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+static sun/security/util/Debug.getInstance(Ljava/lang/String;Ljava/lang/String;)Lsun/security/util/Debug; 
+BCI: 4, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/Reader.<init>(Ljava/lang/Object;)V 
+BCI: 10, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/UnixFileSystem.normalize(Ljava/lang/String;II)Ljava/lang/String; 
+BCI: 1, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 11, Taken: 0, Not-Taken: 6, Percent Taken: 0.00
+BCI: 24, Taken: 3, Not-Taken: 3, Percent Taken: 0.50
+BCI: 35, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 55, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+BCI: 80, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/nio/charset/CoderResult.isOverflow()Z 
+BCI: 5, Taken: 418, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/ThreadGroup.remove(Ljava/lang/Thread;)V 
+BCI: 8, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 21, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+BCI: 31, Taken: 2, Not-Taken: 2, Percent Taken: 0.50
+BCI: 85, Taken: 1, Not-Taken: 1, Percent Taken: 0.50
+BCI: 96, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/Float.floatToIntBits(F)I 
+BCI: 11, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/Class.forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class; 
+BCI: 1, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 9, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/nio/cs/StreamEncoder.implWrite([CII)V 
+BCI: 12, Taken: 324, Not-Taken: 0, Percent Taken: 1.00
+BCI: 27, Taken: 0, Not-Taken: 324, Percent Taken: 0.00
+BCI: 51, Taken: 0, Not-Taken: 324, Percent Taken: 0.00
+BCI: 57, Taken: 324, Not-Taken: 0, Percent Taken: 1.00
+BCI: 88, Taken: 324, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/String.charAt(I)C 
+BCI: 1, Taken: 0, Not-Taken: 1557, Percent Taken: 0.00
+BCI: 9, Taken: 1557, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/CharacterDataLatin1.toLowerCase(I)I 
+BCI: 11, Taken: 32, Not-Taken: 4, Percent Taken: 0.89
+BCI: 20, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+
+virtual java/lang/String.lastIndexOf(II)I 
+BCI: 20, Taken: 46, Not-Taken: 0, Percent Taken: 1.00
+BCI: 39, Taken: 0, Not-Taken: 46, Percent Taken: 0.00
+BCI: 45, Taken: 15, Not-Taken: 926, Percent Taken: 0.02
+BCI: 54, Taken: 895, Not-Taken: 31, Percent Taken: 0.97
+
+virtual java/util/Random.nextInt(I)I 
+BCI: 1, Taken: 18, Not-Taken: 0, Percent Taken: 1.00
+BCI: 19, Taken: 18, Not-Taken: 0, Percent Taken: 1.00
+BCI: 55, Taken: 0, Not-Taken: 18, Percent Taken: 0.00
+
+virtual java/io/ExpiringCache.entryFor(Ljava/lang/String;)Ljava/io/ExpiringCache$Entry; 
+BCI: 15, Taken: 24, Not-Taken: 3, Percent Taken: 0.89
+BCI: 30, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+BCI: 39, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/BufferedReader.ensureOpen()V 
+BCI: 4, Taken: 19, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/misc/Launcher$ExtClassLoader.getExtDirs()[Ljava/io/File; 
+BCI: 7, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 38, Taken: 1, Not-Taken: 2, Percent Taken: 0.33
+
+static sun/net/www/ParseUtil.encodePath(Ljava/lang/String;Z)Ljava/lang/String; 
+BCI: 33, Taken: 7, Not-Taken: 308, Percent Taken: 0.02
+BCI: 44, Taken: 280, Not-Taken: 28, Percent Taken: 0.91
+BCI: 55, Taken: 28, Not-Taken: 280, Percent Taken: 0.09
+BCI: 63, Taken: 240, Not-Taken: 40, Percent Taken: 0.86
+BCI: 280, Taken: 308, Not-Taken: 0, Percent Taken: 1.00
+BCI: 81, Taken: 0, Not-Taken: 268, Percent Taken: 0.00
+BCI: 88, Taken: 62, Not-Taken: 206, Percent Taken: 0.23
+BCI: 95, Taken: 206, Not-Taken: 0, Percent Taken: 1.00
+BCI: 102, Taken: 42, Not-Taken: 20, Percent Taken: 0.68
+BCI: 109, Taken: 15, Not-Taken: 5, Percent Taken: 0.75
+BCI: 116, Taken: 14, Not-Taken: 33, Percent Taken: 0.30
+BCI: 123, Taken: 5, Not-Taken: 28, Percent Taken: 0.15
+BCI: 145, Taken: 19, Not-Taken: 0, Percent Taken: 1.00
+BCI: 51, Taken: 0, Not-Taken: 28, Percent Taken: 0.00
+
+virtual java/lang/Thread.setContextClassLoader(Ljava/lang/ClassLoader;)V 
+BCI: 5, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/Class.privateGetDeclaredFields(Z)[Ljava/lang/reflect/Field; 
+BCI: 8, Taken: 0, Not-Taken: 9, Percent Taken: 0.00
+BCI: 16, Taken: 9, Not-Taken: 0, Percent Taken: 1.00
+BCI: 47, Taken: 6, Not-Taken: 3, Percent Taken: 0.67
+BCI: 65, Taken: 6, Not-Taken: 3, Percent Taken: 0.67
+BCI: 83, Taken: 0, Not-Taken: 6, Percent Taken: 0.00
+BCI: 87, Taken: 6, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/Double.doubleToLongBits(D)J 
+BCI: 14, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/File.<init>(Ljava/lang/String;Ljava/lang/String;)V 
+BCI: 5, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 17, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 26, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+static java/io/UnixFileSystem.parentOrNull(Ljava/lang/String;)Ljava/lang/String; 
+BCI: 1, Taken: 12, Not-Taken: 0, Percent Taken: 1.00
+BCI: 26, Taken: 0, Not-Taken: 116, Percent Taken: 0.00
+BCI: 40, Taken: 108, Not-Taken: 8, Percent Taken: 0.93
+BCI: 57, Taken: 96, Not-Taken: 12, Percent Taken: 0.89
+BCI: 49, Taken: 8, Not-Taken: 0, Percent Taken: 1.00
+BCI: 63, Taken: 11, Not-Taken: 1, Percent Taken: 0.92
+BCI: 74, Taken: 0, Not-Taken: 11, Percent Taken: 0.00
+BCI: 81, Taken: 1, Not-Taken: 10, Percent Taken: 0.09
+BCI: 92, Taken: 10, Not-Taken: 0, Percent Taken: 1.00
+BCI: 68, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/nio/CharBuffer.array()[C 
+BCI: 4, Taken: 205, Not-Taken: 0, Percent Taken: 1.00
+BCI: 19, Taken: 205, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/BufferedInputStream.<init>(Ljava/io/InputStream;I)V 
+BCI: 11, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/UnixFileSystem.canonicalize(Ljava/lang/String;)Ljava/lang/String; 
+BCI: 3, Taken: 9, Not-Taken: 0, Percent Taken: 1.00
+BCI: 22, Taken: 0, Not-Taken: 9, Percent Taken: 0.00
+BCI: 33, Taken: 0, Not-Taken: 9, Percent Taken: 0.00
+BCI: 42, Taken: 2, Not-Taken: 7, Percent Taken: 0.22
+BCI: 57, Taken: 4, Not-Taken: 3, Percent Taken: 0.57
+BCI: 135, Taken: 3, Not-Taken: 6, Percent Taken: 0.33
+BCI: 156, Taken: 0, Not-Taken: 6, Percent Taken: 0.00
+BCI: 160, Taken: 2, Not-Taken: 4, Percent Taken: 0.33
+BCI: 171, Taken: 1, Not-Taken: 3, Percent Taken: 0.25
+BCI: 182, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+BCI: 191, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+BCI: 209, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+BCI: 217, Taken: 1, Not-Taken: 2, Percent Taken: 0.33
+BCI: 233, Taken: 9, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/AbstractList$Itr.checkForComodification()V 
+BCI: 11, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/nio/charset/CharsetEncoder.onUnmappableCharacter(Ljava/nio/charset/CodingErrorAction;)Ljava/nio/charset/CharsetEncoder; 
+BCI: 1, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/ArrayList.<init>(I)V 
+BCI: 5, Taken: 7, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/nio/cs/StreamDecoder.forInputStreamReader(Ljava/io/InputStream;Ljava/lang/Object;Ljava/lang/String;)Lsun/nio/cs/StreamDecoder; 
+BCI: 3, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 17, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+static sun/net/www/ParseUtil.fileToEncodedURL(Ljava/io/File;)Ljava/net/URL; 
+BCI: 16, Taken: 5, Not-Taken: 0, Percent Taken: 1.00
+BCI: 45, Taken: 0, Not-Taken: 5, Percent Taken: 0.00
+BCI: 52, Taken: 4, Not-Taken: 1, Percent Taken: 0.80
+
+virtual java/lang/String.regionMatches(ZILjava/lang/String;II)Z 
+BCI: 31, Taken: 0, Not-Taken: 5, Percent Taken: 0.00
+BCI: 35, Taken: 0, Not-Taken: 5, Percent Taken: 0.00
+BCI: 50, Taken: 2, Not-Taken: 3, Percent Taken: 0.40
+BCI: 66, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 76, Taken: 1, Not-Taken: 12, Percent Taken: 0.08
+BCI: 103, Taken: 2, Not-Taken: 10, Percent Taken: 0.17
+BCI: 110, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+BCI: 131, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 147, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/String.checkBounds([BII)V 
+BCI: 1, Taken: 54, Not-Taken: 0, Percent Taken: 1.00
+BCI: 14, Taken: 54, Not-Taken: 0, Percent Taken: 1.00
+BCI: 31, Taken: 54, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/Integer.toString(II)Ljava/lang/String; 
+BCI: 2, Taken: 0, Not-Taken: 18, Percent Taken: 0.00
+BCI: 8, Taken: 18, Not-Taken: 0, Percent Taken: 1.00
+BCI: 17, Taken: 0, Not-Taken: 18, Percent Taken: 0.00
+
+virtual sun/misc/Launcher$AppClassLoader$1.run()Ljava/lang/Object; 
+BCI: 4, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+static java/util/BitSet.<clinit>()V 
+BCI: 6, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/lang/String.trim()Ljava/lang/String; 
+BCI: 20, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 31, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 42, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 55, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 65, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 73, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/reflect/Reflection.verifyMemberAccess(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;I)Z 
+BCI: 8, Taken: 1, Not-Taken: 2, Percent Taken: 0.33
+BCI: 20, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 35, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 44, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/io/ObjectStreamField.<init>(Ljava/lang/String;Ljava/lang/Class;Z)V 
+BCI: 10, Taken: 13, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/UnixFileSystem.resolve(Ljava/io/File;)Ljava/lang/String; 
+BCI: 5, Taken: 1, Not-Taken: 13, Percent Taken: 0.07
+
+static sun/reflect/ReflectionFactory.getReflectionFactory()Lsun/reflect/ReflectionFactory; 
+BCI: 5, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/ThreadLocal$ThreadLocalMap.set(Ljava/lang/ThreadLocal;Ljava/lang/Object;)V 
+BCI: 28, Taken: 1, Not-Taken: 2, Percent Taken: 0.33
+BCI: 44, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+BCI: 119, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 128, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/System.setProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; 
+BCI: 9, Taken: 8, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/FileOutputStream.<init>(Ljava/io/FileDescriptor;)V 
+BCI: 19, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 31, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/Vector.indexOf(Ljava/lang/Object;I)I 
+BCI: 1, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 41, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/Console$1$1.run()V 
+BCI: 3, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/Hashtable.put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; 
+BCI: 1, Taken: 64, Not-Taken: 0, Percent Taken: 1.00
+BCI: 41, Taken: 58, Not-Taken: 31, Percent Taken: 0.65
+BCI: 110, Taken: 55, Not-Taken: 3, Percent Taken: 0.95
+BCI: 51, Taken: 25, Not-Taken: 6, Percent Taken: 0.81
+BCI: 63, Taken: 0, Not-Taken: 6, Percent Taken: 0.00
+
+virtual java/lang/String.equals(Ljava/lang/Object;)Z 
+BCI: 2, Taken: 169, Not-Taken: 113, Percent Taken: 0.60
+BCI: 11, Taken: 0, Not-Taken: 169, Percent Taken: 0.00
+BCI: 29, Taken: 112, Not-Taken: 57, Percent Taken: 0.66
+BCI: 60, Taken: 57, Not-Taken: 932, Percent Taken: 0.06
+BCI: 79, Taken: 932, Not-Taken: 0, Percent Taken: 1.00
+
+static java/io/Console.<clinit>()V 
+BCI: 6, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/io/Writer.<init>(Ljava/lang/Object;)V 
+BCI: 12, Taken: 6, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/LinkedHashMap.get(Ljava/lang/Object;)Ljava/lang/Object; 
+BCI: 10, Taken: 3, Not-Taken: 24, Percent Taken: 0.11
+
+virtual java/nio/ByteBuffer.array()[B 
+BCI: 4, Taken: 531, Not-Taken: 0, Percent Taken: 1.00
+BCI: 19, Taken: 531, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/LinkedHashMap.addEntry(ILjava/lang/Object;Ljava/lang/Object;I)V 
+BCI: 24, Taken: 11, Not-Taken: 0, Percent Taken: 1.00
+BCI: 48, Taken: 11, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/Integer.toString(I)Ljava/lang/String; 
+BCI: 3, Taken: 18, Not-Taken: 0, Percent Taken: 1.00
+BCI: 10, Taken: 18, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/net/URLStreamHandler.equals(Ljava/net/URL;Ljava/net/URL;)Z 
+BCI: 14, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 36, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual sun/misc/Resource.getByteBuffer()Ljava/nio/ByteBuffer; 
+BCI: 9, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/net/www/MessageHeader.grow()V 
+BCI: 4, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 43, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 64, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/ClassLoader.preDefineClass(Ljava/lang/String;Ljava/security/ProtectionDomain;)Ljava/security/ProtectionDomain; 
+BCI: 5, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 36, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+BCI: 45, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 86, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 95, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+
+virtual java/nio/charset/CharsetEncoder.isLegalReplacement([B)Z 
+BCI: 8, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 106, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+
+static java/lang/Class.checkInitted()V 
+BCI: 3, Taken: 4, Not-Taken: 8, Percent Taken: 0.33
+
+virtual java/util/Properties.getProperty(Ljava/lang/String;)Ljava/lang/String; 
+BCI: 10, Taken: 16, Not-Taken: 32, Percent Taken: 0.33
+BCI: 23, Taken: 32, Not-Taken: 16, Percent Taken: 0.67
+BCI: 30, Taken: 16, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/reflect/ReflectionFactory.checkInitted()V 
+BCI: 3, Taken: 2, Not-Taken: 1, Percent Taken: 0.67
+
+virtual java/io/File.list()[Ljava/lang/String; 
+BCI: 5, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/Thread.exit()V 
+BCI: 4, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+
+static java/nio/charset/Charset.lookup2(Ljava/lang/String;)Ljava/nio/charset/Charset; 
+BCI: 5, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 44, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/Stack.empty()Z 
+BCI: 4, Taken: 5, Not-Taken: 2, Percent Taken: 0.71
+
+virtual java/util/ArrayList.clear()V 
+BCI: 17, Taken: 3, Not-Taken: 7, Percent Taken: 0.30
+
+virtual java/lang/ClassLoader.checkCerts(Ljava/lang/String;Ljava/security/CodeSource;)V 
+BCI: 9, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+BCI: 44, Taken: 1, Not-Taken: 1, Percent Taken: 0.50
+BCI: 48, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 59, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 66, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 102, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 119, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/nio/cs/Surrogate$Generator.<clinit>()V 
+BCI: 6, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/io/PrintStream.write(Ljava/lang/String;)V 
+BCI: 34, Taken: 0, Not-Taken: 162, Percent Taken: 0.00
+BCI: 43, Taken: 162, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/ref/ReferenceQueue.reallyPoll()Ljava/lang/ref/Reference; 
+BCI: 4, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/misc/URLClassPath.<init>([Ljava/net/URL;Ljava/net/URLStreamHandlerFactory;)V 
+BCI: 53, Taken: 2, Not-Taken: 5, Percent Taken: 0.29
+BCI: 79, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+
+virtual sun/nio/cs/StreamDecoder.inReady()Z 
+BCI: 4, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 14, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 24, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/BitSet.set(I)V 
+BCI: 1, Taken: 51, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/security/AccessControlContext.optimize()Ljava/security/AccessControlContext; 
+BCI: 4, Taken: 7, Not-Taken: 0, Percent Taken: 1.00
+BCI: 23, Taken: 0, Not-Taken: 7, Percent Taken: 0.00
+BCI: 33, Taken: 2, Not-Taken: 5, Percent Taken: 0.29
+BCI: 50, Taken: 2, Not-Taken: 5, Percent Taken: 0.29
+BCI: 71, Taken: 0, Not-Taken: 7, Percent Taken: 0.00
+BCI: 75, Taken: 0, Not-Taken: 7, Percent Taken: 0.00
+BCI: 40, Taken: 0, Not-Taken: 5, Percent Taken: 0.00
+BCI: 57, Taken: 5, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/Character.charCount(I)I 
+BCI: 3, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/misc/URLClassPath$JarLoader.getResource(Ljava/lang/String;Z)Lsun/misc/Resource; 
+BCI: 4, Taken: 0, Not-Taken: 8, Percent Taken: 0.00
+BCI: 15, Taken: 0, Not-Taken: 8, Percent Taken: 0.00
+
+static java/lang/ClassLoader.findNative(Ljava/lang/ClassLoader;Ljava/lang/String;)J 
+BCI: 1, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 32, Taken: 3, Not-Taken: 2, Percent Taken: 0.60
+BCI: 58, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/HashMap.getEntry(Ljava/lang/Object;)Ljava/util/HashMap$Entry; 
+BCI: 1, Taken: 32, Not-Taken: 0, Percent Taken: 1.00
+BCI: 32, Taken: 29, Not-Taken: 8, Percent Taken: 0.78
+BCI: 40, Taken: 5, Not-Taken: 3, Percent Taken: 0.62
+BCI: 51, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+BCI: 55, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+BCI: 64, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+
+virtual java/security/Permissions.add(Ljava/security/Permission;)V 
+BCI: 4, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 49, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 61, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+static java/nio/charset/Charset.atBugLevel(Ljava/lang/String;)Z 
+BCI: 3, Taken: 0, Not-Taken: 11, Percent Taken: 0.00
+BCI: 9, Taken: 1, Not-Taken: 10, Percent Taken: 0.09
+BCI: 37, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 48, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 58, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/nio/charset/CharsetEncoder.replaceWith([B)Ljava/nio/charset/CharsetEncoder; 
+BCI: 1, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 18, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 38, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 56, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/security/BasicPermission.init(Ljava/lang/String;)V 
+BCI: 1, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 20, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 44, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 104, Taken: 3, Not-Taken: 1, Percent Taken: 0.75
+
+virtual java/io/ExpiringCache.put(Ljava/lang/String;Ljava/lang/String;)V 
+BCI: 15, Taken: 11, Not-Taken: 0, Percent Taken: 1.00
+BCI: 29, Taken: 11, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/Integer.stringSize(I)I 
+BCI: 8, Taken: 72, Not-Taken: 18, Percent Taken: 0.80
+
+virtual java/util/HashMap.<init>(IF)V 
+BCI: 10, Taken: 7, Not-Taken: 0, Percent Taken: 1.00
+BCI: 43, Taken: 7, Not-Taken: 0, Percent Taken: 1.00
+BCI: 52, Taken: 0, Not-Taken: 7, Percent Taken: 0.00
+BCI: 59, Taken: 7, Not-Taken: 0, Percent Taken: 1.00
+BCI: 93, Taken: 7, Not-Taken: 28, Percent Taken: 0.20
+
+virtual sun/reflect/NativeConstructorAccessorImpl.newInstance([Ljava/lang/Object;)Ljava/lang/Object; 
+BCI: 14, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/Class$3.run()Ljava/lang/Object; 
+BCI: 3, Taken: 1, Not-Taken: 3, Percent Taken: 0.25
+BCI: 15, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/util/PreHashedMap.get(Ljava/lang/Object;)Ljava/lang/Object; 
+BCI: 29, Taken: 2, Not-Taken: 2, Percent Taken: 0.50
+BCI: 41, Taken: 2, Not-Taken: 2, Percent Taken: 0.50
+BCI: 55, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/ThreadGroup.add(Ljava/lang/ThreadGroup;)V 
+BCI: 8, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 23, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/util/AbstractCollection.toArray()[Ljava/lang/Object; 
+BCI: 18, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 57, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/Character.toLowerCase(I)I 
+BCI: 5, Taken: 0, Not-Taken: 36, Percent Taken: 0.00
+BCI: 12, Taken: 0, Not-Taken: 36, Percent Taken: 0.00
+
+virtual java/util/StringTokenizer.hasMoreTokens()Z 
+BCI: 20, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual sun/misc/Launcher.<init>()V 
+BCI: 61, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/IdentityHashMap$IdentityHashMapIterator.hasNext()Z 
+BCI: 13, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+static java/nio/Bits.byteOrder()Ljava/nio/ByteOrder; 
+BCI: 3, Taken: 1, Not-Taken: 93, Percent Taken: 0.01
+BCI: 92, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/Vector.contains(Ljava/lang/Object;)Z 
+BCI: 6, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/misc/URLClassPath$3.run()Ljava/lang/Object; 
+BCI: 9, Taken: 0, Not-Taken: 5, Percent Taken: 0.00
+BCI: 18, Taken: 4, Not-Taken: 1, Percent Taken: 0.80
+BCI: 33, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/util/Hashtable.<init>(IF)V 
+BCI: 25, Taken: 7, Not-Taken: 0, Percent Taken: 1.00
+BCI: 58, Taken: 0, Not-Taken: 7, Percent Taken: 0.00
+BCI: 65, Taken: 7, Not-Taken: 0, Percent Taken: 1.00
+BCI: 96, Taken: 7, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/System.nullInputStream()Ljava/io/InputStream; 
+BCI: 5, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/lang/ThreadGroup.add(Ljava/lang/Thread;)V 
+BCI: 8, Taken: 5, Not-Taken: 0, Percent Taken: 1.00
+BCI: 23, Taken: 3, Not-Taken: 2, Percent Taken: 0.60
+BCI: 46, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+static java/util/Collections.reverse(Ljava/util/List;)V 
+BCI: 10, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 33, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/nio/charset/CharsetEncoder.encode(Ljava/nio/CharBuffer;Ljava/nio/ByteBuffer;Z)Ljava/nio/charset/CoderResult; 
+BCI: 1, Taken: 324, Not-Taken: 34, Percent Taken: 0.91
+BCI: 15, Taken: 35, Not-Taken: 323, Percent Taken: 0.10
+BCI: 94, Taken: 358, Not-Taken: 0, Percent Taken: 1.00
+BCI: 105, Taken: 0, Not-Taken: 358, Percent Taken: 0.00
+BCI: 109, Taken: 324, Not-Taken: 34, Percent Taken: 0.91
+BCI: 116, Taken: 34, Not-Taken: 0, Percent Taken: 1.00
+BCI: 23, Taken: 323, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/Class.getConstructor0([Ljava/lang/Class;I)Ljava/lang/reflect/Constructor; 
+BCI: 2, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 21, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+BCI: 35, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+
+virtual java/lang/ThreadLocal.setInitialValue()Ljava/lang/Object; 
+BCI: 16, Taken: 1, Not-Taken: 1, Percent Taken: 0.50
+
+static java/lang/System.getProperty(Ljava/lang/String;)Ljava/lang/String; 
+BCI: 9, Taken: 46, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/ClassLoader.check()V 
+BCI: 4, Taken: 23, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/nio/cs/StreamDecoder.implRead([CII)I 
+BCI: 3, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 36, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 71, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+BCI: 76, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 87, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 98, Taken: 2, Not-Taken: 1, Percent Taken: 0.67
+BCI: 119, Taken: 1, Not-Taken: 1, Percent Taken: 0.50
+BCI: 105, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 197, Taken: 1, Not-Taken: 1, Percent Taken: 0.50
+BCI: 213, Taken: 1, Not-Taken: 1, Percent Taken: 0.50
+BCI: 130, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 140, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 218, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+static java/lang/Shutdown.add(Ljava/lang/Runnable;)V 
+BCI: 9, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/File.equals(Ljava/lang/Object;)Z 
+BCI: 1, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+BCI: 8, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+BCI: 19, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+
+virtual java/util/ArrayList.RangeCheck(I)V 
+BCI: 5, Taken: 13, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/StringCoding.safeTrim([BILjava/nio/charset/Charset;)[B 
+BCI: 3, Taken: 34, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/BufferedReader.<init>(Ljava/io/Reader;I)V 
+BCI: 26, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/misc/Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; 
+BCI: 9, Taken: 2, Not-Taken: 5, Percent Taken: 0.29
+BCI: 19, Taken: 5, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/net/URL.hashCode()I 
+BCI: 5, Taken: 5, Not-Taken: 8, Percent Taken: 0.38
+
+static java/lang/Character.toUpperCase(I)I 
+BCI: 5, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+BCI: 12, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+
+virtual sun/net/www/protocol/file/Handler.hostsEqual(Ljava/net/URL;Ljava/net/URL;)Z 
+BCI: 17, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 44, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/BufferedReader.readLine(Z)Ljava/lang/String; 
+BCI: 15, Taken: 0, Not-Taken: 19, Percent Taken: 0.00
+BCI: 22, Taken: 19, Not-Taken: 0, Percent Taken: 1.00
+BCI: 40, Taken: 17, Not-Taken: 2, Percent Taken: 0.89
+BCI: 55, Taken: 18, Not-Taken: 1, Percent Taken: 0.95
+BCI: 90, Taken: 18, Not-Taken: 0, Percent Taken: 1.00
+BCI: 137, Taken: 0, Not-Taken: 429, Percent Taken: 0.00
+BCI: 153, Taken: 18, Not-Taken: 411, Percent Taken: 0.04
+BCI: 160, Taken: 411, Not-Taken: 0, Percent Taken: 1.00
+BCI: 188, Taken: 0, Not-Taken: 18, Percent Taken: 0.00
+BCI: 192, Taken: 0, Not-Taken: 18, Percent Taken: 0.00
+BCI: 250, Taken: 18, Not-Taken: 0, Percent Taken: 1.00
+BCI: 59, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/Shutdown.sequence()V 
+BCI: 10, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 54, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/HashMap.keySet()Ljava/util/Set; 
+BCI: 6, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/StringCoding$StringEncoder.encode([CII)[B 
+BCI: 20, Taken: 34, Not-Taken: 0, Percent Taken: 1.00
+BCI: 68, Taken: 34, Not-Taken: 0, Percent Taken: 1.00
+BCI: 92, Taken: 34, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/misc/Launcher.getClassPath(Ljava/lang/String;)[Ljava/io/File; 
+BCI: 1, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 27, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 66, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 131, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 173, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/security/SecureClassLoader.check()V 
+BCI: 4, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/Class.getClassLoader()Ljava/lang/ClassLoader; 
+BCI: 6, Taken: 0, Not-Taken: 31, Percent Taken: 0.00
+
+virtual sun/nio/cs/StreamEncoder.<init>(Ljava/io/OutputStream;Ljava/lang/Object;Ljava/nio/charset/CharsetEncoder;)V 
+BCI: 47, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+
+static sun/reflect/Reflection.isSameClassPackage(Ljava/lang/ClassLoader;Ljava/lang/String;Ljava/lang/ClassLoader;Ljava/lang/String;)Z 
+BCI: 2, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 26, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 32, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 62, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 125, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 198, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/ClassLoader.<init>(Ljava/lang/ClassLoader;)V 
+BCI: 91, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/net/URLStreamHandler.parseURL(Ljava/net/URL;Ljava/lang/String;II)V 
+BCI: 57, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+BCI: 71, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 84, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 133, Taken: 2, Not-Taken: 2, Percent Taken: 0.50
+BCI: 191, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+BCI: 199, Taken: 2, Not-Taken: 2, Percent Taken: 0.50
+BCI: 645, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 655, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+BCI: 665, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 682, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+BCI: 690, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+BCI: 712, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 868, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 877, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+BCI: 890, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 946, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 1040, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 1091, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 1118, Taken: 2, Not-Taken: 2, Percent Taken: 0.50
+BCI: 143, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 209, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+static BigExample.fib(I)I 
+BCI: 2, Taken: 109109, Not-Taken: 109034, Percent Taken: 0.50
+
+static java/lang/StringCoding.encode(Ljava/lang/String;[CII)[B 
+BCI: 12, Taken: 34, Not-Taken: 0, Percent Taken: 1.00
+BCI: 25, Taken: 1, Not-Taken: 33, Percent Taken: 0.03
+BCI: 66, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 90, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 38, Taken: 33, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/security/ProtectionDomain.<init>(Ljava/security/CodeSource;Ljava/security/PermissionCollection;Ljava/lang/ClassLoader;[Ljava/security/Principal;)V 
+BCI: 15, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 34, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 44, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 60, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/reflect/Reflection.ensureMemberAccess(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;I)V 
+BCI: 1, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+BCI: 5, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 23, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/nio/cs/StreamDecoder.readBytes()I 
+BCI: 12, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 62, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 80, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+BCI: 94, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 137, Taken: 1, Not-Taken: 1, Percent Taken: 0.50
+BCI: 152, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 168, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 226, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 263, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 144, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/nio/cs/FastCharsetProvider.canonicalize(Ljava/lang/String;)Ljava/lang/String; 
+BCI: 15, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/misc/VM.allowArraySyntax()Z 
+BCI: 3, Taken: 23, Not-Taken: 1, Percent Taken: 0.96
+BCI: 13, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/nio/Buffer.hasRemaining()Z 
+BCI: 8, Taken: 92, Not-Taken: 327, Percent Taken: 0.22
+
+static sun/nio/cs/StreamEncoder.<clinit>()V 
+BCI: 6, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+static sun/misc/URLClassPath.<clinit>()V 
+BCI: 30, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/HashMap.addEntry(ILjava/lang/Object;Ljava/lang/Object;I)V 
+BCI: 43, Taken: 14, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/net/URLStreamHandler.toExternalForm(Ljava/net/URL;)Ljava/lang/String; 
+BCI: 14, Taken: 0, Not-Taken: 6, Percent Taken: 0.00
+BCI: 24, Taken: 6, Not-Taken: 0, Percent Taken: 1.00
+BCI: 43, Taken: 0, Not-Taken: 6, Percent Taken: 0.00
+BCI: 60, Taken: 6, Not-Taken: 0, Percent Taken: 1.00
+BCI: 79, Taken: 6, Not-Taken: 0, Percent Taken: 1.00
+BCI: 123, Taken: 0, Not-Taken: 6, Percent Taken: 0.00
+BCI: 133, Taken: 6, Not-Taken: 0, Percent Taken: 1.00
+BCI: 156, Taken: 0, Not-Taken: 6, Percent Taken: 0.00
+BCI: 172, Taken: 6, Not-Taken: 0, Percent Taken: 1.00
+BCI: 195, Taken: 6, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/StringTokenizer.scanToken(I)I 
+BCI: 7, Taken: 3, Not-Taken: 170, Percent Taken: 0.02
+BCI: 14, Taken: 0, Not-Taken: 170, Percent Taken: 0.00
+BCI: 31, Taken: 108, Not-Taken: 62, Percent Taken: 0.64
+BCI: 42, Taken: 60, Not-Taken: 2, Percent Taken: 0.97
+BCI: 96, Taken: 5, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/net/URLClassLoader.<init>([Ljava/net/URL;Ljava/lang/ClassLoader;Ljava/net/URLStreamHandlerFactory;)V 
+BCI: 12, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/ClassLoader.getCallerClassLoader()Ljava/lang/ClassLoader; 
+BCI: 6, Taken: 12, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/ref/ReferenceQueue.remove(J)Ljava/lang/ref/Reference; 
+BCI: 3, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 31, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/Math.min(II)I 
+BCI: 2, Taken: 128, Not-Taken: 105, Percent Taken: 0.55
+
+virtual java/util/Hashtable.rehash()V 
+BCI: 59, Taken: 3, Not-Taken: 81, Percent Taken: 0.04
+BCI: 70, Taken: 81, Not-Taken: 60, Percent Taken: 0.57
+
+virtual java/io/BufferedReader.close()V 
+BCI: 11, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/StringTokenizer.countTokens()I 
+BCI: 12, Taken: 1, Not-Taken: 2, Percent Taken: 0.33
+BCI: 26, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+static java/nio/charset/CharsetEncoder.<clinit>()V 
+BCI: 6, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/net/Parts.<init>(Ljava/lang/String;)V 
+BCI: 13, Taken: 0, Not-Taken: 9, Percent Taken: 0.00
+BCI: 31, Taken: 0, Not-Taken: 9, Percent Taken: 0.00
+BCI: 54, Taken: 9, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/ref/SoftReference.get()Ljava/lang/Object; 
+BCI: 6, Taken: 0, Not-Taken: 89, Percent Taken: 0.00
+
+static java/lang/Character.<clinit>()V 
+BCI: 6, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+static java/lang/ref/Reference.<clinit>()V 
+BCI: 25, Taken: 1, Not-Taken: 2, Percent Taken: 0.33
+
+virtual java/io/ExpiringCache$1.removeEldestEntry(Ljava/util/Map$Entry;)Z 
+BCI: 11, Taken: 11, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/reflect/AccessibleObject.setAccessible(Z)V 
+BCI: 5, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/nio/cs/StreamDecoder.<clinit>()V 
+BCI: 6, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/util/ArrayList.toArray([Ljava/lang/Object;)[Ljava/lang/Object; 
+BCI: 6, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+
+virtual java/security/SecureClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/CodeSource;)Ljava/lang/Class; 
+BCI: 2, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/security/CodeSource.hashCode()I 
+BCI: 4, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+
+virtual java/util/BitSet.checkInvariants()V 
+BCI: 3, Taken: 70, Not-Taken: 0, Percent Taken: 1.00
+BCI: 40, Taken: 70, Not-Taken: 0, Percent Taken: 1.00
+BCI: 73, Taken: 70, Not-Taken: 0, Percent Taken: 1.00
+
+static java/util/Locale.getDefault()Ljava/util/Locale; 
+BCI: 3, Taken: 13, Not-Taken: 1, Percent Taken: 0.93
+BCI: 41, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/BufferedWriter.ensureOpen()V 
+BCI: 4, Taken: 648, Not-Taken: 0, Percent Taken: 1.00
+
+static java/nio/charset/Charset.defaultCharset()Ljava/nio/charset/Charset; 
+BCI: 3, Taken: 2, Not-Taken: 1, Percent Taken: 0.67
+BCI: 36, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+static java/lang/System.getProperties()Ljava/util/Properties; 
+BCI: 5, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/concurrent/atomic/AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl.<init>(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)V 
+BCI: 74, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 90, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 109, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 115, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 136, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/nio/cs/StreamEncoder.forOutputStreamWriter(Ljava/io/OutputStream;Ljava/lang/Object;Ljava/lang/String;)Lsun/nio/cs/StreamEncoder; 
+BCI: 3, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+BCI: 17, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+
+virtual java/nio/charset/CoderResult.isError()Z 
+BCI: 5, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/BufferedOutputStream.<init>(Ljava/io/OutputStream;I)V 
+BCI: 6, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/Shutdown.runHooks()V 
+BCI: 13, Taken: 1, Not-Taken: 3, Percent Taken: 0.25
+
+virtual java/lang/Thread.init(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V 
+BCI: 11, Taken: 7, Not-Taken: 0, Percent Taken: 1.00
+BCI: 41, Taken: 7, Not-Taken: 0, Percent Taken: 1.00
+BCI: 99, Taken: 7, Not-Taken: 0, Percent Taken: 1.00
+BCI: 159, Taken: 7, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/concurrent/locks/ReentrantLock$Sync.tryRelease(I)Z 
+BCI: 14, Taken: 19, Not-Taken: 0, Percent Taken: 1.00
+BCI: 28, Taken: 0, Not-Taken: 19, Percent Taken: 0.00
+
+virtual java/net/URL.<init>(Ljava/net/URL;Ljava/lang/String;Ljava/net/URLStreamHandler;)V 
+BCI: 30, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 57, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+BCI: 70, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 83, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+BCI: 94, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 114, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 126, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+BCI: 137, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 149, Taken: 0, Not-Taken: 34, Percent Taken: 0.00
+BCI: 156, Taken: 4, Not-Taken: 30, Percent Taken: 0.12
+BCI: 170, Taken: 0, Not-Taken: 30, Percent Taken: 0.00
+BCI: 177, Taken: 30, Not-Taken: 0, Percent Taken: 1.00
+BCI: 228, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+BCI: 233, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 249, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+BCI: 261, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+BCI: 273, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+BCI: 281, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+BCI: 347, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 379, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 441, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+BCI: 464, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+BCI: 471, Taken: 4, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/File.exists()Z 
+BCI: 5, Taken: 12, Not-Taken: 0, Percent Taken: 1.00
+BCI: 25, Taken: 1, Not-Taken: 11, Percent Taken: 0.08
+
+virtual java/lang/String.compareTo(Ljava/lang/String;)I 
+BCI: 45, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+BCI: 63, Taken: 4, Not-Taken: 251, Percent Taken: 0.02
+BCI: 84, Taken: 251, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/misc/MetaIndex.mayContain(Ljava/lang/String;)Z 
+BCI: 4, Taken: 8, Not-Taken: 0, Percent Taken: 1.00
+BCI: 28, Taken: 8, Not-Taken: 20, Percent Taken: 0.29
+BCI: 38, Taken: 20, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/reflect/ReflectionFactory$1.run()Ljava/lang/Object; 
+BCI: 3, Taken: 1, Not-Taken: 1, Percent Taken: 0.50
+BCI: 15, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 39, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/nio/charset/CharsetDecoder.flush(Ljava/nio/CharBuffer;)Ljava/nio/charset/CoderResult; 
+BCI: 5, Taken: 0, Not-Taken: 54, Percent Taken: 0.00
+BCI: 18, Taken: 0, Not-Taken: 54, Percent Taken: 0.00
+
+virtual java/lang/ThreadLocal$ThreadLocalMap.getEntryAfterMiss(Ljava/lang/ThreadLocal;ILjava/lang/ThreadLocal$ThreadLocalMap$Entry;)Ljava/lang/ThreadLocal$ThreadLocalMap$Entry; 
+BCI: 12, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/nio/cs/UTF_8$Decoder.decodeArrayLoop(Ljava/nio/ByteBuffer;Ljava/nio/CharBuffer;)Ljava/nio/charset/CoderResult; 
+BCI: 30, Taken: 60, Not-Taken: 0, Percent Taken: 1.00
+BCI: 52, Taken: 0, Not-Taken: 60, Percent Taken: 0.00
+BCI: 95, Taken: 60, Not-Taken: 0, Percent Taken: 1.00
+BCI: 117, Taken: 0, Not-Taken: 60, Percent Taken: 0.00
+BCI: 133, Taken: 60, Not-Taken: 2060, Percent Taken: 0.03
+BCI: 234, Taken: 2060, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/net/www/protocol/file/FileURLConnection.getPermission()Ljava/security/Permission; 
+BCI: 4, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 23, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual sun/nio/cs/StreamEncoder.implFlushBuffer()V 
+BCI: 7, Taken: 0, Not-Taken: 324, Percent Taken: 0.00
+
+virtual java/net/URLStreamHandler.sameFile(Ljava/net/URL;Ljava/net/URL;)Z 
+BCI: 8, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 42, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 73, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 96, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 118, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 129, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/SystemClassLoaderAction.run()Ljava/lang/Object; 
+BCI: 34, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual sun/net/www/protocol/file/Handler.openConnection(Ljava/net/URL;Ljava/net/Proxy;)Ljava/net/URLConnection; 
+BCI: 6, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 15, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/nio/cs/StreamEncoder.flushBuffer()V 
+BCI: 11, Taken: 0, Not-Taken: 324, Percent Taken: 0.00
+
+virtual java/util/Vector.removeElementAt(I)V 
+BCI: 15, Taken: 6, Not-Taken: 0, Percent Taken: 1.00
+BCI: 53, Taken: 6, Not-Taken: 0, Percent Taken: 1.00
+BCI: 75, Taken: 6, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/security/util/Debug.isOn(Ljava/lang/String;)Z 
+BCI: 3, Taken: 0, Not-Taken: 4, Percent Taken: 0.00
+
+virtual java/lang/ClassLoader.checkName(Ljava/lang/String;)Z 
+BCI: 1, Taken: 0, Not-Taken: 23, Percent Taken: 0.00
+BCI: 8, Taken: 23, Not-Taken: 0, Percent Taken: 1.00
+BCI: 20, Taken: 0, Not-Taken: 23, Percent Taken: 0.00
+BCI: 26, Taken: 0, Not-Taken: 23, Percent Taken: 0.00
+BCI: 36, Taken: 23, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/DeleteOnExitHook.run()V 
+BCI: 48, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/concurrent/ConcurrentHashMap.put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; 
+BCI: 1, Taken: 19, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/File.<init>(Ljava/lang/String;)V 
+BCI: 5, Taken: 14, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/StringCoding.deref(Ljava/lang/ThreadLocal;)Ljava/lang/Object; 
+BCI: 9, Taken: 86, Not-Taken: 2, Percent Taken: 0.98
+
+virtual sun/misc/Launcher$ExtClassLoader$1.run()Ljava/lang/Object; 
+BCI: 10, Taken: 1, Not-Taken: 2, Percent Taken: 0.33
+
+virtual java/util/concurrent/locks/AbstractQueuedSynchronizer.release(I)Z 
+BCI: 5, Taken: 0, Not-Taken: 19, Percent Taken: 0.00
+BCI: 14, Taken: 19, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/String.toLowerCase(Ljava/util/Locale;)Ljava/lang/String; 
+BCI: 1, Taken: 14, Not-Taken: 0, Percent Taken: 1.00
+BCI: 19, Taken: 14, Not-Taken: 32, Percent Taken: 0.30
+BCI: 37, Taken: 32, Not-Taken: 0, Percent Taken: 1.00
+BCI: 82, Taken: 32, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/misc/Launcher$AppClassLoader.getAppClassLoader(Ljava/lang/ClassLoader;)Ljava/lang/ClassLoader; 
+BCI: 7, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/misc/MetaIndex.getJarMap()Ljava/util/Map; 
+BCI: 3, Taken: 4, Not-Taken: 1, Percent Taken: 0.80
+BCI: 15, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 41, Taken: 5, Not-Taken: 0, Percent Taken: 1.00
+
+virtual sun/misc/Resource.cachedInputStream()Ljava/io/InputStream; 
+BCI: 4, Taken: 2, Not-Taken: 2, Percent Taken: 0.50
+
+virtual java/lang/String.replace(CC)Ljava/lang/String; 
+BCI: 2, Taken: 7, Not-Taken: 9, Percent Taken: 0.44
+BCI: 31, Taken: 4, Not-Taken: 57, Percent Taken: 0.07
+BCI: 43, Taken: 52, Not-Taken: 5, Percent Taken: 0.91
+BCI: 52, Taken: 4, Not-Taken: 5, Percent Taken: 0.44
+BCI: 67, Taken: 5, Not-Taken: 20, Percent Taken: 0.20
+BCI: 92, Taken: 5, Not-Taken: 83, Percent Taken: 0.06
+BCI: 112, Taken: 73, Not-Taken: 10, Percent Taken: 0.88
+
+virtual java/util/concurrent/atomic/AtomicInteger.getAndAdd(I)I 
+BCI: 15, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+
+virtual sun/nio/cs/StreamEncoder.writeBytes()V 
+BCI: 27, Taken: 324, Not-Taken: 0, Percent Taken: 1.00
+BCI: 45, Taken: 0, Not-Taken: 324, Percent Taken: 0.00
+BCI: 57, Taken: 0, Not-Taken: 324, Percent Taken: 0.00
+BCI: 64, Taken: 324, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/reflect/Modifier.isProtected(I)Z 
+BCI: 3, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+
+virtual java/lang/ClassLoader.findBootstrapClass0(Ljava/lang/String;)Ljava/lang/Class; 
+BCI: 9, Taken: 7, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/Throwable.<init>(Ljava/lang/Throwable;)V 
+BCI: 16, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+
+virtual java/lang/ref/Reference$ReferenceHandler.run()V 
+BCI: 9, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/Class.checkMemberAccess(ILjava/lang/ClassLoader;)V 
+BCI: 5, Taken: 9, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/nio/CharBuffer.arrayOffset()I 
+BCI: 4, Taken: 615, Not-Taken: 0, Percent Taken: 1.00
+BCI: 19, Taken: 615, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/CharacterDataLatin1.toUpperCase(I)I 
+BCI: 11, Taken: 2, Not-Taken: 2, Percent Taken: 0.50
+BCI: 20, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+
+virtual sun/nio/cs/StreamEncoder.write([CII)V 
+BCI: 13, Taken: 0, Not-Taken: 324, Percent Taken: 0.00
+BCI: 19, Taken: 0, Not-Taken: 324, Percent Taken: 0.00
+BCI: 23, Taken: 0, Not-Taken: 324, Percent Taken: 0.00
+BCI: 31, Taken: 0, Not-Taken: 324, Percent Taken: 0.00
+BCI: 37, Taken: 324, Not-Taken: 0, Percent Taken: 1.00
+BCI: 49, Taken: 324, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/FilePermissionCollection.add(Ljava/security/Permission;)V 
+BCI: 4, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 38, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/Class.getName()Ljava/lang/String; 
+BCI: 4, Taken: 1, Not-Taken: 7, Percent Taken: 0.12
+
+virtual java/nio/charset/CharsetDecoder.replaceWith(Ljava/lang/String;)Ljava/nio/charset/CharsetDecoder; 
+BCI: 1, Taken: 5, Not-Taken: 0, Percent Taken: 1.00
+BCI: 20, Taken: 5, Not-Taken: 0, Percent Taken: 1.00
+BCI: 40, Taken: 5, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/ClassLoader.loadLibrary0(Ljava/lang/Class;Ljava/io/File;)Z 
+BCI: 19, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 37, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 52, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 88, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 140, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 190, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 332, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+static sun/net/www/ParseUtil.highMask(CC)J 
+BCI: 42, Taken: 4, Not-Taken: 64, Percent Taken: 0.06
+
+static java/util/Arrays.copyOfRange([CII)[C 
+BCI: 5, Taken: 98, Not-Taken: 0, Percent Taken: 1.00
+
+static java/nio/Bits.<clinit>()V 
+BCI: 6, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+static java/lang/StringCoding.lookupCharset(Ljava/lang/String;)Ljava/nio/charset/Charset; 
+BCI: 4, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+
+virtual java/io/UnixFileSystem.resolve(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; 
+BCI: 6, Taken: 14, Not-Taken: 0, Percent Taken: 1.00
+BCI: 18, Taken: 14, Not-Taken: 0, Percent Taken: 1.00
+BCI: 57, Taken: 14, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/misc/Launcher.pathToURLs([Ljava/io/File;)[Ljava/net/URL; 
+BCI: 11, Taken: 1, Not-Taken: 1, Percent Taken: 0.50
+
+virtual java/nio/charset/CharsetEncoder.<init>(Ljava/nio/charset/Charset;FF[B)V 
+BCI: 36, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 52, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 70, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+BCI: 76, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+static java/nio/CharBuffer.allocate(I)Ljava/nio/CharBuffer; 
+BCI: 1, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/File.length()J 
+BCI: 5, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/security/util/Debug.<clinit>()V 
+BCI: 37, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 82, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/net/URLClassLoader$1.run()Ljava/lang/Object; 
+BCI: 31, Taken: 2, Not-Taken: 2, Percent Taken: 0.50
+
+virtual java/net/URLStreamHandler.hostsEqual(Ljava/net/URL;Ljava/net/URL;)Z 
+BCI: 14, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 33, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 40, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/io/FileInputStream.<init>(Ljava/io/File;)V 
+BCI: 10, Taken: 0, Not-Taken: 3, Percent Taken: 0.00
+BCI: 27, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 36, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/security/SecureClassLoader.<init>(Ljava/lang/ClassLoader;)V 
+BCI: 28, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/net/URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class; 
+BCI: 15, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+BCI: 186, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/AbstractList$Itr.hasNext()Z 
+BCI: 11, Taken: 2, Not-Taken: 3, Percent Taken: 0.40
+
+static java/nio/charset/CharsetDecoder.<clinit>()V 
+BCI: 6, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/util/Properties.getProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; 
+BCI: 7, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/reflect/ReflectionFactory.langReflectAccess()Lsun/reflect/LangReflectAccess; 
+BCI: 3, Taken: 11, Not-Taken: 1, Percent Taken: 0.92
+
+virtual sun/nio/cs/StreamDecoder.ensureOpen()V 
+BCI: 4, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+static java/nio/charset/Charset.isSupported(Ljava/lang/String;)Z 
+BCI: 4, Taken: 0, Not-Taken: 7, Percent Taken: 0.00
+
+virtual java/nio/charset/spi/CharsetProvider.<init>()V 
+BCI: 9, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/net/www/ParseUtil.lowMask(CC)J 
+BCI: 34, Taken: 1, Not-Taken: 10, Percent Taken: 0.09
+
+virtual java/lang/ThreadGroup.addUnstarted()V 
+BCI: 8, Taken: 7, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/io/UnixFileSystem.normalize(Ljava/lang/String;)Ljava/lang/String; 
+BCI: 13, Taken: 28, Not-Taken: 833, Percent Taken: 0.03
+BCI: 27, Taken: 733, Not-Taken: 100, Percent Taken: 0.88
+BCI: 34, Taken: 100, Not-Taken: 0, Percent Taken: 1.00
+BCI: 60, Taken: 25, Not-Taken: 3, Percent Taken: 0.89
+
+virtual java/util/Vector.elementAt(I)Ljava/lang/Object; 
+BCI: 5, Taken: 9, Not-Taken: 0, Percent Taken: 1.00
+
+static sun/reflect/misc/ReflectUtil.ensureMemberAccess(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;I)V 
+BCI: 1, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 8, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/lang/Thread.checkAccess()V 
+BCI: 5, Taken: 11, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/reflect/Modifier.isAbstract(I)Z 
+BCI: 5, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+
+static java/lang/String.indexOf([CII[CIII)I 
+BCI: 3, Taken: 22, Not-Taken: 0, Percent Taken: 1.00
+BCI: 19, Taken: 22, Not-Taken: 0, Percent Taken: 1.00
+BCI: 27, Taken: 22, Not-Taken: 0, Percent Taken: 1.00
+BCI: 57, Taken: 14, Not-Taken: 58, Percent Taken: 0.19
+BCI: 66, Taken: 10, Not-Taken: 48, Percent Taken: 0.17
+BCI: 95, Taken: 14, Not-Taken: 44, Percent Taken: 0.24
+BCI: 123, Taken: 8, Not-Taken: 36, Percent Taken: 0.18
+BCI: 150, Taken: 36, Not-Taken: 8, Percent Taken: 0.82
+BCI: 76, Taken: 14, Not-Taken: 592, Percent Taken: 0.02
+BCI: 85, Taken: 34, Not-Taken: 558, Percent Taken: 0.06
+BCI: 134, Taken: 36, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/ClassLoader.defineClassSourceLocation(Ljava/security/ProtectionDomain;)Ljava/lang/String; 
+BCI: 8, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+BCI: 15, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+
+virtual java/lang/String.<init>([BIILjava/lang/String;)V 
+BCI: 6, Taken: 54, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/util/BitSet.ensureCapacity(I)V 
+BCI: 6, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/nio/ByteBuffer.arrayOffset()I 
+BCI: 4, Taken: 941, Not-Taken: 0, Percent Taken: 1.00
+BCI: 19, Taken: 941, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/Class.newInstance0()Ljava/lang/Object; 
+BCI: 4, Taken: 1, Not-Taken: 3, Percent Taken: 0.25
+BCI: 11, Taken: 3, Not-Taken: 0, Percent Taken: 1.00
+BCI: 85, Taken: 3, Not-Taken: 1, Percent Taken: 0.75
+BCI: 98, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+
+virtual java/lang/AbstractStringBuilder.append(C)Ljava/lang/AbstractStringBuilder; 
+BCI: 13, Taken: 356, Not-Taken: 29, Percent Taken: 0.92
+
+virtual java/lang/Class.clearCachesOnClassRedefinition()V 
+BCI: 8, Taken: 12, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/Class.desiredAssertionStatus()Z 
+BCI: 6, Taken: 0, Not-Taken: 19, Percent Taken: 0.00
+
+static java/lang/ClassLoader.initSystemClassLoader()V 
+BCI: 3, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 9, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+BCI: 27, Taken: 0, Not-Taken: 1, Percent Taken: 0.00
+BCI: 82, Taken: 1, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/lang/ClassLoader.postDefineClass(Ljava/lang/Class;Ljava/security/ProtectionDomain;)V 
+BCI: 4, Taken: 0, Not-Taken: 2, Percent Taken: 0.00
+BCI: 16, Taken: 2, Not-Taken: 0, Percent Taken: 1.00
+
+virtual java/nio/Buffer.<init>(IIII)V 
+BCI: 16, Taken: 511, Not-Taken: 0, Percent Taken: 1.00
+BCI: 46, Taken: 511, Not-Taken: 0, Percent Taken: 1.00

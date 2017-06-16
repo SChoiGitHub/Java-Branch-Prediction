@@ -13,13 +13,14 @@
 
 #include "ProfileBranch.h"
 
+
 class ProfileData{
 	public:
 		ProfileData();
 		~ProfileData();
 		ProfileData(std::string s);
-	
 		
+		std::unordered_map<std::string,std::vector<ProfileBranch>>& data();
 		
 	private:
 		void beginParse();

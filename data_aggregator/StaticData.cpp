@@ -1,6 +1,6 @@
 #include "StaticData.h"
 StaticData::StaticData(){
-	throw(std::runtime_error("Error: Missing static data file to parse"));
+	
 }
 StaticData::~StaticData(){
 	delete[] names_of_heuristics;
@@ -13,8 +13,8 @@ StaticData::~StaticData(){
 	}
 }
 StaticData::StaticData(std::string s){
+	method_name_to_taken = std::unordered_map<std::string,std::vector<int*>>();
 	column_count = 0;
-	
 	inFile.open(s); //open new file.
 	std::string line; //temp line var
 	
@@ -65,4 +65,13 @@ void StaticData::parse_method(std::string method_name, int lines){
 		method_name_to_taken.at(method_name).push_back(h_data_for_this_line);
 		getline(inFile,temp); //end the previous line.
 	}
+}
+std::unordered_map<std::string,std::vector<int*>>& StaticData::data(){
+	return method_name_to_taken;
+}
+int StaticData::get_heuristic_count(){
+	return column_count;
+}
+std::string* StaticData::get_heuristic_names(){
+	return names_of_heuristics;
 }

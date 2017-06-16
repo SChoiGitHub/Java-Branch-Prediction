@@ -9,11 +9,17 @@
 #include <unordered_map>
 #include <vector>
 
+
+
 class StaticData{
 	public:
 		StaticData();
 		~StaticData();
 		StaticData(std::string s);
+		
+		std::unordered_map<std::string,std::vector<int*>>& data();
+		int get_heuristic_count();
+		std::string* get_heuristic_names();
 	
 	private:
 		void read_columns();
