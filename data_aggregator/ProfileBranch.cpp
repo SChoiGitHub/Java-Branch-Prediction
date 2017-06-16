@@ -1,6 +1,8 @@
 #include "ProfileBranch.h"
 
-ProfileBranch::ProfileBranch();
+ProfileBranch::ProfileBranch(){
+	throw std::runtime_error("Error: Blank profile branch.");
+}
 ProfileBranch::ProfileBranch(int i, int t, int u){
 	myIndex = i;
 	taken = t;
@@ -14,4 +16,7 @@ int ProfileBranch::getTaken(){
 }
 int ProfileBranch::getUntaken(){
 	return untaken;
+}
+bool ProfileBranch::operator<(ProfileBranch rhs){
+	return (this->myIndex < rhs.myIndex);
 }

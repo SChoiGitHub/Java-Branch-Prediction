@@ -1,1 +1,4 @@
-rm -r *.class 'HeuristicAnalysis' 'Soot_Heuristic_Information' "./data_aggregator/*.sdfs"
+rm -r *.class 'Soot_Heuristic_Information' 
+find . -type f -name '*.sdfs' -delete
+find . -type f -name '*.o' -delete
+find . -type f -name 'DataAggregator' -delete

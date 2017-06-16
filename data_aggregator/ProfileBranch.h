@@ -16,6 +16,8 @@ class ProfileBranch{
 		int getIndex();
 		int getTaken();
 		int getUntaken();
+		
+		bool operator<(ProfileBranch rhs);
 	private:
 		int myIndex;
 		int taken;
