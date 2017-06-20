@@ -7,6 +7,7 @@ import java.util.*;
 import soot.toolkits.graph.*;
 import soot.jimple.toolkits.annotation.*;
 import soot.jimple.toolkits.annotation.logic.*;
+import java.util.concurrent.*;
 
 //For any future researchers
 //This is a class that inheirits from LoopFinder, which inheirits from BodyTransform. This will allow it to be inserted into Soot's Packs, which will be dealt with at runtime.
@@ -14,6 +15,7 @@ public class LoopHeuristic extends LoopFinder {
 	private FileOutputStream file;
 	HeuristicDatabase h_d;
 	int h_id;
+	private static Object lock = new Object();
 	
 	LoopHeuristic(HeuristicDatabase hd, int heuristic_id){
 		System.out.println("Loop Heuristic Prepared.");
@@ -32,54 +34,60 @@ public class LoopHeuristic extends LoopFinder {
 	}
 	
     protected void internalTransform (Body b, String phaseName, Map options){
-		h_d.name_heuristic(h_id,phaseName);
-		try{
-			file = new FileOutputStream("Soot_Heuristic_Information/loop_h_" + b.getMethod(), false);
-		}catch(Exception e){
+		synchronized(lock){
+			System.out.println("Applying " + phaseName + " on " + b.getMethod());
 			
-		}
-		
-		printAndWriteToFile("Applying " + phaseName + " on " + b.getMethod());
-		
-		super.internalTransform(b,phaseName,options);
-		//If we want the loops, we can call super.loops() to have it return a collection of loops
-		//this will print out all of the header units then print out all exits from that loop.
-		for(Loop l : super.loops()){
-			printAndWriteToFile("\tLoop Found, Header: " + l.getHead());
 			
-			for(Stmt s : l.getLoopExits()){
-				printAndWriteToFile("\t\tExit: " + s);
-				try{
-					//Is s an if statement?
-					IfStmt s_if = (IfStmt) s;
-					//If both are true, we check.
-					if(s_if.getTarget() != l.getHead()){
-						//The header is not the destination of the goto if it is taken. 
-						printAndWriteToFile("\t\t\tPredict not taken to continue the loop.");
-						h_d.add(b.getMethod(),h_id,false,s_if);
-					}else{
-						printAndWriteToFile("\t\t\tPredict taken to continue the loop.");
-						h_d.add(b.getMethod(),h_id,true,s_if);
-					}
-				}catch(Exception e1){
-					/*
-					try{
-						//Is this a switch statment?
-						SwitchStmt s_sw = (SwitchStmt) s;
-						printAndWriteToFile("Switch Heuristics are not accounted for yet.");
-					}catch(Exception e2){
-						//Okay, I don't know how to resolve this yet.
-						printAndWriteToFile("\t\t\tThere was an unknown Heuristic Failure");				
-					}	
-					* */					
-				}
+			
+			h_d.name_heuristic(h_id,phaseName);
+			try{
+				file = new FileOutputStream("Soot_Heuristic_Information/loop_h_" + b.getMethod(), false);
+			}catch(Exception e){
 				
 			}
-		}
-		try{
-			file.close();
-		}catch(Exception e){
 			
+			printAndWriteToFile("Applying " + phaseName + " on " + b.getMethod());
+			
+			super.internalTransform(b,phaseName,options);
+			//If we want the loops, we can call super.loops() to have it return a collection of loops
+			//this will print out all of the header units then print out all exits from that loop.
+			for(Loop l : super.loops()){
+				printAndWriteToFile("\tLoop Found, Header: " + l.getHead());
+				
+				for(Stmt s : l.getLoopExits()){
+					printAndWriteToFile("\t\tExit: " + s);
+					try{
+						//Is s an if statement?
+						IfStmt s_if = (IfStmt) s;
+						//If both are true, we check.
+						if(s_if.getTarget() != l.getHead()){
+							//The header is not the destination of the goto if it is taken. 
+							printAndWriteToFile("\t\t\tPredict not taken to continue the loop.");
+							h_d.add(b.getMethod(),h_id,false,s_if);
+						}else{
+							printAndWriteToFile("\t\t\tPredict taken to continue the loop.");
+							h_d.add(b.getMethod(),h_id,true,s_if);
+						}
+					}catch(Exception e1){
+						/*
+						try{
+							//Is this a switch statment?
+							SwitchStmt s_sw = (SwitchStmt) s;
+							printAndWriteToFile("Switch Heuristics are not accounted for yet.");
+						}catch(Exception e2){
+							//Okay, I don't know how to resolve this yet.
+							printAndWriteToFile("\t\t\tThere was an unknown Heuristic Failure");				
+						}	
+						* */					
+					}
+					
+				}
+			}
+			try{
+				file.close();
+			}catch(Exception e){
+				
+			}
 		}
     }
 }

@@ -53,7 +53,7 @@ void DataAggregator::dataFusion(std::vector<int*>& heuristics, std::vector<Profi
 			csv_out << ',' << acutal[y].getTaken() << ',' << acutal[y].getUntaken() << ',' << (acutal[y].getUntaken()+acutal[y].getTaken()) << '\n';
 		}
 	}else{
-		throw std::runtime_error("Error: unequal vector sizes");
+		throw std::runtime_error("Error: unequal vector sizes\n" + method_name);
 	}
 	
 	//Method specific output; data summary.

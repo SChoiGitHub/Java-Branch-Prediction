@@ -30,6 +30,9 @@ StaticData::StaticData(std::string s){
 				read_columns(); //fill the new array!
 			}else if(line.substr(0,8) == "Method: "){
 				std::string method_name = line.substr(8);
+				
+				process_method_name(method_name);
+				
 				method_name_to_taken.insert({method_name,std::vector<int*>()}); //get the method name
 				getline(inFile,line); //get next line, that will be the number of lines we deal with;
 				parse_method(method_name, std::stoi(line.substr(21)));
@@ -42,6 +45,17 @@ StaticData::StaticData(std::string s){
 		throw(std::runtime_error("Error: Missing static data file to parse"));
 	}
 	inFile.close();
+}
+
+void StaticData::process_method_name(std::string& method_name){
+	int last_instance_of_period = method_name.rfind('.');
+	//The profiling has '/' instead of '.', excluding the last one.
+	for(int x = 0; x < last_instance_of_period; x++){
+		if(method_name.at(x) == '.'){
+			method_name.at(x) = '/';
+		}
+		
+	}
 }
 void StaticData::read_columns(){
 	std::string temp;

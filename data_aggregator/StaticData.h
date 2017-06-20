@@ -24,6 +24,7 @@ class StaticData{
 	private:
 		void read_columns();
 		void parse_method(std::string method_name, int lines);
+		void process_method_name(std::string& method_name);
 		
 		int column_count;
 		std::string* names_of_heuristics;

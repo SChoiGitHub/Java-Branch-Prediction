@@ -35,6 +35,7 @@ public class ReturnHeuristic extends BodyTransformer {
 	
 	
 	protected void internalTransform(Body b, String phaseName, Map options){
+		System.out.println("Applying " + phaseName + " on " + b.getMethod());
 		h_d.name_heuristic(h_id,phaseName);
 		
 		try{
