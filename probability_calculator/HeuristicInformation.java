@@ -7,12 +7,11 @@ import java.util.*;
 import soot.toolkits.graph.*;
 
 //Maybe we don't need this...
-public class HeuristicIfPair{
-	private IfStmt corresponding_if_stmt;
+public class HeuristicInformation{
 	private int[] heuristic_taken_or_not;
+	private double taken_chance = -1;
 	
-	HeuristicIfPair(int count, IfStmt i_s){
-		corresponding_if_stmt = i_s;
+	HeuristicInformation(int count){
 		heuristic_taken_or_not = new int[count];
 	}
 	
@@ -24,8 +23,8 @@ public class HeuristicIfPair{
 		return heuristic_taken_or_not[where];
 	}
 	
-	public IfStmt getIfStmt(){
-		return corresponding_if_stmt;
+	public void setTakenChance(double in){
+		taken_chance = in;
 	}
 }
 

@@ -50,19 +50,33 @@ void ProfileData::beginParse(){
 	while(getline(inFile,line)){
 		if(line.length() > 2){
 			//std::cout << line << '\n';
+			
 			parseMethod(line);
 		}
 	}
 }
 void ProfileData::parseMethod(std::string s){
-	std::string method_name = s;
+	for(int x = 0; x < (signed) s.length(); x++){
+		if(s.at(x) == '/'){
+			s.at(x) = '.';
+		}
+	}
+	
+	//std::cout << s << '\n';
+	
 	std::stringstream temp_stream;
-	std::string temp;
+	temp_stream = std::stringstream(s);
 	
+	std::string method_name;
+	temp_stream >> method_name;
+	temp_stream >> method_name;
 	//std::cout << "Method: " << line << '\n'; //Debug
+	//std::cout << method_name << '\n';
 	
-	methodName_to_branches[s] = std::vector<ProfileBranch>();
 	
+	methodName_to_branches[method_name] = std::vector<ProfileBranch>();
+	
+	std::string temp;
 	while(getline(inFile,line)){
 		if(line.length() > 3){
 			temp_stream = std::stringstream(line);
@@ -88,15 +102,15 @@ void ProfileData::parseMethod(std::string s){
 			int untaken = std::stoi(temp);
 			//std::cout << untaken << '\n'; //DEBUG
 			
-			methodName_to_branches[s].push_back(ProfileBranch(index,taken,untaken));
-			
+			methodName_to_branches[method_name].push_back(ProfileBranch(index,taken,untaken));
 			continue; //we're done.
 		}else{
+			//std::cout << "\tProcessed: " << method_name << "\n";
 			break;
 		}
 	}
 	//Sort the method's branches, they are not in order sometimes.
-	std::sort(methodName_to_branches[s].begin(),methodName_to_branches[s].end());
+	std::sort(methodName_to_branches[method_name].begin(),methodName_to_branches[method_name].end());
 	
 	/*
 	for(std::vector<ProfileBranch>::iterator a = methodName_to_branches[s].begin(); a != methodName_to_branches[s].end(); a++){
