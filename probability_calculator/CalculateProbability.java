@@ -544,13 +544,18 @@ public class CalculateProbability extends LoopFinder {
 	}	
 	public void loopUnvisitor(SootMethod sm, SootMethod tracking){
 		//does sm dominate the current node?
+		
 		if(dominatorFinder_sm.isDominatedBy(tracking, sm) && tracking.visited()){
 			//It does! Its in the loop
 			tracking.unvisit();
-			for(Object succ : dcg.getSuccsOf(sm)){
+			System.out.println("IN LOOP: " + parseMethod(sm) + "\t" + parseMethod(tracking));
+			
+			for(Object succ : dcg.getSuccsOf(tracking)){
 				//Look at the successors of this
 				loopUnvisitor(sm,(SootMethod)succ);
 			}
+		}else{
+			System.out.println();
 		}
 		//System.out.println("LOOP END");
 	}	
@@ -578,6 +583,9 @@ public class CalculateProbability extends LoopFinder {
 				propagateCallFreqPart1(s_sm);
 			}
 		}
+		
+		
+		
 		//... in reverse depth-first order.
 		//This gets called once there are no more successors, we are doing a reverse depth-first order.
 		if(isLoopHead(sm)){
@@ -659,12 +667,11 @@ public class CalculateProbability extends LoopFinder {
 		
 		//0.9999999999 is 1-epsilion, I think.
 		if(cyclic_probability > (0.999999999999)){
-			System.out.println(sm.getName() + " is really popular...");
 			cyclic_probability = 0.999999999999;
 		}
 		
 		//Again, we don't want to divide by zero.
-		dcg.setInvokeFreq(sm,   dcg.getInvokeFreq(sm) / (1-cyclic_probability)  );
+		dcg.setInvokeFreq(sm,   dcg.getInvokeFreq(sm) / (1.0-cyclic_probability)  );
 		
 		
 
@@ -679,6 +686,7 @@ public class CalculateProbability extends LoopFinder {
 				SootMethod s_sm = (SootMethod) s;
 				//The global call frequency is the local frequency and the call frequency multiplied
 				dcg.setGlobalCallFreq(sm, s_sm, dcg.getLocalFreq(sm,s_sm) * dcg.getInvokeFreq(sm));
+				
 				
 				if(head.equals(s_sm) && !finale){
 					//This will be important later.
