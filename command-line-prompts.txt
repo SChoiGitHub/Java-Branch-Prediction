@@ -1,0 +1,50 @@
+USING static_data_generator (Class file with a main method)
+bash compile.sh
+bash run.sh ReadSpecificMethods LoopTest
+	This requires "ReadSpecificMethods.java" and "LoopTest.java" to be in the same folder.
+	$RT_JAR_LOCATION needs to be your rt.jar location
+	$JCE_JAR_LOCATION needs to be your jce.jar location
+	Completing this will generate "LoopTest_sd"
+
+USING static_data_generator (On DaCapo Benchmark)
+WARNING: Not all tests work!
+NOTE: These are in "TamiFlexer"
+bash updateSDG.sh
+	updateSDG means "update static data generator"
+bash avroraTest.sh small
+	$RT_JAR_LOCATION needs to be your rt.jar location
+	$JCE_JAR_LOCATION needs to be your jce.jar location
+	Completing this will generate "avrora_sd" using a small avrora test
+
+
+USING profile_data_generator (Any class file)
+	You need to ask your research mentor for that.
+
+USING data_aggregator (Any class file)
+cp ../static_data_generator/LoopTest_sd .
+	This copies the LoopTest_sd from the static_data_generator
+bash run_data_aggregator.sh LoopTest;
+	This requries the LoopTest static data. It should be named "LoopTest_sd"
+	This requires the LoopTest profile data. It should be named "LoopTest_pd"
+	Doing this will generate "LoopTest_raw_aggregation.csv", which is information on heuristics and where they apply.
+	It will also generate "LoopTest_cd", which is the probability that a branch will be taken. The program does account for heuristics that avoid branches rather than take them.
+
+USING probability_calculator (Class file with a main method)
+bash compile.sh
+cp ../data_aggregator/LoopTest_* .
+	This copies LoopTest data files here. We really only need the "LoopTest_sd" and "LoopTest_cd" for this though.
+bash test_with_main_class_as_arguement.sh ReadSpecificMethods LoopTest
+	This generates LoopTest_frequencies.csv, which is analysis of block frequency, method frequency, and generally a look at what parts of a program tend to be used more.
+
+USING probability_calculator (On DaCapo Benchmark)
+WARNING: Not all tests work!
+NOTE: These are in "TamiFlexer"
+cp ../data_aggregator/avrora_cd .
+	We need the avrora combined data file.
+bash updateCDU.sh
+	updateCDU means "update combined data user"
+bash avroraTest2.sh small
+	$RT_JAR_LOCATION needs to be your rt.jar location
+	$JCE_JAR_LOCATION needs to be your jce.jar location
+	There are 2 tests because each one requires different things.
+	This should create avrora_frequencies.csv

@@ -225,7 +225,7 @@ public class CalculateProbability extends LoopFinder {
 		
 		
 		
-		try{
+		{
 			//These are the loops, but them in an array list.
 			ArrayList<Loop> orderedLoops = new ArrayList<Loop>(loops());
 			
@@ -263,10 +263,8 @@ public class CalculateProbability extends LoopFinder {
 			
 			//Save the graph. It is the one with the information.
 			methodToBBG.put(b.getMethod(),block_g);
-		}catch(Exception e){
-			//??? There was an error...
-			System.out.println("ERROR: " + e.getMessage());
 		}
+		
 		
 	}
 	private void propagateFrequencyPreparation(Block b){
@@ -481,7 +479,7 @@ public class CalculateProbability extends LoopFinder {
 						if(isBackEdge((SootMethod)p,sm)){
 							for(Object o2 : dcg.getSuccsOf(p)){
 								if(o2 instanceof SootMethod){
-									System.out.println(((SootMethod)o2).getName() + " is a target of a back edge"); //DEBUG
+									//System.out.println(((SootMethod)o2).getName() + " is a target of a back edge"); //DEBUG
 									backEdgeTargets.add((SootMethod)o2);
 								}
 							}
@@ -514,7 +512,7 @@ public class CalculateProbability extends LoopFinder {
 									((Stmt)u).getInvokeExpr().getMethodRef().tryResolve(),
 									b.getBlockFreq()+dcg.getLocalFreq(sm,((Stmt)u).getInvokeExpr().getMethodRef().tryResolve())
 								);
-								
+								b.calls(((Stmt)u).getInvokeExpr().getMethodRef().tryResolve());
 								//System.out.println("\t"+sm + " CALLS " + ((Stmt)u).getInvokeExpr().getMethodRef().tryResolve() + "\tFREQ: " + b.getBlockFreq() + "\t" + dcg.getLocalFreq(sm,((Stmt)u).getInvokeExpr().getMethodRef().tryResolve())); //DEBUG
 								
 								//This is the first part of algorithm 3. Do the same thing that the previous thing did.
@@ -548,14 +546,11 @@ public class CalculateProbability extends LoopFinder {
 		if(dominatorFinder_sm.isDominatedBy(tracking, sm) && tracking.visited()){
 			//It does! Its in the loop
 			tracking.unvisit();
-			System.out.println("IN LOOP: " + parseMethod(sm) + "\t" + parseMethod(tracking));
 			
 			for(Object succ : dcg.getSuccsOf(tracking)){
 				//Look at the successors of this
 				loopUnvisitor(sm,(SootMethod)succ);
 			}
-		}else{
-			System.out.println();
 		}
 		//System.out.println("LOOP END");
 	}	
@@ -572,7 +567,6 @@ public class CalculateProbability extends LoopFinder {
 	}	
 	public void propagateCallFreqPart1(SootMethod sm){
 		sm.traverse(); //We were here.
-		
 		//For each function f...
 		for(Object s : dcg.getSuccsOf(sm)){
 			//We have not been here before right?
@@ -582,10 +576,7 @@ public class CalculateProbability extends LoopFinder {
 				//We are getting the successors of sm. Add these to the stack.
 				propagateCallFreqPart1(s_sm);
 			}
-		}
-		
-		
-		
+		}		
 		//... in reverse depth-first order.
 		//This gets called once there are no more successors, we are doing a reverse depth-first order.
 		if(isLoopHead(sm)){
@@ -594,13 +585,13 @@ public class CalculateProbability extends LoopFinder {
 		}
 	}
 	public void propagateCallFreq(SootMethod sm, SootMethod head, Boolean finale){
-		System.out.println(parseMethod(sm) + "\t" + parseMethod(head) + "\t" + finale);
-		
-		
-		
 		if(sm.visited()){
 			return; //We were here.
 		}
+		
+		System.out.println(parseMethod(sm) + "\t" + parseMethod(head) + "\t" + finale); //DEBUG
+		
+		
 		
 		/* //DEBUG INFORMATION
 		System.out.println(sm.getName());
@@ -658,16 +649,19 @@ public class CalculateProbability extends LoopFinder {
 				
 				//yes, final is finale here. Its because of keywords...
 				if(finale && isBackEdge(p_sm,sm)){
+					System.out.println("BACKEDGE\t" + parseMethod(p_sm) + "\t" + parseMethod(sm) + "\t" + dcg.getBackEdgeProb(p_sm,sm) + "\t" + cyclic_probability);
 					cyclic_probability += dcg.getBackEdgeProb(p_sm,sm);
 				}else if(!isBackEdge(p_sm,sm)){
 					dcg.setInvokeFreq(sm, dcg.getInvokeFreq(sm) + dcg.getGlobalCallFreq(p_sm,sm));
 				}
+				
 			}
 		}
 		
 		//0.9999999999 is 1-epsilion, I think.
 		if(cyclic_probability > (0.999999999999)){
 			cyclic_probability = 0.999999999999;
+			//System.out.println(parseMethod(sm) + " is really popular..."); //DEBUG
 		}
 		
 		//Again, we don't want to divide by zero.
@@ -687,6 +681,7 @@ public class CalculateProbability extends LoopFinder {
 				//The global call frequency is the local frequency and the call frequency multiplied
 				dcg.setGlobalCallFreq(sm, s_sm, dcg.getLocalFreq(sm,s_sm) * dcg.getInvokeFreq(sm));
 				
+				System.out.println("\t" + parseMethod(sm) + "\t" + parseMethod(s_sm) + "\t" + dcg.getGlobalCallFreq(sm,s_sm)); //DEBUG
 				
 				if(head.equals(s_sm) && !finale){
 					//This will be important later.
@@ -740,34 +735,52 @@ public class CalculateProbability extends LoopFinder {
 		*/
 	}
 	public void writeInformation(){
-		//Generates a csv file. It uses tabs as its spacer.
-		System.out.println("Edge Probability and Frequency");
-		for(SootMethod sm : methodToBBG.keySet()){
-			System.out.println("Method: " + parseMethod(sm));
-			System.out.println("BCI of From Block's Tail\tFrom Block's Tail\tTo Block's Tail\tFrom Block's Frequency\tEdge Probability\tEdge Frequency");
-			for(Block from : methodToBBG.get(sm)){
-				for(Block to : methodToBBG.get(sm).getSuccsOf(from)){
-					System.out.println(from.getTail().get_BCI() +"\t" + from.getTail() +"\t"+ to.getTail() +"\t"+ from.getBlockFreq() +"\t"+ from.getEdgeProb(to) +"\t"+ from.getEdgeFreq(to));
+		try{
+			PrintWriter f = new PrintWriter(Options.v().get_combined_data().substring(0,Options.v().get_combined_data().length()-3) + "_frequencies.csv");
+			
+			//Generates a csv file. It uses tabs as its spacer.
+			f.println("Edge Probability and Frequency");
+			for(SootMethod sm : methodToBBG.keySet()){
+				f.println("Method: " + parseMethod(sm));
+				f.println("BCI of From Block's Tail\tFrom Block's Tail\tTo Block's Tail\tFrom Block's Frequency\tEdge Probability\tEdge Frequency\tWhat Methods Does the From Block Call?\tWhat Methods Does the To Block Call?");
+				for(Block from : methodToBBG.get(sm)){
+					for(Block to : methodToBBG.get(sm).getSuccsOf(from)){
+						f.print(from.getTail().get_BCI() +"\t" + from.getTail() +"\t"+ to.getTail() +"\t"+ from.getBlockFreq() +"\t"+ from.getEdgeProb(to) +"\t"+ from.getEdgeFreq(to) + "\t");
+						for(SootMethod called_soot_method : from.whoDoICall()){
+							//whoDoICall is an addedMethod.
+							f.print(parseMethod(called_soot_method) + " ");
+						}
+						f.print("\t");
+						for(SootMethod called_soot_method : to.whoDoICall()){
+							//whoDoICall is an addedMethod.
+							if(methodToBBG.keySet().contains(called_soot_method)){
+								f.print(parseMethod(called_soot_method) + " ");
+							}
+						}
+						f.print("\n");
+					}
 				}
-			}
-			System.out.println();
-		}
-		
-		System.out.println("Call Frequencies");
-		for(Object o : dcg){
-			SootMethod sm = (SootMethod) o;
-			
-			System.out.println("From Method: " + parseMethod(sm) + "\tCall Frequency: " + dcg.getInvokeFreq(sm));
-			System.out.println("To Method\tLocal Call To Frequency\tGlobal Call Frequency");
-			
-			for(Object o2 : dcg.getSuccsOf(sm)){
-				SootMethod sm2 = (SootMethod) o2;
-				System.out.println(parseMethod(sm2)+"\t"+dcg.getLocalFreq(sm,sm2)+"\t"+dcg.getGlobalCallFreq(sm,sm2));
+				f.println();
 			}
 			
-			System.out.println();
+			f.println("Call Frequencies");
+			for(Object o : dcg){
+				SootMethod sm = (SootMethod) o;
+				
+				f.println("From Method: " + parseMethod(sm) + "\tCall Frequency: " + dcg.getInvokeFreq(sm));
+				f.println("To Method\tLocal Call To Frequency\tGlobal Call Frequency");
+				
+				for(Object o2 : dcg.getSuccsOf(sm)){
+					SootMethod sm2 = (SootMethod) o2;
+					f.println(parseMethod(sm2)+"\t"+dcg.getLocalFreq(sm,sm2)+"\t"+dcg.getGlobalCallFreq(sm,sm2));
+				}
+				
+				f.println();
+			}
+			f.close();
+		}catch(IOException e){
+			
 		}
-		
 	}
 }
 class Filter implements SootMethodFilter {

@@ -1,5 +1,5 @@
-java -javaagent:poa-2.0.3.jar -jar ../libs/dacapo-9.12-bach.jar sunflow -s $1
-#java -javaagent:pia-2.0.3.jar -jar ../libs/dacapo-9.12-bach.jar sunflow -s $1
+java -javaagent:../libs/poa-2.0.3.jar -jar ../libs/dacapo-9.12-bach.jar sunflow -s $1
+#java -javaagent:../libs/pia-2.0.3.jar -jar ../libs/dacapo-9.12-bach.jar sunflow -s $1
 #echo "Harness+main" > ../loadme.txt
 echo "org.sunflow.Benchmark+kernelMain" > ../loadme.txt
 echo "org.sunflow.Benchmark+kernelBegin" >> ../loadme.txt

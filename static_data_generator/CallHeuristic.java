@@ -16,8 +16,8 @@ public class CallHeuristic extends HeuristicBase {
 	CallHeuristic(HeuristicDatabase hd, int heuristic_id){
 		super(hd,heuristic_id);
 	}
-	
-	protected void internalTransform(Body b, String phaseName, Map options){
+
+	protected synchronized void internalTransform(Body b, String phaseName, Map options){
 		//System.out.println("Applying " + phaseName + " on " + b.getMethod());
 		hd.name_heuristic(h_id,phaseName);
 		

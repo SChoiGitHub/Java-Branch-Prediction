@@ -1,5 +1,5 @@
-java -javaagent:poa-2.0.3.jar -jar ../libs/dacapo-9.12-bach.jar h2 -s $1
-java -javaagent:pia-2.0.3.jar -jar ../libs/dacapo-9.12-bach.jar h2 -s $1
+java -javaagent:../libs/poa-2.0.3.jar -jar ../libs/dacapo-9.12-bach.jar h2 -s $1
+java -javaagent:../libs/pia-2.0.3.jar -jar ../libs/dacapo-9.12-bach.jar h2 -s $1
 echo "org.dacapo.h2.TPCC+make" > ../loadme.txt
 echo "org.dacapo.h2.TPCC+prepare" >> ../loadme.txt
 echo "org.dacapo.h2.TPCC+preIteration" >> ../loadme.txt
