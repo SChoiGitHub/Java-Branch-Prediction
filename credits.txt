@@ -6,3 +6,8 @@ Java-Branch-Prediction-master contains the code for the static data generation a
 libs contains libraries used in this program.
 TamiFlexer gets Soot and DaCapo to cooperate.
 
+The following papers were read and used in the making of my parts of this program.
+
+BALL, THOMAS, and JAMES R. LARUS. "Branch Prediction For Free." (1993).
+
+Wu, Youfeng, and James R. Larus. "Static branch frequency and program profile analysis." Proceedings of the 27th annual international symposium on Microarchitecture. ACM, 1994.
