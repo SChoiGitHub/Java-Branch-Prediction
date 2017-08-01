@@ -29,7 +29,6 @@ public class CallHeuristic extends HeuristicBase {
 		for(Block block : g){
 			if(g.getSuccsOf(block).size() == 2){
 				if(block.getTail() instanceof IfStmt){
-					
 					for(Block succ : g.getSuccsOf(block)){
 						if(((IfStmt)block.getTail()).getTarget().equals(succ.getHead()) && validBlock(block,succ)){
 							hd.add(b.getMethod(),h_id,false,(IfStmt)block.getTail());
@@ -45,8 +44,6 @@ public class CallHeuristic extends HeuristicBase {
 			Unit u = (Unit) i.next();
 			if(u instanceof InvokeStmt){
 				//Successor cannot post dominate the block b
-				
-				
 				//Get post dominators of b, it CANNOT contain succ if it wants to apply.
 				return !d.getDominators(b).contains(succ);
 			}

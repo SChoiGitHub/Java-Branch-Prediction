@@ -23,8 +23,7 @@ public class LoopHeaderHeuristic extends HeuristicBase {
 		synchronized(lock){
 			//System.out.println("Applying " + phaseName + " on " + b.getMethod());
 			
-			bug = new BriefUnitGraph(b);
-			
+			bug = new BriefUnitGraph(b); //bug = brief unit graph
 			
 			hd.name_heuristic(h_id,phaseName);
 			
@@ -34,7 +33,6 @@ public class LoopHeaderHeuristic extends HeuristicBase {
 			for(Loop l : super.loops()){
 				for(Stmt s : l.getLoopExits()){
 					//System.out.println(s.getClass().getName());
-					
 					try{
 						//Is s an if statement?
 						IfStmt s_if = (IfStmt) s;
@@ -43,16 +41,7 @@ public class LoopHeaderHeuristic extends HeuristicBase {
 							hd.add(b.getMethod(),h_id,true,s_if);
 						}
 					}catch(Exception e1){
-						/*
-						try{
-							//Is this a switch statment?
-							SwitchStmt s_sw = (SwitchStmt) s;
-							printAndWriteToFile("Switch Heuristics are not accounted for yet.");
-						}catch(Exception e2){
-							//Okay, I don't know how to resolve this yet.
-							printAndWriteToFile("\t\t\tThere was an unknown Heuristic Failure");				
-						}	
-						* */					
+						//It is not an ifstmt					
 					}
 					
 				}

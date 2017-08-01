@@ -1,6 +1,7 @@
 opcode_data.txt from "https://gist.github.com/apangin/524391f92082eaaf611e7ec1607fd1dc"
 
 The soot-trunk has been modified. The originial can be found here: "https://sable.github.io/soot/"
+my_custom_soot_src contains my modified version of the soot source code. Again, the original is found above.
 Java-Branch-Prediction-master contains the code for the static data generation and the data aggregation program.
 libs contains libraries used in this program.
 TamiFlexer gets Soot and DaCapo to cooperate.

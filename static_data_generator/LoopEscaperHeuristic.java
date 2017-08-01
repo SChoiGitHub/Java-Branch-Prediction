@@ -21,16 +21,11 @@ public class LoopEscaperHeuristic extends HeuristicBase {
     protected void internalTransform (Body b, String phaseName, Map options){
 		synchronized(lock){
 			//System.out.println("Applying " + phaseName + " on " + b.getMethod());
-			
-			
-			
 			hd.name_heuristic(h_id,phaseName);
-			
 			super.internalTransform(b,phaseName,options);
 			//If we want the loops, we can call super.loops() to have it return a collection of loops
 			//this will print out all of the header units then print out all exits from that loop.
 			for(Loop l : super.loops()){
-				
 				for(Stmt s : l.getLoopExits()){
 					try{
 						//Is s an if statement?
@@ -41,16 +36,7 @@ public class LoopEscaperHeuristic extends HeuristicBase {
 							hd.add(b.getMethod(),h_id,false,s_if);
 						}
 					}catch(Exception e1){
-						/*
-						try{
-							//Is this a switch statment?
-							SwitchStmt s_sw = (SwitchStmt) s;
-							printAndWriteToFile("Switch Heuristics are not accounted for yet.");
-						}catch(Exception e2){
-							//Okay, I don't know how to resolve this yet.
-							printAndWriteToFile("\t\t\tThere was an unknown Heuristic Failure");				
-						}	
-						* */					
+						//Nope, s is not an ifstmt				
 					}
 					
 				}

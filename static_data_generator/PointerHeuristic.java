@@ -28,20 +28,21 @@ public class PointerHeuristic extends HeuristicBase {
 					//cond = condition
 					if(((IfStmt)block.getTail()).getCondition() instanceof BinopExpr){
 						BinopExpr cond = (BinopExpr) ((IfStmt)block.getTail()).getCondition();
+						
+						//System.out.println(b.getMethod().getName());
 						//System.out.println(cond + "\t" + cond.getClass().getName());
 						//System.out.println("\t" + cond.getOp1() + "\t" + cond.getOp1().getType().getClass().getName());
 						//System.out.println("\t" + cond.getSymbol());
 						//System.out.println("\t" + cond.getOp2() + "\t" + cond.getOp2().getType().getClass().getName());
-						switch(cond.getSymbol()){
-							case " == ":
-								if(
-									(cond.getOp1().getType() instanceof soot.RefLikeType && cond.getOp2().getType() instanceof soot.RefLikeType) ||
-									(cond.getOp2().getType() instanceof soot.NullType || cond.getOp1().getType() instanceof soot.NullType)
-								){
-									hd.add(b.getMethod(),h_id,false,(IfStmt)block.getTail());
-								}
-								break;
+						if( (cond.getSymbol().equals(" == ")) &&
+							(
+								(cond.getOp1().getType() instanceof soot.RefLikeType && cond.getOp2().getType() instanceof soot.RefLikeType) ||
+								(cond.getOp2().getType() instanceof soot.NullType || cond.getOp1().getType() instanceof soot.NullType)
+							)
+						){
+							hd.add(b.getMethod(),h_id,false,(IfStmt)block.getTail());
 						}
+						break;
 					}
 				}
 			}

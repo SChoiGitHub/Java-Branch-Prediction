@@ -28,8 +28,19 @@ public class OpcodeHeuristic extends HeuristicBase {
 			if(g.getSuccsOf(block).size() == 2){
 				if(block.getTail() instanceof IfStmt){
 					//cond = condition
+					
+					
+					
+					
+					System.out.println(b.getMethod().getName() + "\t"  + block.getTail().get_BCI());
+					
+					
+					
+					
+					
 					if(((IfStmt)block.getTail()).getCondition() instanceof BinopExpr){
 						BinopExpr cond = (BinopExpr) ((IfStmt)block.getTail()).getCondition();
+						//Just debugging down here.
 						//System.out.println(cond + "\t" + cond.getClass().getName());
 						//System.out.println("\t" + cond.getOp1() + "\t" + cond.getOp1().getClass().getName());
 						//System.out.println("\t" + cond.getSymbol());

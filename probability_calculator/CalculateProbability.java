@@ -649,8 +649,8 @@ public class CalculateProbability extends LoopFinder {
 				
 				//yes, final is finale here. Its because of keywords...
 				if(finale && isBackEdge(p_sm,sm)){
-					System.out.println("BACKEDGE\t" + parseMethod(p_sm) + "\t" + parseMethod(sm) + "\t" + dcg.getBackEdgeProb(p_sm,sm) + "\t" + cyclic_probability);
 					cyclic_probability += dcg.getBackEdgeProb(p_sm,sm);
+					System.out.println("BACKEDGE\t" + parseMethod(p_sm) + "\t" + parseMethod(sm) + "\t" + dcg.getBackEdgeProb(p_sm,sm) + "\t" + cyclic_probability);
 				}else if(!isBackEdge(p_sm,sm)){
 					dcg.setInvokeFreq(sm, dcg.getInvokeFreq(sm) + dcg.getGlobalCallFreq(p_sm,sm));
 				}
@@ -660,6 +660,7 @@ public class CalculateProbability extends LoopFinder {
 		
 		//0.9999999999 is 1-epsilion, I think.
 		if(cyclic_probability > (0.999999999999)){
+			System.out.println("POPULAR\t" + parseMethod(sm));
 			cyclic_probability = 0.999999999999;
 			//System.out.println(parseMethod(sm) + " is really popular..."); //DEBUG
 		}
