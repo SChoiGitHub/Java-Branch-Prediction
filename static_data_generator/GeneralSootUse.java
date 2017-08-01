@@ -18,15 +18,7 @@ public class GeneralSootUse{
 	public static void main(String[] args) {
 		HeuristicDatabase h_d = new HeuristicDatabase(8);
 		
-		try{
-			File directory = new File("Soot_Heuristic_Information");
-			try{
-				directory.mkdir();
-			} 
-			catch(Exception e){
-			}   
-			
-			
+		try{			
 			//The main must be called in order to add the internalTransforms below to the jtp pack. This will activate the Transform when Soot makes its Jimple file.
 			//This Transform helps with reading the if statements.
 			
