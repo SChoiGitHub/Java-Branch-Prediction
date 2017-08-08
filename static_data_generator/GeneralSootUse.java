@@ -13,10 +13,14 @@ import soot.toolkits.astmetrics.ClassData;
 import java.util.Scanner;
 
 //For any future researchers
-public class GeneralSootUse{
+//This class loads the transformations (the heuristics) into Soot's packs then runs Soot.
+//When Soot is run, it runs all the transformations in its packs on each method in the class it acts upon.
+//The heuristics are transformations, but they don't change anything, just analyze it.
+//This is intended to be the first arguement in the run bash script.
+public class GeneralSootUse{	
 	//This has the main method, and thusly should be used as the caller.
 	public static void main(String[] args) {
-		HeuristicDatabase h_d = new HeuristicDatabase(8);
+		HeuristicDatabase h_d = new HeuristicDatabase(8); //Build a heuristic data base with 8 heuristics in them.
 		
 		try{			
 			//The main must be called in order to add the internalTransforms below to the jtp pack. This will activate the Transform when Soot makes its Jimple file.
@@ -27,9 +31,9 @@ public class GeneralSootUse{
 			
 			//These transform should deal with analysis.
 			
-			add_jtp_Transformer(new BackHeuristic(h_d,0));
-			add_jtp_Transformer(new ForwardHeuristic(h_d,1));
-			add_jtp_Transformer(new ReturnHeuristic(h_d,2));
+			add_jtp_Transformer(new BackHeuristic(h_d,0)); //Put back heuristic into the database, associate it with index 0
+			add_jtp_Transformer(new ForwardHeuristic(h_d,1)); //Put forward heuristic into the database, associate it with index 1
+			add_jtp_Transformer(new ReturnHeuristic(h_d,2)); //And so on...
 			add_jtp_Transformer(new CallHeuristic(h_d,3));
 			add_jtp_Transformer(new PointerHeuristic(h_d,4));
 			add_jtp_Transformer(new OpcodeHeuristic(h_d,5));
@@ -40,11 +44,12 @@ public class GeneralSootUse{
 		}
 		
 		
-		soot.Main.main(args); //old way of doing things.
-		h_d.print();
+		soot.Main.main(args); 
+		h_d.print(); //The heuristic database needs to print out its information after everything it run.
 	}
 	
 	public static void add_jtp_Transformer(BodyTransformer a){
+		//This method loads the heuristic and gives it a standard name based on its class.
 		PackManager.v().getPack("jtp").add(new Transform("jtp." + a.getClass().getName(),a));
 	}
 }

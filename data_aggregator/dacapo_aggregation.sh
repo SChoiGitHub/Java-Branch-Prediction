@@ -1,3 +1,5 @@
+#This basically runs the data aggregator on every single dacapo benchmark.
+#This requires static and profiling data in the folder to be availble.
 bash run_data_aggregator.sh avrora
 bash run_data_aggregator.sh batik
 bash run_data_aggregator.sh eclipse

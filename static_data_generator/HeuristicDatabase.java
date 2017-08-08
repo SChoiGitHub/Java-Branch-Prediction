@@ -7,7 +7,8 @@ import java.util.*;
 import soot.toolkits.graph.*;
 import java.util.concurrent.*;
 
-//Maybe we don't need this...
+//The heuristic database is used by heuristic base (and all its derivatives)
+//The heuristic database knows how many heuristics there are, the name of them, and what applies in each if stmt in each soot method.
 public class HeuristicDatabase{
 	private Hashtable<SootMethod,Hashtable<Integer,HeuristicInformation>> methodToPredictionTable;
 	private int heuristic_count;
@@ -30,22 +31,27 @@ public class HeuristicDatabase{
 	}
 	
 	public void add(SootMethod s_m, int heuristic_num, boolean taken, IfStmt the_if){
+		//Do we know this method yet in the database?
 		if(!methodToPredictionTable.containsKey(s_m)){
 			methodToPredictionTable.put(s_m,new Hashtable<Integer,HeuristicInformation>());
 		}
 		
+		//Do we know the if-stmt in this method yet?
 		if(!methodToPredictionTable.get(s_m).containsKey(the_if.get_BCI())){
 			methodToPredictionTable.get(s_m).put(the_if.get_BCI(),new HeuristicInformation(heuristic_count));
 		}
 		
 		if(taken){
+			//If the heuristic predicts taken, we set it to two.
 			methodToPredictionTable.get(s_m).get(the_if.get_BCI()).setTaken(heuristic_num,2);
 		}else{
+			//If the heuristic predicts untaken, we set it to one
 			methodToPredictionTable.get(s_m).get(the_if.get_BCI()).setTaken(heuristic_num,1);
 		}
 	}
 	
 	public void print(){
+		//Information output.
 		System.out.println("[ToIB] Table of Information Beginning");
 		synchronized(print_lock){
 			System.out.println(heuristic_count);
@@ -95,16 +101,21 @@ public class HeuristicDatabase{
 	}
 	
 	public HeuristicInformation getHeuristicInformation(SootMethod m, int bci){
+		//Get the heuristic information of method m at bci
 		return methodToPredictionTable.get(m).get(bci);
 	}
 	public int getHeuristicCount(){
+		//Get the number of heuristics in here.
 		return heuristic_count;
 	}
 	public String getHeuristicName(int where){
+		//Get the heuristic name at 'where'
 		return what_heuristics_at_what_row[where];
 	}
 
 	public String typeAppend(Type a){
+		//The profile program identifies methods with varying return and parameter types with letters.
+		//This helps match static data with profiling data.
 		if(a instanceof IntType){
 			return "I";
 		}else if(a instanceof BooleanType){
@@ -132,6 +143,7 @@ public class HeuristicDatabase{
 		}else if(a instanceof RefType){	
 			return "L" + a.toString() + ';';
 		}else{
+			//Okay, something bad happened.
 			return "!@#ERROR#@!";
 		}
 	}

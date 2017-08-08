@@ -28,11 +28,7 @@ StaticData::StaticData(std::string s){
 				//std::cout << column_count << '\n'; //DEBUG
 				read_columns(); //fill the new array!
 			}else if(line.substr(0,8) == "Method: "){
-				
 				std::string method_name = line.substr(8);
-				
-				process_method_name(method_name);
-				
 				method_name_to_taken.insert({method_name,std::unordered_map<int,BCI_Heuristic_Pair>()}); //get the method name
 				//std::cout << "\tProcessing: " << method_name << "\n";
 				getline(inFile,line); //get next line, that will be the number of lines we deal with;
@@ -46,18 +42,6 @@ StaticData::StaticData(std::string s){
 		throw(std::runtime_error("Error: Missing static data file to parse"));
 	}
 	inFile.close();
-}
-void StaticData::process_method_name(std::string& method_name){
-	/*
-	int last_instance_of_period = method_name.rfind('.');
-	//The profiling has '/' instead of '.', excluding the last one.
-	for(int x = 0; x < last_instance_of_period; x++){
-		if(method_name.at(x) == '.'){
-			method_name.at(x) = '/';
-		}
-		
-	}
-	*/
 }
 void StaticData::read_columns(){
 	std::string temp;

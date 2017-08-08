@@ -14,6 +14,7 @@ import java.util.concurrent.*;
 
 //For any future researchers
 //This is a class that inheirits from BodyTransformer. This will allow it to be inserted into Soot's Packs, which will be dealt with at runtime.
+//The heuristic base is the class that all heuristics should inheirit from for easier management
 public abstract class HeuristicBase extends LoopFinder {
 	protected HeuristicDatabase hd;
 	protected int h_id;

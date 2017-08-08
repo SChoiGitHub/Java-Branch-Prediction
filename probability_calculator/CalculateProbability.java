@@ -19,12 +19,10 @@ import java.util.ArrayList;
 
 import soot.jimple.toolkits.callgraph.*;
 
-
-
-
-
 //For any future researchers
 //This is a class that inheirits from LoopFinder. This will allow it to be inserted into Soot's Packs, which will be dealt with at runtime.
+//This handles the probability calculations of each method using combined data ("_cd") and static data ("_sd")
+//When this is compiled, there will be warnings, I am not sure how to suppress them, but you can ignore them.
 public class CalculateProbability extends LoopFinder {
 	private BriefBlockGraph block_g;
 	private PatchingChain<Unit> u;
@@ -46,24 +44,31 @@ public class CalculateProbability extends LoopFinder {
 		
 	}
 	private boolean build(){
+		//This should be called once to take in the information from the files.
+		
 		//Information on heuristic information
 		if(Options.v().get_combined_data().equals("")){
-			throw new RuntimeException("You need a combined data file.");
+			//There is no combined data file.
+			throw new RuntimeException("You need a combined data file. Add \"-combined-data \'classname\'_cd\" to the line that calls ReadSpecificMethods.");
 		}else{
 			if(heuristic_taken_probability == null){
+				//We have not made the item yet.
 				try{
 					Scanner f = new Scanner(new File(Options.v().get_combined_data()));
+					//Open the file that is the combined data.
 					heuristic_taken_probability = new Hashtable<String,Double>();
+					//Make the hashtable
 					while(f.hasNextLine()){
 						String l = f.nextLine();
 						Scanner string_stream = new Scanner(l);
 						
 						String what = string_stream.next();
+						//Associate each heuristic with their taken rate.
 						heuristic_taken_probability.put(what,Double.parseDouble(string_stream.next()));
 					}
 					System.out.println("Combined Data: " + Options.v().get_combined_data());
 				}catch(Exception e){
-					throw new RuntimeException("Failed to read combined data file.");
+					throw new RuntimeException("Failed to read combined data file. Add \"-static-data \'classname\'_sd\" to the line that calls ReadSpecificMethods.");
 				}
 			}
 		}
@@ -79,8 +84,6 @@ public class CalculateProbability extends LoopFinder {
 				while(f.hasNextLine()){
 					try{
 						l = f.nextLine();
-						
-						
 						if(heuristic_name_found && l.substring(0,8).equals("Method: ")){
 							String method_name_for_this_set = l.substring(8,l.length());
 							
@@ -135,6 +138,7 @@ public class CalculateProbability extends LoopFinder {
 		}
 		return true;
 	}
+	
 	protected synchronized void internalTransform(Body b, String phaseName, Map options){
 		//This occurs to each method within soot.
 		if(!built){
@@ -147,7 +151,7 @@ public class CalculateProbability extends LoopFinder {
 		//The method name has to be parsed to match it correctly.
 		String method_name = parseMethod(b.getMethod());
 		u = b.getUnits(); //we need to know the units.
-		//System.out.println(fixThis);
+		//System.out.println(fixThis); //DEBUG
 		
 		//We create a Control Flow Graph using b, the body of the SootMethod.
 		block_g = new BriefBlockGraph(b);	
@@ -155,21 +159,17 @@ public class CalculateProbability extends LoopFinder {
 		//we need to know dominators for later.
 		dominatorFinder_b = new MHGDominatorsFinder<Block> (block_g);
 		
-		
 		//System.out.println("METHOD: " + b.getMethod()); //DEBUG
-		//Just look at the paper, Algorithm 1. I copied it down and put it here.
 		
+		//Just look at the paper, Algorithm 1. I copied it down and put it here.
 		for(Block block : block_g){		
 			if(methodToPredictionTable.containsKey(method_name) && methodToPredictionTable.get(method_name).containsKey(block.getTail().get_BCI())){
 				//we have information for that block!
 				
 				//This block ends with a bci and has two successors.
-				//Begin with half chances here and there.
+				//Begin with half chances for taken and untaken.
 				double taken = 0.5;
 				double untaken = 0.5;
-				
-				
-				
 				
 				try{
 					//This is math, sorry. Just look at algorithm 1 in the paper.
@@ -182,27 +182,28 @@ public class CalculateProbability extends LoopFinder {
 						}
 					}
 					//Assignment of the probabilities.
-					for(Block b4 : block.getSuccs()){
+					for(Block succ : block.getSuccs()){
 						//Just assign the taken and the untaken branches with what they get.
-						if(b4.getHead().equals(((IfStmt)block.getTail()).getTarget())){
-							//System.out.print("Taken "); //This is a taken block edge
-							block.setEdgeProb(b4,taken);
+						if(succ.getHead().equals(((IfStmt)block.getTail()).getTarget())){
+							//System.out.print("Taken "); //DEBUG: This is a taken block edge
+							//The edge probability from "block" to "succ" is taken
+							block.setEdgeProb(succ,taken);
 						}else{
-							//System.out.print("unTaken ");//This is an untaken block edge.
-							block.setEdgeProb(b4,untaken);
+							//System.out.print("unTaken "); //DEBUG: This is an untaken block edge.
+							//The edge probability from "block" to "succ" is taken
+							block.setEdgeProb(succ,untaken);
 						}
 					}
 				}catch(Exception e){
 					//Whoops, I don't know what to do here, so we assume equal chance for both branches.
 					System.out.println(e.getMessage());
 					System.out.println("Defaulting both blocks to 0.5\t" + ((block.getTail())));
-					for(Block b5 : block.getSuccs()){
-						block.setEdgeProb(b5,0.5);
+					for(Block succ : block.getSuccs()){
+						block.setEdgeProb(succ,0.5);
 					}
 				}
 				
-				//System.out.println(); //for formatting debugg
-				
+				//System.out.println(); //for formatting DEBUG
 				//System.out.println(block.getTail().get_BCI() + "\t" + taken + "\t" + untaken); //DEBUG
 			}else{
 				//We don't have information on this branch (which may acutally be non-binary). We assign equal chance to each branch.
@@ -210,27 +211,21 @@ public class CalculateProbability extends LoopFinder {
 					block.setEdgeProb(b1,(1.0/block.getSuccs().size()));
 				}
 			}
-			// debug
-			
-			
 		}
 		
 			
 			
 		//Just look at the paper, Algorithm 2. I copied it down and put it here.
 		for(Block block : block_g){
-			//Create back edges. We need it for later.
+			//Create back edges probabilities. We need it for later.
 			block.intializeBackEdgeProb();
 		}
-		
-		
-		
 		{
-			//These are the loops, but them in an array list.
+			//These are the loops. Put them in an array list.
 			ArrayList<Loop> orderedLoops = new ArrayList<Loop>(loops());
 			
 			//lamda function to sort the loops. The one with the highest bci will be first.
-			//Doing it from highest bci to lowest bci should get the inner loops to outer loops done.
+			//Doing it from highest bci to lowest bci should get the inner loops to outer loops requirement of algorithm 2 done.
 			orderedLoops.sort(
 				(unit1,unit2) -> 
 					(
@@ -238,10 +233,9 @@ public class CalculateProbability extends LoopFinder {
 					)
 			);
 			
-			
 			for(Loop l : orderedLoops){
 				//System.out.println("Found Loop " + l.getHead()); //DEBUG
-				
+				//This iterates between all loops from highest bci to lowest bci, which should deal with innermost loop to outermost loop
 				//Yep, this subroutine is pretty much everything.
 				propagateFrequencyPreparation(findBlockWithUnit(l.getHead()),l); //Unvisit all blocks in loop.
 				propagateFrequency(findBlockWithUnit(l.getHead()),findBlockWithUnit(l.getHead())); //Propagate it!
@@ -251,17 +245,7 @@ public class CalculateProbability extends LoopFinder {
 				propagateFrequency(h,h); //Propagate frequency on everything.
 			}
 			
-			//DEBUG
-			/*
-			for(Block h: block_g){
-				//System.out.println("B.Freq\t" + h.getBlockFreq() + "\t" + h.getHead());
-				for(Block s: block_g.getSuccsOf(h)){
-					//System.out.println("\tEdgeFreq\t" + h.getEdgeFreq(s) + "\t" + s.getHead());
-				}
-			}
-			*/
-			
-			//Save the graph. It is the one with the information.
+			//Save the graph. It is the one with the information and we need it later.
 			methodToBBG.put(b.getMethod(),block_g);
 		}
 		
@@ -280,6 +264,7 @@ public class CalculateProbability extends LoopFinder {
 	private void propagateFrequencyPreparation(Block b, Loop l){
 		//Mark every block in the loop as unvisited.
 		if(inLoop(b,l) && b.visited()){
+			//If block b is in the loop, visit it.
 			//System.out.println(l.getHead() + " " + b.getHead()); //DEBUG
 			b.unvisit();
 			for(Block s : block_g.getSuccsOf(b)){
@@ -335,6 +320,7 @@ public class CalculateProbability extends LoopFinder {
 		
 		//bi = successor
 		for(Block bi : block_g.getSuccsOf(b)){
+			//The edge frequency from 'b' to 'bi' is the edge proability multiplied by the 'b' frequency 
 			b.setEdgeFreq(bi,
 				b.getEdgeProb(bi) * b.getBlockFreq()
 			);
@@ -356,6 +342,7 @@ public class CalculateProbability extends LoopFinder {
 		}		
 	}
 	private boolean isLoopHead(Block who){
+		//The block here is a loop head?
 		for(Loop l : loops()){
 			if(l.getHead().equals(who.getHead())){
 				return true;
@@ -364,6 +351,7 @@ public class CalculateProbability extends LoopFinder {
 		return false;
 	}
 	private boolean isBackEdge(Block from, Block to){
+		//This is the definition of a back edge.
 		return (dominatorFinder_b.isDominatedBy(from,to));
 	}
 	private Block findBlockWithUnit(Unit u){
@@ -391,6 +379,7 @@ public class CalculateProbability extends LoopFinder {
 		return false;
 	}
 	private ArrayList<Block> getBackEdgeSuccs(Block b1){
+		//Get a list of blocks that are backedge successors of b1
 		ArrayList<Block> list = new ArrayList<Block>();
 		for(Block b2 : b1.getSuccs()){
 			//System.out.println(b2.getHead().get_BCI() + " followed by " + b1.getTail().get_BCI() + " " + u.follows(b2.getHead(), b1.getTail())); //DEBUG
@@ -464,12 +453,12 @@ public class CalculateProbability extends LoopFinder {
 		//We put in the call graph, a filter to accept all methods we have analyzed, the head of the entire program, and set the verbose status to false.
 		dcg = new DirectedCallGraph(cg,new Filter(methodToBBG.keySet()),Scene.v().getEntryPoints().iterator(),false);
 		
-		//There is a warning here. I just suppress it.
+		//There is a warning here. Just ignore it
 		dominatorFinder_sm = new MHGDominatorsFinder<SootMethod>(dcg);
 		
 		
 		
-		//Hey, I found loops!? DEBUG
+		//Hey, I found loops!?
 		for(Object o : dcg){
 			if(o instanceof SootMethod){
 				SootMethod sm = (SootMethod) o;
@@ -480,6 +469,7 @@ public class CalculateProbability extends LoopFinder {
 							for(Object o2 : dcg.getSuccsOf(p)){
 								if(o2 instanceof SootMethod){
 									//System.out.println(((SootMethod)o2).getName() + " is a target of a back edge"); //DEBUG
+									//Algorithm 3 defines loop heads as targets of backedges
 									backEdgeTargets.add((SootMethod)o2);
 								}
 							}
@@ -493,7 +483,7 @@ public class CalculateProbability extends LoopFinder {
 		
 		for(Object o : dcg){
 			if(o instanceof SootMethod){
-				//Soot metheod here.
+				//Soot method here.
 				SootMethod sm = (SootMethod) o;
 				if(methodToBBG.containsKey(sm)){
 					//We have information about the method!
@@ -589,7 +579,7 @@ public class CalculateProbability extends LoopFinder {
 			return; //We were here.
 		}
 		
-		System.out.println(parseMethod(sm) + "\t" + parseMethod(head) + "\t" + finale); //DEBUG
+		//System.out.println(parseMethod(sm) + "\t" + parseMethod(head) + "\t" + finale); //DEBUG
 		
 		
 		
@@ -626,10 +616,6 @@ public class CalculateProbability extends LoopFinder {
 				}
 			}
 		}
-		
-		
-		
-		
 		
 		if(sm.equals(head)){
 			//We enter heads once.
@@ -671,7 +657,7 @@ public class CalculateProbability extends LoopFinder {
 		
 
 		
-		// CALCULATE GLOBAL CALL FREQ FOR F's OUT EDGES
+		// CALCULATE GLOBAL CALL FREQ FOR sm's OUT EDGES
 		
 		sm.visit(); //We were here.
 		

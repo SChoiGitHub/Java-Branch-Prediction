@@ -10,6 +10,7 @@ import soot.jimple.internal.*;
 
 //For any future researchers
 //This is a class that inheirits from BodyTransformer. This will allow it to be inserted into Soot's Packs, which will be dealt with at runtime.
+//WARNING: I am not sure if this is usable in Java.
 public class GuardHeuristic extends HeuristicBase {
 	private BriefBlockGraph g;
 	
@@ -18,6 +19,8 @@ public class GuardHeuristic extends HeuristicBase {
 	}
 	
 	protected void internalTransform(Body b, String phaseName, Map options){
+		//WARNING: I am not sure if this works!
+		
 		//System.out.println("Applying " + phaseName + " on " + b.getMethod());
 		hd.name_heuristic(h_id,phaseName);
 		

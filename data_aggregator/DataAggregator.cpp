@@ -2,6 +2,20 @@
 
 #include "DataAggregator.h"
 
+DataAggregator::DataAggregator(std::string static_data, std::string profile_data){
+	//Make the data structures for the input files.
+	StaticData sd(static_data);
+	ProfileData pd(profile_data);
+	//The file names here really only makes sense if you use my naming structure.
+	csv_out.open(static_data.substr(0,static_data.length()-3) + "_raw_aggregation.csv");
+	cd_out.open(static_data.substr(0,static_data.length()-3) + "_cd");
+	//Finally aggregate the data.
+	aggregate(sd,pd);
+	//File is done.
+	csv_out.close();
+	cd_out.close();
+}
+
 void DataAggregator::dataFusion(std::unordered_map<int,BCI_Heuristic_Pair>& heuristics, std::vector<ProfileBranch>& actual, const std::string& method_name, int heuristic_count, std::string* heuristic_names){
 	//Method specific data.
 	int* methodSuccess = new int[heuristic_count];
@@ -198,18 +212,6 @@ void DataAggregator::aggregate(StaticData& s, ProfileData& p){
 	delete[] methodGuessType;
 }
 
-DataAggregator::DataAggregator(std::string static_data, std::string profile_data){
-	//Make the data structures for the input files.
-	StaticData sd(static_data);
-	ProfileData pd(profile_data);
-	//The file name really only makes sense if you use my naming structure.
-	csv_out.open(static_data.substr(0,static_data.length()-3) + "_raw_aggregation.csv");
-	cd_out.open(static_data.substr(0,static_data.length()-3) + "_cd");
-	//Finally aggregate the data.
-	aggregate(sd,pd);
-	//File is done.
-	csv_out.close();
-	cd_out.close();
-}
+
 
 

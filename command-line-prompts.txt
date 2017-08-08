@@ -16,7 +16,6 @@ bash avroraTest.sh small
 	$JCE_JAR_LOCATION needs to be your jce.jar location
 	Completing this will generate "avrora_sd" using a small avrora test
 
-
 USING profile_data_generator (Any class file)
 	You need to ask your research mentor for that.
 

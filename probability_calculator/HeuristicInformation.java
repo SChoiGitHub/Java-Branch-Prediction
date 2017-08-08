@@ -6,10 +6,9 @@ import java.io.*;
 import java.util.*;
 import soot.toolkits.graph.*;
 
-//Maybe we don't need this...
+//Proper documentation of this can be found in the static data generator version of this.
 public class HeuristicInformation{
 	private int[] heuristic_taken_or_not;
-	private double taken_chance = -1;
 	
 	HeuristicInformation(int count){
 		heuristic_taken_or_not = new int[count];
@@ -21,10 +20,6 @@ public class HeuristicInformation{
 	
 	public int getTaken(int where){
 		return heuristic_taken_or_not[where];
-	}
-	
-	public void setTakenChance(double in){
-		taken_chance = in;
 	}
 }
 

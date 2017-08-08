@@ -7,7 +7,7 @@ import java.util.*;
 import soot.toolkits.graph.*;
 import java.util.concurrent.*;
 
-//Maybe we don't need this...
+//Proper documentation of this can be found in the static data generator version of this.
 public class HeuristicDatabase{
 	private Hashtable<SootMethod,Hashtable<Integer,HeuristicInformation>> methodToPredictionTable;
 	private int heuristic_count;
@@ -75,11 +75,6 @@ public class HeuristicDatabase{
 				
 				
 				System.out.println("Method: " + fixThis);
-				
-				
-				
-				
-				
 				System.out.println("Method Continues for " +  methodToPredictionTable.get(s_m).size());
 				for(Integer a : methodToPredictionTable.get(s_m).keySet()){
 					System.out.print(a + "\t");
