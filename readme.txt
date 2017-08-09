@@ -59,6 +59,7 @@ How do I edit and compile soot-trunk?
 How would I add a new heuristic to the static data generator?
 1. Look at my heuristics first. You can base off your custom ones with my ones.
 2. All heuristics act on bodies, which are soot's way of representing methods. Methods know what units (soot's version of statements) they contain. The information they know can be found in the JavaDoc at soot's GitHub.
+3. You would need to add the heuristic to "ReadSpecificMethods.java" or "GeneralSootUse.java" to make the program acknowledge it.
 
 I have other programs that use reflection. How can I analyze them?
 Look at my bash scripts in TamiFlexer. You will need to modify them if you want to analyze programs with reflection.
@@ -74,6 +75,10 @@ What are some issues?
 		Graphs that are loops, but have entries in multiple spots of the loop. The best example is are two nodes that point to each other, but also have a third node that can enter into either of them. This makes both unable to dominate the other, and it confuses the algorithm because there are no back edges, making it impossible to identify this as a loop in my program.
 		I tested a Fibonacci number method. When it recurs, it calls itself twice. This becomes an issue if the branch that calls the recursion has a probability of (>0.5). This makes the algorithm think the fib method will call itself, effectively, forever (fib calls itself twice per call, and each call calls fib 0.5 times, which means it calls itself twice again and so on).
 		I am unsure on what to do about calls to "LoopTest.<clinit>()V" that appear in a majority of the methods in my test program. My loops say that they have a call graph connection to this method, but it is never called.
+	With Tamiflex
+		Some tests do not work properly.
+	With run_everything
+		While I was testing it, the class file was altered, making the static data and profile data mismatch. Might be caused by the poa agent...
 
 Important Specific Changes to Classes
 "Unit" and all its inheirtors
