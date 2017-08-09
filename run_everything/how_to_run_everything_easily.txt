@@ -1,0 +1,46 @@
+1. Open a terminal at this location.
+2. Move the class file of the thing you want to analyze here.
+3. Use export to set "$SOOT_ANALYZE_TARGET" to the class file.
+	For example, if I want to analyze "LoopTest.class", I use "export SOOT_ANALYZE_TARGET=LoopTest" in the terminal. (Yes, exclude file extensions)
+4. Set additional "-cp" items if needed using "$SOOT_ANALYZE_DEPENDENCIES"
+	You can either use an absolute path or a relative path using "../(SomeLocationWhereDependenciesAre)"
+5. If you want to analyze a specific method, you will need to edit the "loadme.txt" file.
+	A reminder: The format for the file is "(Class Name)+(Method Name)". Putting a line that is "LoopTest+main" will tell Tamiflex to analyze LoopTest's main method.
+	By default, you will analyze only the main method of the target class with the given commands.
+	Add additional echo commands that append to "../loadme.txt" below the first echo command (use >> instead of > to append instead of overwriting).
+6. Move the profile data file of the target class into this folder.
+	A reminder: The name of the profile data should be "(Class Name)_pd". LoopTest.class would have a profile data file of "LoopTest_pd".
+7. Add the following exports:
+	$RT_JAR_LOCATION
+	$JCE_JAR_LOCATION
+8. Copy and paste the entire thing after this instruction.
+
+
+
+echo "$SOOT_ANALYZE_TARGET+main" > ../loadme.txt
+
+cp ./"$SOOT_ANALYZE_TARGET.class" ../TamiFlexer/
+cd ../TamiFlexer/
+bash updateSDG.sh
+java -javaagent:../libs/poa-2.0.3.jar $SOOT_ANALYZE_TARGET
+java -Xmx10G -cp "../libs/soot-trunk.jar:$RT_JAR_LOCATION:$JCE_JAR_LOCATION:$SOOT_ANALYZE_DEPENDENCIES:." ReadSpecificMethods -w -app -p cg.spark enabled -cp "../libs/soot-trunk.jar:$RT_JAR_LOCATION:$JCE_JAR_LOCATION:out:$SOOT_ANALYZE_DEPENDENCIES:." -include org.apache. -include org.w3c. -pp $SOOT_ANALYZE_TARGET > $SOOT_ANALYZE_TARGET\_sd
+mv $SOOT_ANALYZE_TARGET\_sd ../data_aggregator; cp ../run_everything/$SOOT_ANALYZE_TARGET\_pd ../data_aggregator
+cd ../data_aggregator/
+bash run_data_aggregator.sh $SOOT_ANALYZE_TARGET
+mv $SOOT_ANALYZE_TARGET\_raw_aggregation.csv ../run_everything/
+mv $SOOT_ANALYZE_TARGET\_cd ../TamiFlexer/
+mv $SOOT_ANALYZE_TARGET\_sd ../TamiFlexer/
+rm $SOOT_ANALYZE_TARGET\_*
+make clean
+cd ../TamiFlexer/
+bash updateCDU.sh
+java -Xmx10G -cp "../libs/soot-trunk.jar:$RT_JAR_LOCATION:$JCE_JAR_LOCATION:$SOOT_ANALYZE_DEPENDENCIES:." ReadSpecificMethods -combined-data $SOOT_ANALYZE_TARGET\_cd -static-data $SOOT_ANALYZE_TARGET\_sd -w -app -p cg.spark enabled -cp "../libs/soot-trunk.jar:$RT_JAR_LOCATION:$JCE_JAR_LOCATION:out:$SOOT_ANALYZE_DEPENDENCIES:." -include org.apache. -include org.w3c. -pp $SOOT_ANALYZE_TARGET
+mv $SOOT_ANALYZE_TARGET\_frequencies.csv ../run_everything
+rm $SOOT_ANALYZE_TARGET\_*
+rm *.class
+rm -r out
+rm -r sootOutput
+cd ../run_everything
+
+
+
