@@ -21,8 +21,12 @@ echo "$SOOT_ANALYZE_TARGET+main" > ../loadme.txt
 cp ./"$SOOT_ANALYZE_TARGET.class" ../TamiFlexer/
 cd ../TamiFlexer/
 bash updateSDG.sh
-java -Xmx10G -cp "../libs/soot-trunk.jar:$RT_JAR_LOCATION:$JCE_JAR_LOCATION:$SOOT_ANALYZE_DEPENDENCIES:." ReadSpecificMethods -w -app -p cg.spark enabled -cp "../libs/soot-trunk.jar:$RT_JAR_LOCATION:$JCE_JAR_LOCATION:$SOOT_ANALYZE_DEPENDENCIES:." -include org.apache. -include org.w3c. -pp $SOOT_ANALYZE_TARGET > $SOOT_ANALYZE_TARGET\_sd
-mv $SOOT_ANALYZE_TARGET\_sd ../data_aggregator; cp ../run_everything/$SOOT_ANALYZE_TARGET\_pd ../data_aggregator
+
+java -cp "../libs/soot-trunk.jar:$RT_JAR_LOCATION:$JCE_JAR_LOCATION:." ReadSpecificMethods -d ../sootOutput/ -whole-program -f J -main-class $SOOT_ANALYZE_TARGET -allow-phantom-refs -cp "../libs/soot-trunk.jar:$RT_JAR_LOCATION:$JCE_JAR_LOCATION:." -pp $SOOT_ANALYZE_TARGET > $SOOT_ANALYZE_TARGET\_sd
+
+
+mv $SOOT_ANALYZE_TARGET\_sd ../data_aggregator
+cp ../run_everything/$SOOT_ANALYZE_TARGET\_pd ../data_aggregator
 cd ../data_aggregator/
 bash run_data_aggregator.sh $SOOT_ANALYZE_TARGET
 mv $SOOT_ANALYZE_TARGET\_raw_aggregation.csv ../run_everything/
