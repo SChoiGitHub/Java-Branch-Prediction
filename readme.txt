@@ -73,16 +73,6 @@ Important changes have been made to "AsmMethodSource.java" so that it would keep
 I see "avroraTest.sh" and "avroraTest2.sh". What's the difference?
 The first one deals with the static data generator while the second one deals with probability calculations.
 
-What are some issues?
-	With the probability calculator...
-		Graphs that are loops, but have entries in multiple spots of the loop. The best example is are two nodes that point to each other, but also have a third node that can enter into either of them. This makes both unable to dominate the other, and it confuses the algorithm because there are no back edges, making it impossible to identify this as a loop in my program.
-		I tested a Fibonacci number method. When it recurs, it calls itself twice. This becomes an issue if the branch that calls the recursion has a probability of (>0.5). This makes the algorithm think the fib method will call itself, effectively, forever (fib calls itself twice per call, and each call calls fib 0.5 times, which means it calls itself twice again and so on).
-		I am unsure on what to do about calls to "LoopTest.<clinit>()V" that appear in a majority of the methods in my test program. My loops say that they have a call graph connection to this method, but it is never called.
-	With Tamiflex
-		Some tests do not work properly.
-	With run_everything
-		While I was testing it, the class file was altered, making the static data and profile data mismatch. Might be caused by the poa agent...
-
 Important Specific Changes to Classes
 "Unit" and all its inheirtors
 	public int get_BCI() //Gets the BCI of this unit. Sometimes appears as -1 if the unit cannot be associated with an opcode in the class.
