@@ -1,3 +1,6 @@
+What is this?
+This program uses Soot to analyze java programs using heuristics for branch prediction purposes. The program consists of three main parts and another external part, a static data generator that applies heuristics on a program and gives out where they apply in each method of each class, a profile data generator (not included in this) that runs a program and provides the number of times a branch was taken, a data aggregator that combines the static and profile data to created combined data about prediction success and raw aggregation data, and a probability calculator that uses static data and combined data to create data on how often a specific method is called in a program.
+
 IMPORTANT NOTES:
 1. My bash scripts assume a certain naming structure. 
 	('ClassName' + "_sd") = static data for the class, generated using static data generator.

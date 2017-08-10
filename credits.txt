@@ -1,10 +1,17 @@
 opcode_data.txt from "https://gist.github.com/apangin/524391f92082eaaf611e7ec1607fd1dc"
 
-The soot-trunk has been modified. The originial can be found here: "https://sable.github.io/soot/"
+The soot-trunk in the libs folder has been modified. The originial can be found here: "https://sable.github.io/soot/"
 my_custom_soot_src contains my modified version of the soot source code. Again, the original is found above.
-Java-Branch-Prediction-master contains the code for the static data generation and the data aggregation program.
+statc_data_generator contains the program that deals with heuristics and where they apply
+data_aggregator uses profile and static data to generate combined data alongside data about heuristics and how accurate they are
+probability_calculator contains the program that calculates method frequencies
+TamiFlexer contains bash scripts to run dacapo benchmarks with Soot
+test_programs contains programs for case testing Soot
 libs contains libraries used in this program.
-TamiFlexer gets Soot and DaCapo to cooperate.
+	Dacapo is one of the main libraries
+	Soot is another
+run_everything has convience instructions
+
 
 The following papers were read and used in the making of my parts of this program.
 

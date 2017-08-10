@@ -1,29 +1,17 @@
 import java.util.*;
 
 
-class Dummy{
-	int num;
-	
-	public Dummy(int x){
-		num = x;
-	}
-}
-
-
-
 
 public class LoopTest{
 	public static void main(String[] args){
-		for(int xyz = 0; xyz < Integer.parseInt(args[0]); xyz++){
-			Dummy d = null;
-			
+		for(int xyz = 0; xyz < 500; xyz++){
 			//Call Heuristic?
 			if(rollTheDice() > 3){
 				System.out.println("Rolled higher than 3");
 				hi(rollTheDice());
 				bye(rollTheDice());
 			}else{
-				d = new Dummy(50);
+				
 			}
 			
 			
@@ -64,11 +52,7 @@ public class LoopTest{
 			
 			System.out.println(bye(hi(asdf%10)%25));
 			
-			if(d == null){
-				System.out.println("Dummy is null");
-			}else{
-				System.out.println("Dummy has something.");
-			}
+			
 		}
 	}
 	

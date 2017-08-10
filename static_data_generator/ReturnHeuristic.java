@@ -32,9 +32,11 @@ public class ReturnHeuristic extends HeuristicBase {
 				if(block.getTail() instanceof IfStmt){
 					//It is an ifstmt.
 					//The target must be checked if it has a return stmt.
-					if(((IfStmt)block.getTail()).getTarget().equals(succ.getHead()) && foundReturn(succ)){
-						//If it does contain a return stmt, predict untaken.
-						hd.add(b.getMethod(),h_id,false,(IfStmt)block.getTail());
+					for(Block succ : g.getSuccsOf(block)){
+						if(((IfStmt)block.getTail()).getTarget().equals(succ.getHead()) && foundReturn(succ)){
+							//If it does contain a return stmt, predict untaken.
+							hd.add(b.getMethod(),h_id,false,(IfStmt)block.getTail());
+						}
 					}
 				}
 			}

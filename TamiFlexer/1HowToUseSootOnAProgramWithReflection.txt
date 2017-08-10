@@ -1,0 +1,16 @@
+DaCapo is a program that uses reflection, which makes programs difficult/impossible to analyze statically. TamiFlex is a program made to handle the issue of reflection in static analysis.
+
+If you want to analyze a program with analysis, this is something you might want to try (That means I am not sure if this works, but it should at least give you some direction):
+1. Make a bash script.
+2. Add the following line in there:
+	For JAR files
+	java -javaagent:../libs/poa-2.0.3.jar -jar whatever.jar firstarguement 2ndOne andSoOn
+	For CLASS files
+	java -javaagent:../libs/poa-2.0.3.jar whateverClass firstarguement 2ndOne andSoOn
+3. If you want to force Soot to enter the program through specific methods, you need to add echo commands to '../loadme.txt'.
+	For example, I want to enter Jython's main method and PySystemState's setArgv method. I would add the following:
+	echo "org.python.util.jython+main" > ../loadme.txt #This would CLEAN loadme.txt since I used '>' and add the class and method to it.
+	echo "org.python.core.PySystemState+setArgv" >> ../loadme.txt #This would APPEND to loadme.txt since I used '>>' and add the class and method to it.
+	The structure is '(ClassName)+(MethodName)'.
+4. You then need to call Soot on the program. You should look at the command in the link in the section called "3. Running soot": https://github.com/Sable/soot/wiki/Using-Soot-and-TamiFlex-to-analyze-DaCapo
+	Modify the command as needed. It may be used on DaCapo specifically, but editing it to be used on something else is likely possible.

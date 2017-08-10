@@ -1,0 +1,24 @@
+To create a heuristic, you want to first go to ReadSpecificMethods.java
+1. You will notice an object HeuristicDatabase named h_d. Its constructor needs one argument: the total number of heuristics you are using.
+2. Below that, you will notice calls to a method named addTransformer. It takes in one arguement: a BodyTransformer.
+3. BodyTransformers are used in Soot to edit or modify methods that Soot acts on. You will have to create one.
+
+Make a java file named 'Something'Heuristic.java.
+1. First, make sure you extend the class the Heuristic base.
+2. The constructor for the new Heuristic you created should have two arguments, one that takes in the HeuristicDatabase, and one that takes in an integer.
+	The constructor should call its superconstructor using the same arguements. This connects the heuristic to the database and gives it an identification number.
+3. Next, you want to make a protected void method called interalTransform. Just copy it from another existing heuristic.
+4. The method MUST call HeuristicDatabase's name_heuristic method. The standard I have is to give it the heuristic id number and the phaseName as its name.
+5. Now do whatever analysis you need. You can use the Body parameter to get information on the method. You should look at Soot's javadoc. You can find a link for it on the wiki.
+6. When you do you analysis, you have to tell the HeuristicDatabase that the heuristic made a prediction. You need to use the add method of the HeuristicDatabase. It takes in four arguements: a SootMethod, an integer (that is the id), a boolean representing untaken or taken (false and true respectively), and the IfStmt where the heuristic applied. Example method calls are below.
+	hd.add(b.getMethod(),h_id,true,if_stmt); //The heuristic predicts taken for the if_stmt in question.
+	hd.add(b.getMethod(),h_id,false,if_stmt); //The heuristic predicts untaken for the if_stmt in question.
+	//To NOT make a prediction at all, you just never call the 'add' method. The HeuristicDatabase, by default, assumes all heuristics don't apply until you call 'add'.
+7. If you need a specific example, check PointerHeuristic. It will be more heavily documented.
+
+Add the Heuristic to Soot
+1. When you have your new heuristic, you need to add it to ReadSpecificMethods.java
+2. Increment the integer arguement constructor of HeuristicDatabase to increase its size.
+3. Add another call to 'addTransformer'. The arguement of it should be the constructor to your new heuristic.
+4. You should give it the HeuristicDatabase object and an unique id. Do not make the id larger or equal to the size of the heuristic database.
+5. The next time you run the static data generator, the new heuristic should be used.
