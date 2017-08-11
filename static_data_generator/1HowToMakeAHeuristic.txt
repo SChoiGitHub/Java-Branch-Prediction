@@ -10,6 +10,9 @@ Make a java file named 'Something'Heuristic.java.
 3. Next, you want to make a protected void method called interalTransform. Just copy it from another existing heuristic.
 4. The method MUST call HeuristicDatabase's name_heuristic method. The standard I have is to give it the heuristic id number and the phaseName as its name.
 5. Now do whatever analysis you need. You can use the Body parameter to get information on the method. You should look at Soot's javadoc. You can find a link for it on the wiki.
+	The link should be this: https://soot-build.cs.uni-paderborn.de/doc/soot/
+	Classes you may want to note for analysis purposes: 'Body','BriefBlockGraph','BriefUnitGraph','Unit'
+	Read the "readme.txt" in the main folder to learn about important changes to classes that may be helpful.
 6. When you do you analysis, you have to tell the HeuristicDatabase that the heuristic made a prediction. You need to use the add method of the HeuristicDatabase. It takes in four arguements: a SootMethod, an integer (that is the id), a boolean representing untaken or taken (false and true respectively), and the IfStmt where the heuristic applied. Example method calls are below.
 	hd.add(b.getMethod(),h_id,true,if_stmt); //The heuristic predicts taken for the if_stmt in question.
 	hd.add(b.getMethod(),h_id,false,if_stmt); //The heuristic predicts untaken for the if_stmt in question.

@@ -1,0 +1,22 @@
+The probability calculator uses combined data (_cd) and static data (_sd) to generate data on how frequently certain methods in a program should be called based on heuristic data and heuristic accuracy.
+
+How to run Probability Calculator?
+If you look into ReadSpecificMethods.java here, you will see that it is almost identical to the static data generator. The only difference is that there is only one BodyTransformer instead of all the heuristics: "CaclulateProbability". Calculate probability uses algorithms described in the following paper:
+
+Wu, Youfeng, and James R. Larus. "Static branch frequency and program profile analysis." Proceedings of the 27th annual international symposium on Microarchitecture. ACM, 1994.
+
+However, it is important to note that the paper was written not with Java in mind, so some things described in the paper do not apply in Java.
+
+The command to run this is in "test_with_main_class_as_arguement.sh". If you look into the script, you will see that it writes into "loadme.txt" to force the "ReadSpecificMethods" the read in the main method of the analyzed class. You are expected to put in "ReadSpecificMethods" as the first arguement while putting the analyzed class as the second arguement in the bash script.
+
+Something like this: "bash test_with_main_class_as_arguement.sh ReadSpecificMethods AnalyzeMe"
+
+The line that runs Soot contains two custom arguements I edited into Soot:
+
+-combined-data
+-static-data 
+
+You are expected to add the filename of the combined data and the static data repsectively into each one. The bash script does it automatitcally for you, assuming you use my naming structure as described in the "readme.txt" of the main folder.
+
+What are some issues with the probability calculator?
+The GitHub page of the repository should describe issues with the probability calculator.
