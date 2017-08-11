@@ -1,0 +1,3 @@
+The DataAggregator program is a c++ program. In order to compile it, you need to open a console here and type in 'make'. It may not work if you do not have g++ installed, so if you cannot use it, install g++. When you get DataAggregator compiled, you can run it with two arguements: the first one should be the filename of the static data file while the other should be the profile data file. The bash script is a convience script that does everything for you, assuming you have the static data and profile data files named properly.
+
+To clean this folder, you can use 'make clean' to remove all '.o' and the DataAggregator program. This will keep all source code and any data files.

@@ -14,3 +14,5 @@ If you want to analyze a program with analysis, this is something you might want
 	The structure is '(ClassName)+(MethodName)'.
 4. You then need to call Soot on the program. You should look at the command in the link in the section called "3. Running soot": https://github.com/Sable/soot/wiki/Using-Soot-and-TamiFlex-to-analyze-DaCapo
 	Modify the command as needed. It may be used on DaCapo specifically, but editing it to be used on something else is likely possible.
+
+'avroraTest.sh' and 'avroraTest2.sh' will be best documented for any needs to look into this further.
